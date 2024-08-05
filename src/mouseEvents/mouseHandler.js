@@ -144,7 +144,7 @@ function updateRepTank(){
     joelho3.posy = altura - nivel0 - hrep - hsaida + cano2.w + 32.5 * yscale;
     saidaAgua1.posy = canoEntradaTanque2.posy + (25 + 7.5) * yscale;
 
-    saidaAgua1.altura =  (hsaida) * yscale;
+    saidaAgua1.altura =  (hsaida);
 
     cano2.largura = joelho2.posy - (altura - nivel0 - hrep - hsaida + 15*yscale + 32.5 * yscale);
   }
