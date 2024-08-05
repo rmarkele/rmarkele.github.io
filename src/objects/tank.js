@@ -7,7 +7,7 @@ class baseTanque {
       this.posy = posy;
     }
     show() {
-      const w = 1;
+      const w = yscale;
       push();
       angleMode(DEGREES);
       translate(this.posx, this.posy);
@@ -35,7 +35,7 @@ class baseTanque {
       this.posy = posy;
     }
     show() {
-      const w = 1;
+      const w = yscale;
       push();
       angleMode(DEGREES);
       translate(this.posx, this.posy);
