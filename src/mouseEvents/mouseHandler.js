@@ -29,10 +29,10 @@ function mouseIsOver() {
   }
 
   let overPipeIn = mouseIsInRect(
-    canoEntradaTanque2.posx,
-    canoEntradaTanque2.posy,
-    canoEntradaTanque2.largura,
-    canoEntradaTanque2.w 
+        joelho3.posx,
+        canoEntradaTanque2.posy,
+        joelho3.largura + canoEntradaTanque2.largura,
+        joelho3.w + canoEntradaTanque2.w 
     )
 
 
@@ -63,6 +63,7 @@ function mouseIsOver() {
         endShape(CLOSE);
     pop()
   }
+  
 
   if(overBase || overPipeIn){
     cursor(HAND)
@@ -76,10 +77,10 @@ function mousePressed() {
     //clicked on tank rep base
     baseClicked = mouseDist(tanqueRep.posx + 0.5 * base, tanqueRep.posy) <=  0.5 * base;
     pipeInClicked = mouseIsInRect(
-        canoEntradaTanque2.posx,
+        joelho3.posx,
         canoEntradaTanque2.posy,
-        canoEntradaTanque2.largura,
-        canoEntradaTanque2.w
+        joelho3.largura + canoEntradaTanque2.largura,
+        joelho3.w + canoEntradaTanque2.w 
     )
     
     
