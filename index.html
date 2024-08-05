@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Bomba Centrífuga</title>
+  <meta name="description" content="Simulador Didático">
+  <meta property="og:title" content="Bomba Centrífuga">
+  <meta property="og:description" content="Simulador Didático">
+  <meta name="classification" content="simulador didático dinâmico bomba centrífuga">
+  <meta name="keywords" content="online,bomba centrífuga,didático,dinâmico,simulador">
+  <meta name="author" content="Renato Markele Ferreira Cândido e Claudio Cesar Bezerra Teles">
+  <meta property="og:image" content="https://proanuncio.com.br/sb/sbppeq.jpg">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="src/p5/p5.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/main.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/help.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/langSelectorStyle.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/selectScenario.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/flowPanel.css">
+
+  <meta charset="utf-8">
+  
+
+</head>
+
+<body>
+  <div id="main-div">
+    <nav id="main-navbar">
+      <div class="lang-menu">
+        <div class="selected-lang">
+          <img src="src/assets/images/PT-BR.png" alt="português" />
+          <span>Português</span>
+        </div>
+        <ul>
+          <li data-lang="PT-BR" data-index="0">
+            <img src="src/assets/images/PT-BR.png" alt="português">
+            <span class="br">Português</span>
+          </li>
+          <li data-lang="EN-US" data-index="1">
+            <img src="src/assets/images/EN-US.png" alt="português">
+            <span class="us">English</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lights">
+        <div id="light-PS" class="circle orange off">
+          <p>PS</p>
+        </div>
+        <div id="light-NORMAL" class="circle green off">
+          <p>NORMAL</p>
+        </div>
+        <div id="light-PC" class="circle orange off">
+          <p>PC</p>
+        </div>
+      </div>
+
+      <div id="cenarios-select-container">
+        <select name="cenarios" id="cenarios-select">
+
+        </select>
+    </div>
+
+    </nav>
+
+    <div id="myCanvasContainer" class="canvasContainer">
+      <div id="logo-container">
+        <div id="logo-txt0"></div>
+        <div id="logo-txt1"></div>
+        <a id="help-button" class="logo-container--btn" href="src/help/html/PT-BR.html" target="_blank"
+          rel="noopener noreferrer"></a>
+      </div>
+      <div id="flow-panel">
+        <div id="pump-flow" class="flow-var">
+          <!-- <div class="flow-arrow"> </div> -->
+          <div class="flow-text">Vazão da Bomba [m³/s]:</div>
+          <div class="flow-number">5.6</div>
+        </div>
+        <div id="city-flow" class="flow-var">
+          <div class="flow-arrow"><img src="src/assets/images/right_arrow.png" alt=""></div>
+          <div class="flow-text">Abastecimento [m³/s]:</div>
+          <div class="flow-number">5.6</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="Hplace" class="h-container">
+        <div class="h-text"></div>
+        <div class="h-number"></div>
+      </div>
+      <div id="Jplace" class="h-container">
+        <div class="h-text"></div>
+        <div class="h-number"></div>
+      </div>
+      <div id="Zplace" class="h-container">
+        <div class="h-text"></div>
+        <div class="h-number"></div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="src/variables/initVariables.js"></script>
+
+  <script src="src/mouseEvents/mouseHandler.js"></script>
+  
+  <script src="src/objects/tank.js"></script>
+  <script src="src/objects/pump.js"></script>
+  <script src="src/objects/pipe.js"></script>
+  <script src="src/objects/knee.js"></script>
+  <script src="src/objects/valve.js"></script>
+  <script src="src/objects/city.js"></script>
+  <script src="src/objects/plot.js"></script>
+  <script src="src/objects/waterDrop.js"></script>
+  <script src="src/objects/wattimeter.js"></script>
+
+  <script src="src/assets/script/drawArrow.js"></script>
+  <script src="src/assets/script/plotGrid.js"></script>
+  
+  <script src="src/panels/painelAlturas.js"></script>
+  <script src="src/panels/flowPanel.js"></script>
+
+  <script src="src/strings/leitorStrings.js"></script>
+  <script src="src/strings/updateStrings.js"></script>
+  
+  <script src="src/system/createWaterSystem.js"></script>
+  <script src="src/system/drawWaterSystem.js"></script>
+  <script src="src/system/criaEstrutura.js"></script>
+
+  <script src="config/Cenarios.js"></script>
+  <script src="config/strings.js"></script>
+  <script src="src/help/help.js"></script>
+  <script src="src/lang/langSelector.js"></script>
+  <script src="src/scenarios/leitorCenarios.js"></script>
+  <script src="src/scenarios/selectScenario.js"></script>
+  <script src="src/sketch.js"></script>
+
+</body>
+
+</html>
