@@ -38,9 +38,9 @@ function updateFlowPanel(){
         cityFlow.number.innerHTML =  nfs(round(10 * vazaoEntrada) / 10, 0, 1);
     }
 
-    if (vazaoEntrada > vazaoSaida + 0.01) {
+    if (vazaoEntrada > vazaoSaida + 0.03) {
         cityFlow.img.src = ".\\src\\assets\\images\\ne_arrow.png"
-      } else if (vazaoEntrada < vazaoSaida - 0.01) {
+      } else if (vazaoEntrada < vazaoSaida - 0.03) {
         cityFlow.img.src = ".\\src\\assets\\images\\se_arrow.png"
       } else {
         cityFlow.img.src = ".\\src\\assets\\images\\right_arrow.png"
