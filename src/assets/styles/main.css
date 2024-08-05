@@ -11,6 +11,7 @@
   --canvas-height: calc(
     var(--vh, 1vh) * 100 - var(--header-height) - var(--footer-height)
   );
+  --main-height: calc(var(--vh, 1vh) * 100);
 }
 
 canvas {
@@ -28,7 +29,7 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: var(--main-height);
 }
 
 /* Barra de navegação */
@@ -101,15 +102,6 @@ footer {
 
 h2.centerAlign {
   text-align: center;
-}
-
-iframe {
-  line-height: 1.6;
-  font-size: 20px;
-  width: 100%;
-  height: 100%;
-  border: none;
-  overflow: auto;
 }
 
 a {
