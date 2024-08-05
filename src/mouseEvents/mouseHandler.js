@@ -102,6 +102,11 @@ function mouseDragged(){
 
 }
 
+function touchEnded() { 
+    mouseX =0; 
+    mouseY =0; 
+} 
+
 function mouseDist(x, y){
     return Math.sqrt((mouseX - x) ** 2 +  (mouseY - y) ** 2)
 }
