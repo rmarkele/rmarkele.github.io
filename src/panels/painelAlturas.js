@@ -14,6 +14,6 @@ function criaPainelAlturas(pos) {
 
 function escrevePainelAlturas() {
   txtH.number.innerHTML = nfs(round(10 * PontoOperacao.Hop) / 10, 2, 1);
-  txtJ.number.innerHTML = nfs(round(10 * (PontoOperacao.Hop - Z)) / 10, 2, 1);
-  txtZ.number.innerHTML = nfs(round(10 * Z) / 10, 2, 1);
+  txtJ.number.innerHTML = PontoOperacao.Hop >= Z ? nfs(round(10 * (PontoOperacao.Hop - Z)) / 10, 2, 1) : "--";
+  txtZ.number.innerHTML = PontoOperacao.Hop >= Z ? nfs(round(10 * Z) / 10, 2, 1) : "--";
 }
