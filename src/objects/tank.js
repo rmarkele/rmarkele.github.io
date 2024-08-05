@@ -21,6 +21,7 @@ class baseTanque {
       vertex(-0.2 * this.base, this.altura);
       vertex(-0.01 * this.base, 0);
       endShape();
+      arc(0 + 1.02 * base / 2, this.altura ,  1.5 * base, 20 * w, 0, 360);
       pop();
     }
   }
