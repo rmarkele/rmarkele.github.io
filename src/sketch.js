@@ -86,82 +86,6 @@ function draw() {
 
 }
 
-function geraCurvaBomba(Hmax, Vmax, fs) {
-  const Npoints = Vmax / fs;
-  let Hb = [];
-  for (let i = 0; i <= Npoints; i++) {
-    let Hi = (-Hmax / (Vmax * Vmax)) * (i * fs - Vmax) * (i * fs + Vmax);
-    Hb[i] = createVector(i * fs, Hi);
-  }
-  return Hb;
-}
-
-function geraCurvaSistema(Z, R, Vmax, Ymax, fs) {
-  const Npoints = Vmax / fs;
-  let Hs = [];
-  if (R < Infinity) {
-    for (let i = 0; i <= Npoints; i++) {
-      let Hi = Z + R * (i * fs) * (i * fs);
-      if (Hi <= Ymax) {
-        Hs[i] = createVector(i * fs, Hi);
-      } else {
-        let Vlim = sqrt((Ymax - Z) / R);
-        Hs[i] = createVector(Vlim, Ymax);
-        break;
-      }
-    }
-  } else {
-    Hs[0] = createVector(0, 0);
-    Hs[1] = createVector(0, Ymax);
-  }
-  return Hs;
-}
-
-function calculaPontoDeOperacao(Z, R, Hmax, Vmax) {
-  let V, H;
-  if (R < Infinity) {
-    const Num = max(Hmax - Z, 0);
-    const Den = R + Hmax / (Vmax * Vmax);
-
-    V = sqrt(Num / Den);
-    H = min(Z + R * V * V, Hmax);
-  } else {
-    V = 0;
-    H = Hmax;
-  }
-  let PontoOperacao = {
-    Vop: V,
-    Hop: H,
-  };
-
-  return PontoOperacao;
-}
-
-function potenciaEletrica(V, N) {
-  const Phmax = 458.2;
-  const Vmax = 5.75;
-  const Nmax = 1880;
-  const K = 10;
-  const rendimento = 0.75;
-  const P0 = Phmax / rendimento - K * Vmax;
-  return (K * V + P0) * pow(N / Nmax, 3);
-}
-
-function checkForUndefined(x, x0) {
-  if (typeof x !== "undefined") {
-    return checkForNaN(x, x0);
-  } else {
-    return x0;
-  }
-}
-
-function checkForNaN(x, x0) {
-  if (float(x) === float(x)) {
-    return float(x);
-  } else {
-    return x0;
-  }
-}
 
 
 
@@ -169,41 +93,17 @@ function checkForNaN(x, x0) {
 
 
 
-function lightMode() {
-  let mode = 1;
-  if (PontoOperacao.Vop < LIMIARVAZAOBAIXA * Vmax) {
-    mode = 0;
-  } else if (PontoOperacao.Vop > LIMIARVAZAOALTA * Vmax) {
-    mode = 2;
-  }
 
-  if (mode !== light.MODE) {
-    light.MODE = mode;
-    light.PS.classList.remove("on");
-    light.NORMAL.classList.remove("on");
-    light.PC.classList.remove("on");
 
-    light.PS.classList.add("off");
-    light.NORMAL.classList.add("off");
-    light.PC.classList.add("off");
 
-    switch (mode) {
-      case 0:
-        light.PS.classList.add("on");
-        light.PS.classList.remove("off");
-        break;
-      case 1:
-        light.NORMAL.classList.add("on");
-        light.NORMAL.classList.remove("off");
-        break;
-      case 2:
-        light.PC.classList.add("on");
-        light.PC.classList.remove("off");
-        break;
-      default:
-        break;
-    }
-  }
-}
+
+
+
+
+
+
+
+
+
 
 
