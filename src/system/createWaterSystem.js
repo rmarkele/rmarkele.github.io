@@ -198,7 +198,7 @@ function createWaterSystem() {
     }
   
     cano3 = new cano(
-      joelho4.posx + joelho4.largura - joelho4.w/2,
+      joelho4.posx + joelho4.largura + (canvasW>600? 0 : - joelho4.w/2),
       joelho4.posy + joelho4.largura + joelho4.w/2,
       cano3W,
       15 * yscale,
