@@ -1,5 +1,6 @@
 
 function setup() {
+  
   canvasW = canvasDimentions.width;
   canvasH = canvasDimentions.height;
   canv = createCanvas(canvasW, canvasH);
