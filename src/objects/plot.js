@@ -33,11 +33,12 @@ class plot {
     show() {
       let step = canvasW > 600 ? 1 : 2;
       let txtS = canvasW > 600 ? text_size : text_size - 2;
+      let strW = canvasW > 600 ? 2 : 1;
       push();
       translate(this.posx, this.posy);
       noFill();
       stroke(0);
-      strokeWeight(3);
+      strokeWeight(strW+1);
       rect(0, 0, this.largura, -this.altura);
       let xtickplot = [];
       for (var i = 0; i < this.xtick.length; i += step) {
@@ -50,17 +51,18 @@ class plot {
         );
         push();
         stroke(1, 50);
-        strokeWeight(1);
+        strokeWeight(strW / 2);
         line(xtickplot[i], 0, xtickplot[i], -this.altura);
         pop();
         push();
         noStroke();
         fill(0);
+        textSize(txtS)
         text(this.xtick[i], xtickplot[i] - 5, txtS + 1);
         pop();
       }
       push();
-      strokeWeight(1);
+      strokeWeight(strW / 2);
       stroke(0);
       fill(0);
       text(this.xlabel, this.largura / 2, 1.8 * txtS);
@@ -76,18 +78,19 @@ class plot {
         );
         push();
         stroke(1, 50);
-        strokeWeight(1);
+        strokeWeight(strW / 2);
         line(0, ytickplot[i], this.largura, ytickplot[i]);
         pop();
         push();
         noStroke();
         fill(0);
         textAlign(RIGHT);
+        textSize(txtS)
         text(this.ytick[i], -txtS + 2, ytickplot[i] + 5);
         pop();
       }
       push();
-      strokeWeight(1);
+      strokeWeight(strW / 2);
       noStroke();
       fill(0);
   
@@ -95,7 +98,7 @@ class plot {
       pop();
   
       push();
-      strokeWeight(2);
+      strokeWeight(strW);
       stroke(255, 0, 0);
       let xdataplot = [],
         ydataplot = [];
@@ -136,32 +139,29 @@ class plot {
         -this.altura
       );
       let offsetarrow = canvasW <= 600 ? 20 : 0;
-      let space = canvasW <= 600 ? 27.5 : 35;
-      let Zx = (-50 * canvasW) / 1300 - offsetarrow;
-      let Jx =
-        canvasW > 600
-          ? (-77.5 * canvasW) / 1300 - offsetarrow
-          : (-110 * canvasW) / 1300 - offsetarrow;
-      let Hx =
-        canvasW > 600
-          ? (-110 * canvasW) / 1300 - offsetarrow
-          : (-170 * canvasW) / 1300 - offsetarrow;
+      let arrDist =  (10 * canvasW) / 1300;
+      let lref =  canvasW > 600 ? -110 : -120;
+      let space = canvasW > 600 ? 27.5 : 40;
+      let Hx =((lref) * canvasW) / 1300 - offsetarrow;
   
+      let Jx = ((lref + space) * canvasW) / 1300 - offsetarrow
+      let Zx = ((lref + 2 * space) * canvasW) / 1300 - offsetarrow
+
       drawingContext.setLineDash([1, 7]);
       stroke(1, 200);
-      strokeWeight(2);
-      line(Hx - (10 * canvasW) / 1300, yPonto, -2*text_size, yPonto); //linha altura de carga
+      strokeWeight(strW);
+      line(Hx - arrDist, yPonto, -2*text_size, yPonto); //linha altura de carga
       line(0, yPonto, xPonto, yPonto); //linha altura de carga
   
       line(
-        Zx - (10 * canvasW) / 1300,
+        Zx - arrDist,
         ydataplot[0],
         -2*text_size,
         ydataplot[0]
       ); //linha altura de elevação
       line(0, ydataplot[0], tanqueRep.posx - this.posx, ydataplot[0]); //linha altura de elevação
   
-      line(Hx - (10 * canvasW) / 1300, 0, -2*text_size, 0); //linha base
+      line(Hx - arrDist, 0, -2*text_size, 0); //linha base
       line(0, 0, tanqueRep.posx - this.posx, 0); //linha base
   
       line(Jx, 0, Jx, yPonto); //J
@@ -173,9 +173,9 @@ class plot {
   
       // Z
       line(
-        Zx - (10 * canvasW) / 1300,
+        Zx - arrDist,
         ydataplot[0],
-        Zx + (10 * canvasW) / 1300,
+        Zx + arrDist,
         ydataplot[0]
       );
       if (ydataplot[0] < 0) {
@@ -183,32 +183,32 @@ class plot {
         vec = createVector(Zx, 0);
         drawArrow(base, vec, [0], 10);
       }
-      line(Zx - (10 * canvasW) / 1300, 0, Zx + (10 * canvasW) / 1300, 0);
+      line(Zx - arrDist, 0, Zx + arrDist, 0);
   
       //  J
       if (yPonto < ydataplot[0]) {
         line(
-          Jx - (10 * canvasW) / 1300,
+          Jx - arrDist,
           yPonto,
-          Jx + (10 * canvasW) / 1300,
+          Jx + arrDist,
           yPonto
         );
         base = createVector(Jx, yPonto);
         vec = createVector(Jx, ydataplot[0]);
         drawArrow(base, vec, [0], 10);
         line(
-          Jx - (10 * canvasW) / 1300,
+          Jx - arrDist,
           ydataplot[0],
-          Jx + (10 * canvasW) / 1300,
+          Jx + arrDist,
           ydataplot[0]
         );
       }
   
       // H
       line(
-        Hx - (10 * canvasW) / 1300,
+        Hx - arrDist,
         yPonto,
-        Hx + (10 * canvasW) / 1300,
+        Hx + arrDist,
         yPonto
       );
       if (yPonto < 0) {
@@ -216,20 +216,20 @@ class plot {
         vec = createVector(Hx, 0);
         drawArrow(base, vec, [0], -15);
       }
-      line(Hx - (10 * canvasW) / 1300, 0, Hx + (10 * canvasW) / 1300, 0);
+      line(Hx - arrDist, 0, Hx + arrDist, 0);
   
       push();
-      strokeWeight(1);
+      strokeWeight(strW / 2);
       fill(0);
       textAlign(CENTER);
-      textSize(canvasW > 600 ? text_size : text_size - 2);
+      textSize(txtS);
       textFont(selFont);
       text(strg.alturasRep[0][0], Hx, text_size + 2);
       text(strg.alturasRep[1][0], Jx, text_size + 2);
       text(strg.alturasRep[2][0], Zx, text_size + 2);
       pop();
   
-      strokeWeight(10);
+      strokeWeight(strW * 5);
       push();
       stroke(0, 255, 0);
       let xDemanda = map(

@@ -6,6 +6,7 @@ function criaEstrutura() {
     let watt2X = 0.91 * canvasW;
     let watt2Y = watt1Y + 1.7 * wattMult * canvasW;
     let plotX = 0.2 * canvasW;
+    let plotW = 0.42 * canvasW;
     if (canvasW <= 800 && canvasW > 500) {
       watt1X = 0.4 * canvasW + wattMult * canvasW;
       watt1Y = baseTanqueFont.posy + baseTanqueFont.altura;
@@ -18,7 +19,8 @@ function criaEstrutura() {
       watt1Y = 0.63 * canvasH;
       watt2X = 0.8 * canvasW;
       watt2Y = watt1Y;
-      plotX = 0.34 * canvasW;
+      plotX = 0.26 * canvasW;
+      plotW = 0.5 * canvasW
     }
   
     watt1 = new wattimetro(
@@ -51,7 +53,7 @@ function criaEstrutura() {
     plot1 = new plot(
       plotX,
       tanqueFont.posy - nivel0,
-      0.42 * canvasW,
+      plotW,
       (580 - 230) * yscale,
       Hb,
       Hsys,
