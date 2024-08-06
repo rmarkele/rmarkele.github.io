@@ -57,6 +57,7 @@ footer {
   align-items: center;
   color: white;
   padding: 0px 10px;
+  z-index: 2;
 }
 
 .h-container {
