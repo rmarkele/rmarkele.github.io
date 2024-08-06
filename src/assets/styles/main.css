@@ -210,6 +210,15 @@ input[type="range"] {
   cursor: pointer;
   border-radius: 0px;
   color: black;
+} 
+
+input[type="text"]{
+  width: 45px;
+  border: 0;
+  border-bottom: 2px solid black;
+  background: none;
+  outline: none;
+  text-align: center;
 }
 
 @media (max-width: 800px) {

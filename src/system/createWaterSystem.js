@@ -224,15 +224,15 @@ function createWaterSystem() {
   
     if(canvasW<=600){
       bombar.inputs.parent("myCanvasContainer")
-      bombar.inputs.position(0, 0.72*canvasH)
+      bombar.inputs.position(0, 0.7*canvasH)
       bombar.inputs.style(`width:${canvasW}px`)
   
       valvula1.inputs.parent("myCanvasContainer")
-      valvula1.inputs.position(0, 0.82*canvasH)
+      valvula1.inputs.position(0, 0.8*canvasH)
       valvula1.inputs.style(`width:${canvasW}px`)
   
       sistemaConsumidor.inputs.parent("myCanvasContainer")
-      sistemaConsumidor.inputs.position(0, 0.92*canvasH)
+      sistemaConsumidor.inputs.position(0, 0.9*canvasH)
       sistemaConsumidor.inputs.style(`width:${canvasW}px`)
     }
   }
