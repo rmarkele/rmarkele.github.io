@@ -16,7 +16,7 @@ const cityFlow = {
 function createFlowPanel(){
     let posy = valvula1.posy + valvula1.w + 2;
     if(canvasW<=600){
-        posy = cano3.posy + 2 * cano3.w;
+        posy = cano3.posy + 2 * cano3.w + 10;
         let posx = 0.25 * canvasW;
         flowPanel.style.left = posx + 'px'
     }
