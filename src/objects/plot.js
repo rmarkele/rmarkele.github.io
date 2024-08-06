@@ -31,7 +31,7 @@ class plot {
       this.demanda = demanda;
     }
     show() {
-      let step = canvasW > 600 ? 1 : 3;
+      let step = canvasW > 600 ? 1 : 2;
       let txtS = canvasW > 600 ? text_size : text_size - 2;
       push();
       translate(this.posx, this.posy);
