@@ -31,9 +31,9 @@ class plot {
       this.demanda = demanda;
     }
     show() {
-      let step = canvasW > 600 ? 1 : 2;
-      let txtS = canvasW > 600 ? text_size : text_size - 2;
-      let strW = canvasW > 600 ? 2 : 1;
+      let step = canvasW > respLim[0] ? 1 : 2;
+      let txtS = canvasW > respLim[0] ? text_size : text_size - 2;
+      let strW = canvasW > respLim[0] ? 2 : 1;
       push();
       translate(this.posx, this.posy);
       noFill();
@@ -138,10 +138,10 @@ class plot {
         0,
         -this.altura
       );
-      let offsetarrow = canvasW <= 600 ? 20 : 0;
+      let offsetarrow = canvasW <= respLim[0] ? 20 : 0;
       let arrDist =  (10 * canvasW) / 1300;
-      let lref =  canvasW > 600 ? -110 : -120;
-      let space = canvasW > 600 ? 27.5 : 40;
+      let lref =  canvasW > respLim[0] ? -110 : -120;
+      let space = canvasW > respLim[0] ? 27.5 : 40;
       let Hx =((lref) * canvasW) / 1300 - offsetarrow;
   
       let Jx = ((lref + space) * canvasW) / 1300 - offsetarrow

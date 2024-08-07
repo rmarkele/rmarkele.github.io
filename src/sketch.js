@@ -7,7 +7,7 @@ function setup() {
   canv.parent("myCanvasContainer");
   textSize(18);
   text_size = 18
-  if (canvasW <= 800) {
+  if (canvasW <= respLim[1]) {
     text_size = 14;
     textSize(14);
   }
@@ -23,7 +23,7 @@ function setup() {
   idiomaSelect();
 
   createFlowPanel();
-  if (canvasW > 600) {
+  if (canvasW > respLim[0]) {
     criaPainelAlturas([-50  , (20 * canvasW) / 1300]);
   } else {
     criaPainelAlturas([-85, (20 * canvasW) / 1300]);
@@ -33,7 +33,7 @@ function setup() {
   pipeSliderCreate();
   atualizaStrings();
   cenarioSelectEvent();
-  bkgColor = canvasW>800? 250:255;
+  bkgColor = canvasW>respLim[1]? 250:255;
   
 }
 

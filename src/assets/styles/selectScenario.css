@@ -5,7 +5,7 @@
   height: 25px;
 }
 
-@media (max-width:800px) {
+@media (max-width:850px) {
   #cenarios-select{
     font-weight: bold;
     border: 3px solid #000;

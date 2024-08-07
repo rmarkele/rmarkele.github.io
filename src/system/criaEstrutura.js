@@ -7,13 +7,13 @@ function criaEstrutura() {
     let watt2Y = watt1Y + 1.7 * wattMult * canvasW;
     let plotX = 0.2 * canvasW;
     let plotW = 0.42 * canvasW;
-    if (canvasW <= 800 && canvasW > 500) {
+    if (canvasW <= respLim[1] && canvasW > respLim[0]) {
       watt1X = 0.4 * canvasW + wattMult * canvasW;
       watt1Y = baseTanqueFont.posy + baseTanqueFont.altura;
       watt2X = watt1X + 2.1 * wattMult * canvasW;
       watt2Y = watt1Y;
       plotX = 0.28 * canvasW;
-    } else if (canvasW <= 600) {
+    } else if (canvasW <= respLim[0]) {
       wattMult = 0.18;
       watt1X = 0.2 * canvasW;
       watt1Y = 0.63 * canvasH;

@@ -3,17 +3,17 @@ function createWaterSystem() {
     let canoEntradaMult = 0.7;
     let valvula1Mult = 0.33;
     let bombaMult = yscale;
-    if(canvasW > 800 && canvasW <= 1300){
+    if(canvasW > respLim[1] && canvasW <= respLim[2]){
       yscale = 0.9;
       base *= 0.8;
       bombaMult = yscale
-    }else if (canvasW <= 800 && canvasW > 500) {
+    }else if (canvasW <= respLim[1] && canvasW > respLim[0]) {
       yscale = 0.8;
       base *= 0.5;
       cano1Mult = 0.72;
       canoEntradaMult = 0.9;
       bombaMult = yscale
-    } else if (canvasW <= 500) {
+    } else if (canvasW <= respLim[0]) {
       yscale = 0.4;
       base *= 0.3;
       cano1Mult = 0.78;
@@ -146,11 +146,11 @@ function createWaterSystem() {
     let cityPosy = tanqueRep.posy - tanqueRep.altura + (0.05 + 1.4 *  0.16) * canvasW ;
     let cityW = (canvasW - cityPosx)/canvasW;
     let saidaTanqueH = cityPosy + cityW * canvasW * 0.6 - 32.5 * yscale - tanqueRep.posy;
-    if (canvasW <= 800 && canvasW > 500) {
+    if (canvasW <= respLim[1] && canvasW > respLim[0]) {
       cityPosx = 0.8 * canvasW;
       cityPosy = baseTanqueRep.posy + baseTanqueRep.altura + 8;
       saidaTanqueH = cityPosy - tanqueRep.posy+10;
-    } else if (canvasW <= 500) {
+    } else if (canvasW <= respLim[0]) {
       cityW = 0.2;
       cityPosx = 0.5 * (1 - cityW) * canvasW;
       cityPosy = cano1.posy + 2 * cano1.w;
@@ -168,13 +168,14 @@ function createWaterSystem() {
       1,
       90
     );
+
   
     let joelho4Angle = 270;
     let joelhopos = [
       canoSaidaTanque2.posx + 7.5 * yscale,
       cityPosy + cityW * canvasW * 0.6 - 32.5 * yscale
     ];
-    if (canvasW <= 500) {
+    if (canvasW <= respLim[0]) {
       joelho4Angle = 180;
       joelhopos = [
         canoSaidaTanque2.posx - (25 + 15 + 15 + 2) * yscale,
@@ -193,12 +194,12 @@ function createWaterSystem() {
     );
   
     let cano3W = cityPosx - joelho4.posx - joelho4.largura + joelho4.w;
-    if (canvasW <= 500) {
+    if (canvasW <= respLim[0]) {
       cano3W = cityPosx + cityW * canvasW + -joelho4.posx - joelho4.largura - joelho4.w;
     }
   
     cano3 = new cano(
-      joelho4.posx + joelho4.largura + (canvasW>600? 0 : - joelho4.w/2),
+      joelho4.posx + joelho4.largura + (canvasW>respLim[0]? 0 : - joelho4.w/2),
       joelho4.posy + joelho4.largura + joelho4.w/2,
       cano3W,
       15 * yscale,
@@ -222,7 +223,7 @@ function createWaterSystem() {
     );
     sistemaConsumidor.slider.value((5 / 10) * 360);
   
-    if(canvasW<=600){
+    if(canvasW<=respLim[0]){
       bombar.inputs.parent("myCanvasContainer")
       bombar.inputs.position(0, 0.7*canvasH)
       bombar.inputs.style(`width:${canvasW}px`)

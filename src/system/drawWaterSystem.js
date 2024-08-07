@@ -20,7 +20,7 @@ function drawWaterSystem() {
     canoSaidaTanque2.show();
     canoEntradaTanque2.show();
     tanqueRep.show();
-    if (canvasW <= 600 || canvasW > 800) {
+    if (canvasW <= respLim[0] || canvasW > respLim[1]) {
       joelho4.show();
       cano3.show();
     }
