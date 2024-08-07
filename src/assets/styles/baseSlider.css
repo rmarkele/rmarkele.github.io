@@ -2,15 +2,10 @@
   position: absolute;
   -webkit-appearance: none;
   width: 100%;
-  /* margin-top: 10px; */
   z-index: 2;
   transform-origin: top left;
   transform: rotate(-90deg);
   background: transparent;
-}
-
-.h-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
 }
 
 .h-slider:focus {
@@ -28,6 +23,7 @@
 .h-slider::-webkit-slider-thumb:focus,
 .h-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   height: 36px;
   width: 72px;
   background: transparent;

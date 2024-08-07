@@ -225,7 +225,7 @@ input[type="text"]{
 @media (max-width: 800px) {
   #myCanvasContainer {    
     max-height: 1000px;
-  }
+  } 
 
   .variable-slider {
     -webkit-appearance: none;
