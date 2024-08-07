@@ -9,6 +9,7 @@ class valvula {
       this.lim = lim;
   
       this.slider = createSlider(0, 360, 180, 1);
+      this.slider.class("variable-slider")
       this.slider.input(() => {
         let val =
           round(map(this.slider.value(), 0, 360, this.lim[0], this.lim[1]) * 10) /

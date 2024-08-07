@@ -12,6 +12,7 @@ class bomba {
       this.out.style("margin: 5px 10px 5px 0; display: inline;");
   
       this.slider = createSlider(600, 1880, 1800, 1);
+      this.slider.class("variable-slider")
       this.slider.input(() => {
         this.inp.value(this.slider.value());
       });

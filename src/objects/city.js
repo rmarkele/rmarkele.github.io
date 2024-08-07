@@ -24,6 +24,7 @@ class sistemaAgua {
       this.txt = txt;
       this.lim = lim;
       this.slider = createSlider(0, 360, 180, 1);
+      this.slider.class("variable-slider")
       // this.slider.size(this.largura);
   
       this.slider.input(() => {
