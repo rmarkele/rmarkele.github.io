@@ -33,7 +33,7 @@ function setup() {
   pipeSliderCreate();
   atualizaStrings();
   cenarioSelectEvent();
-  bkgColor = canvasW>800? 250:250;
+  bkgColor = canvasW>800? 250:255;
 }
 
 function draw() {

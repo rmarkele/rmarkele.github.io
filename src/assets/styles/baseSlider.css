@@ -27,6 +27,7 @@
   height: 36px;
   width: 72px;
   background: transparent;
+  background-color: transparent;
   cursor: pointer;
   margin-top: -12px;
 }
