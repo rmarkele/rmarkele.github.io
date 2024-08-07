@@ -33,10 +33,12 @@ function setup() {
   pipeSliderCreate();
   atualizaStrings();
   cenarioSelectEvent();
+  bkgColor = canvasW>800? 250:250;
 }
 
 function draw() {
-  background(250);
+
+  background(bkgColor);
   velBomba = bombar.slider.value();
 
   Hmax = pow(velBomba / 1800, 2) * 11;

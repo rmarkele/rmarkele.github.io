@@ -90,3 +90,5 @@ let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 const canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+
+let bkgColor = 250;
