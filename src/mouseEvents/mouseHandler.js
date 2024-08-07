@@ -88,5 +88,7 @@ function updateRepTank(){
     let hgt = altura - nivel0 - hrep + 72;;
     pipeSlider.style.top = posy + "px";
     pipeSlider.style.width = hgt + "px";
+
+    pipeSlider.value = map(canoEntradaTanque2.posy, tanqueRep.posy, tanqueRep.posy - tanqueRep.altura, 0, 100);
     
   }
