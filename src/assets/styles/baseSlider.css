@@ -24,17 +24,17 @@
 .h-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  height: 1px;
-  width: 1px;
+  height: 36px;
+  width: 72px;
   background: transparent;
   background-color: transparent;
   cursor: pointer;
   margin-top: -12px;
+  border: none;
+  box-shadow: none;
 }
 
 .h-slider.active::-webkit-slider-thumb {
-  height: 36px;
-  width: 72px;
   background: url("../images/lr_arrow.png");
   background-repeat: no-repeat;
   background-size: contain;
