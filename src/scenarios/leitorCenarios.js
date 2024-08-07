@@ -35,5 +35,7 @@ function cenarioSelectEvent() {
   hsaida = round(1000 * map(checkForUndefined(cenarios[i].Elevacao_Saida_Agua, 0), 0, ylim[1], 0, altura - nivel0)) / 1000;
 
   updateRepTank();
+  baseSlider.value = map(tanqueRep.posy, yref - nivel0, yref - altura, 0, 100);
+  pipeSlider.value = map(canoEntradaTanque2.posy, tanqueRep.posy, tanqueRep.posy - tanqueRep.altura, 0, 100);
     
 }

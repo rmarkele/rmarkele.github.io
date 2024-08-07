@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="src/assets/styles/langSelectorStyle.css">
   <link rel="stylesheet" type="text/css" href="src/assets/styles/selectScenario.css">
   <link rel="stylesheet" type="text/css" href="src/assets/styles/flowPanel.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/baseSlider.css">
 
   <meta charset="utf-8">
   
@@ -72,6 +73,8 @@
         <a id="help-button" class="logo-container--btn" href="src/help/html/PT-BR.html" target="_blank"
           rel="noopener noreferrer"></a>
       </div>
+      <input type="range" name="" id="base-slider" class="h-slider" min="0" max="100">
+      <input type="range" name="" id="pipe-slider" class="h-slider" min="0" max="100">
       <div id="flow-panel">
         <div id="pump-flow" class="flow-var">
           <!-- <div class="flow-arrow"> </div> -->
@@ -115,7 +118,10 @@
 
   <script src="src/lang/langSelector.js"></script>
 
+  <script src="src/mouseEvents/baseSliderCreate.js"></script>
+  <script src="src/mouseEvents/hSlider.js"></script>
   <script src="src/mouseEvents/mouseHandler.js"></script>
+  <script src="src/mouseEvents/pipeSliderCreate.js"></script>
   
   <script src="src/objects/tank.js"></script>
   <script src="src/objects/pump.js"></script>

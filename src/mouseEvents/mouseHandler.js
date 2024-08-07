@@ -1,31 +1,9 @@
 function mouseIsOver() {
- let overBase = mouseDist(tanqueRep.posx + 0.5 * base, tanqueRep.posy) <=  0.5 * base
+ let overBase = (mouseDist(tanqueRep.posx + 0.5 * base, tanqueRep.posy) <=  0.5 * base) || (baseSlider.classList.contains("clicked")) || (baseSlider.classList.contains("mouse-over"));
  if(overBase){   
-    let basevec = createVector(tanqueRep.posx + 0.5 * base, tanqueRep.posy);
-    let xoff = 20;
-    let hgt = 20;
-    let wdt = 5;
-    push()
-        strokeWeight(4);
-        translate(basevec.x,basevec.y);
-        fill(255,0,0);
-        stroke(155,120,120);
-        line(0,xoff,0,xoff + hgt);
-        beginShape();
-            vertex(-wdt,xoff + hgt);
-            vertex(wdt,xoff + hgt);
-            vertex(0,xoff + hgt + wdt);
-            
-        endShape(CLOSE);
-
-        line(0, - xoff,0, - xoff - hgt);
-        beginShape();
-            vertex(-wdt,- xoff - hgt);
-            vertex(wdt, - xoff - hgt);
-            vertex(0,- xoff - hgt - wdt);
-            
-        endShape(CLOSE);
-    pop()
+    baseSlider.classList.add('active')
+  }else{
+    baseSlider.classList.remove('active')
   }
 
   let overPipeIn = mouseIsInRect(
@@ -33,44 +11,15 @@ function mouseIsOver() {
         canoEntradaTanque2.posy,
         joelho3.largura + canoEntradaTanque2.largura,
         joelho3.w + canoEntradaTanque2.w 
-    )
+    ) || (pipeSlider.classList.contains("clicked")) || (pipeSlider.classList.contains("mouse-over"));
 
 
   if(overPipeIn){
-    let basevec = createVector(canoEntradaTanque2.posx + 0.5 * canoEntradaTanque2.largura, canoEntradaTanque2.posy);
-    let xoff = 20;
-    let hgt = 20;
-    let wdt = 5;
-    push()
-        strokeWeight(4);
-        translate(basevec.x,basevec.y);
-        fill(255,0,0);
-        stroke(155,120,120);
-        line(0,xoff,0,xoff + hgt);
-        beginShape();
-            vertex(-wdt,xoff + hgt);
-            vertex(wdt,xoff + hgt);
-            vertex(0,xoff + hgt + wdt);
-            
-        endShape(CLOSE);
-
-        line(0, - xoff,0, - xoff - hgt);
-        beginShape();
-            vertex(-wdt,- xoff - hgt);
-            vertex(wdt, - xoff - hgt);
-            vertex(0,- xoff - hgt - wdt);
-            
-        endShape(CLOSE);
-    pop()
+    pipeSlider.classList.add('active')
+  }else{
+    pipeSlider.classList.remove('active')
   }
   
-
-  if(overBase || overPipeIn){
-    cursor(HAND)
-  }
-  else{
-    cursor(ARROW)
-  }
 }
 
 function mousePressed() {
@@ -86,21 +35,6 @@ function mousePressed() {
     
 }
 
-function mouseDragged(){
-    if(baseClicked){
-        hrep = constrain(altura - nivel0 -  mouseY, 0, altura-nivel0);
-        
-        hsaida = constrain(hsaida, 0, - 10 + 40 - nivel0 - 25 - 7.5   - hrep + altura)
-        updateRepTank();
-    }
-
-    if(pipeInClicked){
-        hsaida = yref - 10 + 40 - nivel0 - 25 - 7.5 - mouseY - hrep;
-        hsaida = constrain(hsaida, 0, - 10 + 40 - nivel0 - 25 - 7.5   - hrep + altura)
-        updateRepTank()
-    }
-
-}
 
 function touchEnded() { 
     mouseX =0; 
@@ -115,10 +49,7 @@ function mouseIsInRect(x,y,w,h){
     return (mouseX>=x) && (mouseX <= x + w) && (mouseY>= y - h) && (mouseY <= y + h);
 }
 
-function updateRepTank(){
-
-    
-    
+function updateRepTank(){ 
     tanqueRep.posy = yref - nivel0 - hrep;
     tanqueRep.altura = altura - nivel0 - hrep;
   
@@ -152,4 +83,10 @@ function updateRepTank(){
     saidaAgua1.altura =  hsaida;
 
     cano2.largura = joelho2.posy - (altura - nivel0 - hrep - hsaida + 15*yscale + 32.5 * yscale);
+
+    let posy = tanqueRep.posy + 36;
+    let hgt = altura - nivel0 - hrep + 72;;
+    pipeSlider.style.top = posy + "px";
+    pipeSlider.style.width = hgt + "px";
+    
   }

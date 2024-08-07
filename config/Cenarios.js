@@ -24,7 +24,7 @@ let cenarios = [
     RPM: 1500,   
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
-    Elevacao_Tanque: 2,// elevação da base do tanque em [m]
+    Elevacao_Tanque: 0,// elevação da base do tanque em [m]
     Elevacao_Saida_Agua: 1,// elevação da saída de água em [m] em relação à base do tanque
   },
   
@@ -36,7 +36,7 @@ let cenarios = [
     RPM: 1500,    
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
-    Elevacao_Tanque: 2,// elevação da base do tanque em [m]
+    Elevacao_Tanque: 1,// elevação da base do tanque em [m]
     Elevacao_Saida_Agua: 3,// elevação da saída de água em [m] em relação à base do tanque
   },
   
