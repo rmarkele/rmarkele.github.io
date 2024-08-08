@@ -148,10 +148,11 @@ class plot {
       let Zx = ((lref + 2 * space) * canvasW) / 1300 - offsetarrow
 
       drawingContext.setLineDash([1, 7]);
-      stroke(1, 200);
+      stroke(1, 120);
       strokeWeight(strW);
       line(Hx - arrDist, yPonto, -2*text_size, yPonto); //linha altura de carga
       line(0, yPonto, xPonto, yPonto); //linha altura de carga
+      line(xPonto, yPonto, xPonto, 0); //linha altura de carga
   
       line(
         Zx - arrDist,
