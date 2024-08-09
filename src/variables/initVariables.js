@@ -93,4 +93,9 @@ const canvasDimentions = document.querySelector("#myCanvasContainer").getBoundin
 
 let bkgColor = 250;
 
-let respLim = [600, 850, 1300]
+let respLim = [600, 850, 1300];
+
+window.addEventListener('load', ()=>{
+  console.log(document.querySelector("#city img").getBoundingClientRect());
+
+})

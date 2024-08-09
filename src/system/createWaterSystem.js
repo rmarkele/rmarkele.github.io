@@ -174,7 +174,7 @@ function createWaterSystem() {
     let joelho4Angle = 270;
     let joelhopos = [
       canoSaidaTanque2.posx + 7.5 * yscale,
-      cityPosy + cityW * canvasW * 0.5 
+      cityPosy + cityW * canvasW * 220/300 - 45 * yscale 
     ];
     if (canvasW <= respLim[0]) {
       joelho4Angle = 180;

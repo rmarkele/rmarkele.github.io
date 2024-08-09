@@ -14,12 +14,13 @@ class sistemaAgua {
       this.posy = posy;
   
       this.largura = largura;
+      this.height = largura * 220 / 300; 
       this.w = w;
       this.txt = txt;
       this.lim = lim;
 
       let {div, inputs, text, input, unit, slider} = createComponentInput({
-        img: `<img width = "${largura}px" height = "auto" alt="" src="src\\assets\\images\\city.jpeg" />`,
+        img: `<img width = "${largura}px" height = "${this.height}px" alt="" src="src\\assets\\images\\city.jpeg" />`,
         id: "city",
         label: strg.textoValvulaDescarga,
         pos: [posx, posy],
