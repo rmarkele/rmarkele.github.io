@@ -61,11 +61,19 @@ class plot {
         text(this.xtick[i], xtickplot[i] - 5, txtS + 1);
         pop();
       }
+
+      push()
+        noStroke();
+        fill([0, 0, 0, canvasW > respLim[0] ? 0 : 100]);
+        textSize(txtS)
+        text(this.xlabel, this.largura / 2, canvasW > respLim[0] ? 2.1 * txtS : strW -5);
+      pop()
+
       push();
       strokeWeight(strW / 2);
       stroke(0);
       fill(0);
-      text(this.xlabel, this.largura / 2, 1.8 * txtS);
+      
       pop();
       let ytickplot = [];
       for (i = 0; i < this.ytick.length; i += step) {

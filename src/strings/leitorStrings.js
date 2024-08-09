@@ -35,17 +35,29 @@ function idiomaSelect() {
        
     //Componentes
       
-      strg.textoBomba = checkForUndefinedString(strings[i]._texto_bomba, "Vel. Bomba [RPM]:");
+      strg.textoBomba = [
+        checkForUndefinedString(strings[i]._texto_bomba[0], "Vel. Bomba:"),
+        checkForUndefinedString(strings[i]._texto_bomba[1], "[RPM]:"),
+      ];
       
       
-      strg.textoValvulaDescarga = checkForUndefinedString(strings[i]._texto_valvula_descarga_bomba, "Abertura [%]:");
+      strg.textoValvulaDescarga = [
+        checkForUndefinedString(strings[i]._texto_valvula_descarga_bomba[0], "Abertura:"),
+        checkForUndefinedString(strings[i]._texto_valvula_descarga_bomba[1], "[%]"),
+      ];
       
-      strg.textovazaoDemandada = checkForUndefinedString(strings[i]._texto_valvula_vazao_demanda, "Vazão Demandada [m³/s]:");
+      strg.textovazaoDemandada = [
+        checkForUndefinedString(strings[i]._texto_valvula_vazao_demanda[0], "Vazão Demandada:"),
+        checkForUndefinedString(strings[i]._texto_valvula_vazao_demanda[1], "[m³/h]")
+      ];
       
-      strg.textovazaoBomba =  checkForUndefinedString(strings[i]._eixo_x_grafico, "Vazão da Bomba [m³/s]:");
+      strg.textovazaoBomba =  [
+        checkForUndefinedString(strings[i]._eixo_x_grafico[0], "Vazão da Bomba:"),
+        checkForUndefinedString(strings[i]._eixo_x_grafico[1], "[m³/h]")
+      ];
   
       
-     strg.textovazaoSaida = checkForUndefinedString(strings[i]._texto_valvula_vazao_saida, "Vazão de saída [m³/s]:");
+     strg.textovazaoSaida = checkForUndefinedString(strings[i]._texto_valvula_vazao_saida, "Vazão de saída [m³/h]:");
       
       strg.textoPotenciaHidraulica = checkForUndefinedString(strings[i]._texto_potencia_hidraulica, ["Pot. Hidráulica", "[x10 kW]"]);
       

@@ -58,8 +58,8 @@ let yref
 
 const Rconst = 100;
 
-let xlabel = "";
-let ylabel;
+// let xlabel = "";
+// let ylabel = "";
 
 // let atualizaInp = false;
 

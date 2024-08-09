@@ -7,55 +7,32 @@ class valvula {
   
       this.txt = txt;
       this.lim = lim;
-  
-      this.slider = createSlider(0, 360, 180, 1);
-      this.slider.class("variable-slider")
-      this.slider.input(() => {
+
+      let {inputs, text, input, unit, slider} = createComponentInput({
+        id: "valvula1",
+        label: strg.textoValvulaDescarga,
+        pos: [posx, posy + 30],
+        lim: [0, 360]
+      })
+      slider.addEventListener('input', ()=>{
         let val =
-          round(map(this.slider.value(), 0, 360, this.lim[0], this.lim[1]) * 10) /
+          round(map(slider.value, 0, 360, this.lim[0], this.lim[1]) * 10) /
           10;
-        this.inp.value(nf(val, 0, 1));
-      });
-  
-      this.out = createP(txt);
-      this.out.style("font-family", selFont);
-      this.out.style("font-size", `${text_size}px`);
-      this.out.style("margin: 5px 10px 5px 0; display: inline;");
-  
-      this.inp = createInput("");
-      this.inp.size(50);
-      this.inp.style("font-family", selFont);
-      this.inp.style("font-size", `${text_size}px`);
-      this.inp.value(
-        nf(
-          round(map(this.slider.value(), 0, 360, this.lim[0], this.lim[1]) * 10) /
-            10
-        ),
-        0,
-        1
-      );
-      this.inp.changed(() => {
-        let val = checkForUndefined(this.inp.value(), 50);
-        this.inp.value(nf(constrain(val, this.lim[0], this.lim[1]), 0, 1));
-        this.slider.value(map(val, this.lim[0], this.lim[1], 0, 360));
-      });
-  
-      this.div = createDiv("");
-      this.div.class("component-container");
-      this.div.position(this.posx, this.posy + 20);
-  
-      this.div2 = createDiv("");
-      this.div2.class("input-container");
-  
-      this.div.parent("myCanvasContainer");
-      this.inputs = createDiv("");
-      this.div2.parent(this.inputs);
-      this.out.parent(this.div2);
-      this.inp.parent(this.div2);
-      this.inputs.child(this.slider);
-      this.inputs.parent(this.div);
-  
-      this.slider.style("width: 100%;");
+          input.value = nf(val, 0, 1);
+      })
+
+      input.addEventListener('change', ()=>{
+        let val = checkForUndefined(input.value, 50);
+        input.value = nf(constrain(val, this.lim[0], this.lim[1]), 0, 1);
+        slider.value = map(val, this.lim[0], this.lim[1], 0, 360);
+      })
+
+      this.inputs = inputs;
+      this.text = text;
+      this.input = input;
+      this.unit = unit;
+      this.slider = slider;
+     
     }
   
     show() {
@@ -86,8 +63,8 @@ class valvula {
         -2 * this.w,
         2 * this.w,
         this.w,
-        0 - this.slider.value(),
-        90 - this.slider.value(),
+        0 - this.slider.value,
+        90 - this.slider.value,
         PIE
       );
       arc(
@@ -95,8 +72,8 @@ class valvula {
         -2 * this.w,
         2 * this.w,
         this.w,
-        90 - this.slider.value(),
-        180 - this.slider.value(),
+        90 - this.slider.value,
+        180 - this.slider.value,
         PIE
       );
       arc(
@@ -104,8 +81,8 @@ class valvula {
         -2 * this.w,
         2 * this.w,
         this.w,
-        180 - this.slider.value(),
-        270 - this.slider.value(),
+        180 - this.slider.value,
+        270 - this.slider.value,
         PIE
       );
       arc(
@@ -113,8 +90,8 @@ class valvula {
         -2 * this.w,
         2 * this.w,
         this.w,
-        270 - this.slider.value(),
-        360 - this.slider.value(),
+        270 - this.slider.value,
+        360 - this.slider.value,
         PIE
       );
       pop();

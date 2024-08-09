@@ -8,11 +8,17 @@ function atualizaStrings() {
   watt1.txt = strg.textoPotenciaHidraulica;
   watt2.txt = strg.textoRendimentoEstimado;
 
-  valvula1.out.elt.innerHTML = strg.textoValvulaDescarga;
-  sistemaConsumidor.out.elt.innerHTML = strg.textovazaoDemandada;
-  bombar.out.elt.innerHTML = strg.textoBomba;
+  bombar.text.innerHTML = strg.textoBomba[0];
+  bombar.unit.innerHTML = strg.textoBomba[1];
 
-  plot1.ylabel = strg.grafico;
+  valvula1.text.innerHTML = strg.textoValvulaDescarga[0];
+  valvula1.unit.innerHTML = strg.textoValvulaDescarga[1];
+
+  sistemaConsumidor.text.innerHTML = strg.textovazaoDemandada[0];
+  sistemaConsumidor.unit.innerHTML = strg.textovazaoDemandada[1];
+
+
+  plot1.xlabel = strg.textovazaoBomba[1];
 
   cenarioLabel(strings[languageIndex].idioma);
   for (let i = 0; i < strg.labelCenario.length; i++) {
@@ -30,8 +36,10 @@ function atualizaStrings() {
   txtJ.text.innerHTML = strg.alturasRep[1][0] + strg.alturasRep[1][1];
   txtZ.text.innerHTML = strg.alturasRep[2][0] + strg.alturasRep[2][1];
 
-  pumpFlow.text.innerHTML =  strg.textovazaoBomba;
-  cityFlow.text.innerHTML =  strg.textovazaoSaida;
+  pumpFlow.text.innerHTML =  strg.textovazaoBomba[0];
+  pumpFlow.unit.innerHTML =  strg.textovazaoBomba[1];
+  cityFlow.text.innerHTML =  strg.textovazaoSaida[0];
+  cityFlow.unit.innerHTML =  strg.textovazaoSaida[1];
 }
 
 function getIndexes() {

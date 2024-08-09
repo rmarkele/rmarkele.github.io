@@ -19,8 +19,8 @@ function setup() {
   Hb = geraCurvaBomba(Hmax, Vmax, fs);
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
 
-  criaEstrutura();
   idiomaSelect();
+  criaEstrutura();
 
   createFlowPanel();
   if (canvasW > respLim[0]) {
@@ -40,7 +40,7 @@ function setup() {
 function draw() {
 
   background(bkgColor);
-  velBomba = bombar.slider.value();
+  velBomba = bombar.slider.value;
 
   Hmax = pow(velBomba / 1800, 2) * 11;
   Vmax = (velBomba / 1800) * 9.5;
@@ -52,12 +52,12 @@ function draw() {
   escrevePainelAlturas();
   updateFlowPanel();
 
-  let Rmult = 50 / map(valvula1.slider.value(), 0, 360, 0, Rconst);
+  let Rmult = 50 / map(valvula1.slider.value, 0, 360, 0, Rconst);
   R = R0 * pow(Rmult, 2);
   PontoOperacao = calculaPontoDeOperacao(Z, R, Hmax, Vmax);
   plot1.PontoOperacao = PontoOperacao;
   vazaoEntrada = PontoOperacao.Vop;
-  vazaoSaida = map(sistemaConsumidor.slider.value(), 0, 360, 0, 10);
+  vazaoSaida = map(sistemaConsumidor.slider.value, 0, 360, 0, 10);
   lightMode();
   plot1.demanda = {
     Vdemanda: min(vazaoSaida, Vmax),
@@ -81,8 +81,8 @@ function draw() {
   tanqueRep.nivel = nivel - nivel0 - hrep;
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
   plot1.Hsys = Hsys;
-  const PotH = PontoOperacao.Hop * PontoOperacao.Vop;
-  const PotE = 48 * pow(velBomba / 1800, 3);
+  const PotH = PontoOperacao.Hop * PontoOperacao.Vop * 1000 / 3600;
+  const PotE = 48 * pow(velBomba / 1800, 3) *1000/3600;
 
   watt1.pot = PotH;
 

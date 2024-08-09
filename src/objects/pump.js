@@ -5,45 +5,31 @@ class bomba {
       this.largura = largura;
       this.altura = altura;
       this.w = w;
-  
-      this.out = createP(strg.textoBomba);
-      this.out.style("font-family", selFont);
-      this.out.style("font-size", `${text_size}px`);
-      this.out.style("margin: 5px 10px 5px 0; display: inline;");
-  
-      this.slider = createSlider(600, 1880, 1800, 1);
-      this.slider.class("variable-slider")
-      this.slider.input(() => {
-        this.inp.value(this.slider.value());
-      });
-  
-      this.inp = createInput("");
-      this.inp.size(50);
-      this.inp.style("font-family", selFont);
-      this.inp.style("font-size", `${text_size}px`);
-      this.inp.value(this.slider.value());
-      this.inp.changed(() => {
-        let val = checkForUndefined(this.inp.value(), 600);
-        this.inp.value(constrain(val, 600, 1880));
-        this.slider.value(val);
-      });
-  
-      this.div = createDiv("");
-      this.div.class("component-container");
-      this.div.position(this.posx, this.posy + 22);
-      this.div.parent("myCanvasContainer");
-  
-      this.div2 = createDiv("");
-      this.div2.class("input-container");
-  
-      this.inputs = createDiv("");
-      this.div2.parent(this.inputs);
-      this.out.parent(this.div2);
-      this.inp.parent(this.div2);
-      this.inputs.child(this.slider);
-      this.inputs.parent(this.div);
-  
-      this.slider.style("width: 100%;");
+      this.id = "pump"
+
+      let {inputs, text, input, unit, slider} = createComponentInput({
+        id: "bomba",
+        label: strg.textoBomba,
+        pos: [posx, posy + 30],
+        lim: [660, 1880]
+      })
+
+      slider.addEventListener('input', ()=>{
+        input.value = slider.value
+      })
+
+      input.addEventListener('change', ()=>{
+        slider.value = input.value
+      })
+
+      this.inputs = inputs;
+      this.text = text;
+      this.input = input;
+      this.unit = unit;
+      this.slider = slider;
+
+      
+
     }
   
     show() {

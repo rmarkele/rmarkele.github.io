@@ -2,21 +2,19 @@ function cenarioSelectEvent() {
   let i =  selPar.value;
   let inp1 = checkForUndefined(cenarios[i].abertura_v1, 50);
   inp1 = constrain(inp1, 0, 100);
-  valvula1.inp.value(nf(inp1, 0, 1));
+  valvula1.input.value = nf(inp1, 0, 1);
   let v1 = map(inp1, 0, 100, 0, 360);
-  valvula1.slider.value(v1);
+  valvula1.slider.value = v1;
 
   let inp2 = checkForUndefined(cenarios[i].demanda, 5);
   inp2 = constrain(inp2, 0, 10);
-  sistemaConsumidor.inp.value(nf(inp2, 0, 1));
-  let v2 = map(inp2, 0, 10, 0, 360);
-  v2 = constrain(v2, 0, 360);
-  sistemaConsumidor.slider.value(v2);
+  sistemaConsumidor.input.value = nf(inp2, 0, 1);
+  sistemaConsumidor.slider.value = inp2;
 
   let inp3 = checkForUndefined(cenarios[i].RPM, 1800);
   inp3 = constrain(inp3, 600, 1880);
-  bombar.inp.value(inp3);
-  bombar.slider.value(inp3);
+  bombar.input.value = inp3;
+  bombar.slider.value = inp3;
 
   LIMIARVAZAOBAIXA = checkForUndefined(
     cenarios[i].Limiar_Vazao_Baixa / 100,

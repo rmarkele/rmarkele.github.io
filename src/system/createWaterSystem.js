@@ -70,7 +70,7 @@ function createWaterSystem() {
       [0, 100],
       -10
     );
-    valvula1.slider.value((50 * 360) / Rconst);
+    
   
     cano1 = new cano(
       valvula1.posx + valvula1.largura,
@@ -148,6 +148,7 @@ function createWaterSystem() {
     let saidaTanqueH = cityPosy + cityW * canvasW * 0.6 - 32.5 * yscale - tanqueRep.posy;
     if (canvasW <= respLim[1] && canvasW > respLim[0]) {
       cityPosx = 0.8 * canvasW;
+      cityW = 0.2;
       cityPosy = baseTanqueRep.posy + baseTanqueRep.altura + 8;
       saidaTanqueH = cityPosy - tanqueRep.posy+10;
     } else if (canvasW <= respLim[0]) {
@@ -221,19 +222,22 @@ function createWaterSystem() {
       [0, 10],
       -100
     );
-    sistemaConsumidor.slider.value((5 / 10) * 360);
   
     if(canvasW<=respLim[0]){
-      bombar.inputs.parent("myCanvasContainer")
-      bombar.inputs.position(0, 0.7*canvasH)
-      bombar.inputs.style(`width:${canvasW}px`)
+      document.querySelector('#myCanvasContainer').appendChild(bombar.inputs);
+      document.querySelector('#myCanvasContainer').appendChild(valvula1.inputs);
+      document.querySelector('#myCanvasContainer').appendChild(sistemaConsumidor.inputs);
+      
+      // bombar.inputs.parent("myCanvasContainer")
+      // bombar.inputs.position(0, 0.7*canvasH)
+      // bombar.inputs.style(`width:${canvasW}px`)
   
-      valvula1.inputs.parent("myCanvasContainer")
-      valvula1.inputs.position(0, 0.8*canvasH)
-      valvula1.inputs.style(`width:${canvasW}px`)
+      // valvula1.inputs.parent("myCanvasContainer")
+      // valvula1.inputs.position(0, 0.8*canvasH)
+      // valvula1.inputs.style(`width:${canvasW}px`)
   
-      sistemaConsumidor.inputs.parent("myCanvasContainer")
-      sistemaConsumidor.inputs.position(0, 0.9*canvasH)
-      sistemaConsumidor.inputs.style(`width:${canvasW}px`)
+      // sistemaConsumidor.inputs.parent("myCanvasContainer")
+      // sistemaConsumidor.inputs.position(0, 0.9*canvasH)
+      // sistemaConsumidor.inputs.style(`width:${canvasW}px`)
     }
   }

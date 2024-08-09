@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Helvetica;
+  font-size: 18px;
 }
 
 :root{
@@ -57,7 +58,7 @@ footer {
   align-items: center;
   color: white;
   padding: 0px 10px;
-  z-index: 2;
+  z-index: -1;
 }
 
 .h-container {
@@ -181,27 +182,7 @@ a {
   color: rgb(127.5, 127.5, 127.5);
 }
 
-.component-container {
-  position: absolute;
-  margin: none;
-  /*   border: 1px solid black; */
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
 
-.input-container {
-  /*   position: absolute; */
-  margin: none;
-  /*   border: 1px solid black; */
-  z-index: 10;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
 
 button,
 select,
@@ -213,16 +194,15 @@ input[type="range"] {
   color: black;
 } 
 
-input[type="text"]{
-  width: 45px;
-  border: 0;
-  border-bottom: 2px solid black;
-  background: none;
-  outline: none;
-  text-align: center;
+.variable-slider{
+  width: 100%;
 }
 
+
 @media (max-width: 850px) {
+  *{
+    font-size: 14px;
+  }
   
   #myCanvasContainer {    
     max-height: 550px;
