@@ -59,7 +59,7 @@ function updateRepTank(){
     cityPosx = tanqueRep.posx + tanqueRep.base + 40;
     cityPosy = tanqueRep.posy - tanqueRep.altura + (0.05 + 1.4 *  0.16) * canvasW ;
     cityW = (canvasW - cityPosx)/canvasW
-    saidaTanqueH = cityPosy + cityW * canvasW * 0.6 - 32.5 * yscale - tanqueRep.posy;
+    saidaTanqueH = cityPosy + cityW * canvasW * 0.5 - 32.5 * yscale - tanqueRep.posy;
     if (canvasW <= respLim[1] && canvasW > respLim[0]) {
       cityPosx = 0.8 * canvasW;
       cityPosy = baseTanqueRep.posy + baseTanqueRep.altura + 8;

@@ -64,7 +64,7 @@ class plot {
 
       push()
         noStroke();
-        fill([0, 0, 0, canvasW > respLim[0] ? 0 : 100]);
+        fill([0, 0, 0, canvasW > respLim[0] ? 255 : 100]);
         textSize(txtS)
         textAlign(CENTER)
         text(this.xlabel, this.largura / 2, canvasW > respLim[0] ? 2.1 * txtS : strW -5);
@@ -72,6 +72,7 @@ class plot {
 
       push();
       strokeWeight(strW / 2);
+      point(0,0)
       stroke(0);
       fill(0);
       

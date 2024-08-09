@@ -18,8 +18,8 @@ class sistemaAgua {
       this.txt = txt;
       this.lim = lim;
 
-      let {inputs, text, input, unit, slider} = createComponentInput({
-        img: `<img class = "cityimg" width = "${largura}px" alt="" src="src\\assets\\images\\city.jpeg" />`,
+      let {div, inputs, text, input, unit, slider} = createComponentInput({
+        img: `<img width = "${largura}px" height = "auto" alt="" src="src\\assets\\images\\city.jpeg" />`,
         id: "city",
         label: strg.textoValvulaDescarga,
         pos: [posx, posy],
@@ -35,8 +35,7 @@ class sistemaAgua {
         input.value = nf(constrain(val, this.lim[0], this.lim[1]), 0, 1);
         slider.value = input.value;
       })
-
-
+      this.div = div
       this.inputs = inputs;
       this.text = text;
       this.input = input;

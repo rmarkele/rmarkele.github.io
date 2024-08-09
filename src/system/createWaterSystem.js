@@ -142,10 +142,10 @@ function createWaterSystem() {
       tanqueRep.posy
     );
   
-    let cityPosx = tanqueRep.posx + tanqueRep.base + 40;
-    let cityPosy = tanqueRep.posy - tanqueRep.altura + (0.05 + 1.4 *  0.16) * canvasW ;
-    let cityW = (canvasW - cityPosx)/canvasW;
-    let saidaTanqueH = cityPosy + cityW * canvasW * 0.6 - 32.5 * yscale - tanqueRep.posy;
+    let cityPosx = (0.91 - 0.08) * canvasW ;
+    let cityPosy = tanqueRep.posy - tanqueRep.altura + (0.04 + 1.4 *  0.16) * canvasW ;
+    let cityW = 0.16;
+    let saidaTanqueH = cityPosy - 32.5 * yscale;
     if (canvasW <= respLim[1] && canvasW > respLim[0]) {
       cityPosx = 0.8 * canvasW;
       cityW = 0.2;
@@ -174,7 +174,7 @@ function createWaterSystem() {
     let joelho4Angle = 270;
     let joelhopos = [
       canoSaidaTanque2.posx + 7.5 * yscale,
-      cityPosy + cityW * canvasW * 0.6 - 32.5 * yscale
+      cityPosy + cityW * canvasW * 0.5 
     ];
     if (canvasW <= respLim[0]) {
       joelho4Angle = 180;
@@ -222,22 +222,13 @@ function createWaterSystem() {
       [0, 10],
       -100
     );
+
+    // console.log(document.querySelector("#city img").getBoundingClientRect());
+
   
     if(canvasW<=respLim[0]){
       document.querySelector('#myCanvasContainer').appendChild(bombar.inputs);
       document.querySelector('#myCanvasContainer').appendChild(valvula1.inputs);
       document.querySelector('#myCanvasContainer').appendChild(sistemaConsumidor.inputs);
-      
-      // bombar.inputs.parent("myCanvasContainer")
-      // bombar.inputs.position(0, 0.7*canvasH)
-      // bombar.inputs.style(`width:${canvasW}px`)
-  
-      // valvula1.inputs.parent("myCanvasContainer")
-      // valvula1.inputs.position(0, 0.8*canvasH)
-      // valvula1.inputs.style(`width:${canvasW}px`)
-  
-      // sistemaConsumidor.inputs.parent("myCanvasContainer")
-      // sistemaConsumidor.inputs.position(0, 0.9*canvasH)
-      // sistemaConsumidor.inputs.style(`width:${canvasW}px`)
     }
   }

@@ -70,6 +70,12 @@ footer {
 .h-text {
   margin-right: 5px;
 }
+.h-number {
+  margin: 0;
+}
+.h-unit {
+  margin-left: 5px;
+}
 
 #myCanvasContainer {
   position: relative;
@@ -85,13 +91,14 @@ footer {
 
 
 
-.cityimg img {
+/* .cityimg {
   width: 100%;
-}
+  height: auto;
+} */
 
-.cityimg input[type="range"] {
+/* .cityimg input[type="range"] {
   width: 100%;
-}
+} */
 
 .closebtn {
   position: absolute;

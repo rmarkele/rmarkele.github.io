@@ -32,9 +32,14 @@ function atualizaStrings() {
   light.textoNORMAL.innerHTML = strg.textoLuzes[1];
   light.textoPC.innerHTML = strg.textoLuzes[2];
   
-  txtH.text.innerHTML = strg.alturasRep[0][0] + strg.alturasRep[0][1];
-  txtJ.text.innerHTML = strg.alturasRep[1][0] + strg.alturasRep[1][1];
-  txtZ.text.innerHTML = strg.alturasRep[2][0] + strg.alturasRep[2][1];
+  txtH.text.innerHTML = strg.alturasRep[0][0];
+  txtH.unit.innerHTML = strg.alturasRep[0][1];
+
+  txtJ.text.innerHTML = strg.alturasRep[1][0];
+  txtJ.unit.innerHTML = strg.alturasRep[1][1];
+
+  txtZ.text.innerHTML = strg.alturasRep[2][0];
+  txtZ.unit.innerHTML = strg.alturasRep[2][1];
 
   pumpFlow.text.innerHTML =  strg.textovazaoBomba[0];
   pumpFlow.unit.innerHTML =  strg.textovazaoBomba[1];

@@ -1,5 +1,6 @@
 function criaEstrutura() {
     createWaterSystem();
+    
     let wattMult = 0.16 / 2;
     let watt1X = 0.91 * canvasW;
     let watt1Y = tanqueRep.posy - tanqueRep.altura + wattMult * canvasW;
@@ -66,6 +67,7 @@ function criaEstrutura() {
       PontoOperacao,
       PontoDemanda
     );
+    
   
   
   }

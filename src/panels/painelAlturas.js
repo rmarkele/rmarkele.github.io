@@ -1,14 +1,20 @@
 function criaPainelAlturas(pos) {
   txtH.text = document.querySelector("#Hplace .h-text");
   txtH.number = document.querySelector("#Hplace .h-number");
-  txtH.text.innerHTML = strg.alturasRep[0][0] + strg.alturasRep[0][1];
+  txtH.unit = document.querySelector("#Hplace .h-unit");
+
+  
 
   txtJ.text = document.querySelector("#Jplace .h-text");
   txtJ.number = document.querySelector("#Jplace .h-number");
+  txtJ.unit = document.querySelector("#Jplace .h-unit");
+
   txtJ.text.innerHTML = strg.alturasRep[1][0] + strg.alturasRep[1][1];
 
   txtZ.text = document.querySelector("#Zplace .h-text");
   txtZ.number = document.querySelector("#Zplace .h-number");
+  txtZ.unit = document.querySelector("#Zplace .h-unit");
+
   txtZ.text.innerHTML = strg.alturasRep[2][0] + strg.alturasRep[2][1];
 }
 

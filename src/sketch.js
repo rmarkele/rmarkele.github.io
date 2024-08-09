@@ -21,6 +21,8 @@ function setup() {
 
   idiomaSelect();
   criaEstrutura();
+  
+  
 
   createFlowPanel();
   if (canvasW > respLim[0]) {
@@ -34,6 +36,7 @@ function setup() {
   atualizaStrings();
   cenarioSelectEvent();
   bkgColor = canvasW>respLim[1]? 250:255;
+  
   
 }
 
@@ -91,6 +94,7 @@ function draw() {
   mouseIsOver();
 
 }
+
 
 
 
