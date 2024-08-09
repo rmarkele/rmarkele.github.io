@@ -75,7 +75,6 @@ class plot {
       point(0,0)
       stroke(0);
       fill(0);
-      
       pop();
       let ytickplot = [];
       for (i = 0; i < this.ytick.length; i += step) {
@@ -242,23 +241,22 @@ class plot {
   
       strokeWeight(strW * 5);
       push();
-      stroke(0, 255, 0);
-      let xDemanda = map(
-        this.demanda.Vdemanda,
-        this.xlim[0],
-        this.xlim[1],
-        0,
-        this.largura
-      );
-      let yDemanda = map(
-        this.demanda.Hdemanda,
-        this.ylim[0],
-        this.ylim[1],
-        0,
-        -this.altura
-      );
-  
-      point(xDemanda, yDemanda);
+        stroke(0, 255, 0);
+        let xDemanda = map(
+          this.demanda.Vdemanda,
+          this.xlim[0],
+          this.xlim[1],
+          0,
+          this.largura
+        );
+        let yDemanda = map(
+          this.demanda.Hdemanda,
+          this.ylim[0],
+          this.ylim[1],
+          0,
+          -this.altura
+        );
+        point(xDemanda, yDemanda);
       pop();
   
       point(xPonto, yPonto);
