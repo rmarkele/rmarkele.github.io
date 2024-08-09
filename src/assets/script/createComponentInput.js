@@ -1,4 +1,4 @@
-function createComponentInput({id, label, pos, lim , img}){
+function createComponentInput({id, label, pos, lim , img, step}){
 
       let div = document.createElement('div');
       div.classList.add("component-input")
@@ -11,7 +11,7 @@ function createComponentInput({id, label, pos, lim , img}){
             <input type = "text "class="label-input" value="0"/>
             <div class="label-unit"> ${label[1]} </div>
           </div>
-          <input type = "range" min="${lim[0]}" max="${lim[1]}" class="component-slider variable-slider" value="0"/>
+          <input type = "range" min="${lim[0]}" max="${lim[1]}" class="component-slider variable-slider" value="0" step="${step??1}"/>
         </div>
       `
       div.style.left = `${pos[0]}px`;

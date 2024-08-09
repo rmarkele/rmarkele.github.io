@@ -23,6 +23,7 @@ class sistemaAgua {
         id: "city",
         label: strg.textoValvulaDescarga,
         pos: [posx, posy],
+        step: 0.1,
         lim
       })
 
