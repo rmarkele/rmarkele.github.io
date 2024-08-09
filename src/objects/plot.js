@@ -66,6 +66,7 @@ class plot {
         noStroke();
         fill([0, 0, 0, canvasW > respLim[0] ? 0 : 100]);
         textSize(txtS)
+        textAlign(CENTER)
         text(this.xlabel, this.largura / 2, canvasW > respLim[0] ? 2.1 * txtS : strW -5);
       pop()
 
