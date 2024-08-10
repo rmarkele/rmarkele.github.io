@@ -74,11 +74,11 @@ class wattimetro {
       noStroke();
       fill(50, 50, 50);
       beginShape();
-      vertex(-7, 0);
-      vertex(7, 0);
-      vertex(0.5, 0.9 * this.raio);
-      vertex(-0.5, 0.9 * this.raio);
-      vertex(-7, 0);
+      vertex(-7  * strW / 2, 0);
+      vertex(7  * strW / 2 , 0);
+      vertex(0.5  * strW / 2, 0.9 * this.raio);
+      vertex(-0.5  * strW / 2, 0.9 * this.raio);
+      vertex(-7  * strW / 2, 0);
       endShape();
       stroke(0);
       strokeWeight(20 * strW / 2);
