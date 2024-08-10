@@ -35,5 +35,9 @@ function cenarioSelectEvent() {
   updateRepTank();
   baseSlider.value = map(tanqueRep.posy, yref - nivel0, yref - altura, 0, 100);
   pipeSlider.value = map(canoEntradaTanque2.posy, tanqueRep.posy, tanqueRep.posy - tanqueRep.altura, 0, 100);
+
+  velBomba = parseFloat(bombar.slider.value);
+  Hmax = pow(velBomba / 1800, 2) * Hmax0;
+  Vmax = (velBomba / 1800) * Vmax0;
     
 }
