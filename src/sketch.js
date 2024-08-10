@@ -75,8 +75,8 @@ function draw() {
   tanqueRep.nivel = nivel - nivel0 - hrep;
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
   plot1.Hsys = Hsys;
-  const PotH = PontoOperacao.Hop * PontoOperacao.Vop * 1000 / 3600;
-  const PotE = 4800 * pow(velBomba / 1800, 3) *1000/3600;
+  const PotH = PontoOperacao.Hop * PontoOperacao.Vop * 10 / 3600;
+  const PotE = 48 * pow(velBomba / 1800, 3) *1000/3600;
 
   watt1.pot = PotH;
 

@@ -23,7 +23,7 @@ const strings = [
     _texto_valvula_descarga_bomba: ["Abertura:", "[%]"],
     _texto_valvula_vazao_demanda: ["Demanda:", "[m³/h]"],
     _texto_valvula_vazao_saida: ["Abastecimento:", "[m³/h]"], 
-    _texto_potencia_hidraulica: ["Pot. Hidráulica", "Bomba [W]"],
+    _texto_potencia_hidraulica: ["Pot. Hidráulica", "Bomba [kW]"],
     _texto_rendimento_estimado: ["Eficiência", "Bomba [%]"],  
     
     //Luzes
@@ -58,7 +58,7 @@ const strings = [
     _texto_valvula_descarga_bomba: ["Opening:", "[%]"],
     _texto_valvula_vazao_demanda: ["Demand:", " [m³/h]"],
     _texto_valvula_vazao_saida: ["Supply:", " [m³/h]"], 
-    _texto_potencia_hidraulica: ["Pump Hydraulic", "Power [W]"],
+    _texto_potencia_hidraulica: ["Pump Hydraulic", "Power [kW]"],
     _texto_rendimento_estimado: ["Pump", "Efficiency [%]"],
      
      //Luzes

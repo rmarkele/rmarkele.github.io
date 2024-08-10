@@ -29,7 +29,7 @@ function criaEstrutura() {
       watt1Y,
       wattMult * canvasW,
       0,
-      1300,
+      20,
       0,
       strg.textoPotenciaHidraulica,
       [255, 0, 0]
