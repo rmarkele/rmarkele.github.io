@@ -18,7 +18,7 @@ class cano {
   
       fill(155);
       stroke(0);
-      strokeWeight(2);
+      strokeWeight(strW);
       beginShape();
       vertex(0, -this.w / 2);
       vertex(this.largura, -this.w / 2);
@@ -35,13 +35,13 @@ class cano {
         vertex(this.w / 2, this.w);
         vertex(this.w / 2, -this.w);
         endShape();
-        strokeWeight(3);
+        strokeWeight(strW);
         line(this.w / 2, -0.75 * this.w, (1.5 * this.w) / 2, -0.75 * this.w);
         line(this.w / 2, 0.75 * this.w, (1.5 * this.w) / 2, 0.75 * this.w);
       }
   
       if (this.flange2) {
-        strokeWeight(2);
+        strokeWeight(strW);
         beginShape();
         vertex(this.largura, -this.w);
         vertex(this.largura - this.w / 2, -this.w);
@@ -50,7 +50,7 @@ class cano {
         vertex(this.largura, -this.w);
         endShape();
   
-        strokeWeight(3);
+        strokeWeight(strW);
         line(
           this.largura - this.w / 2,
           -0.75 * this.w,

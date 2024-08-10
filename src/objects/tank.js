@@ -57,7 +57,7 @@ class baseTanque {
       push();
       angleMode(DEGREES);
       stroke(0);
-      strokeWeight(3);
+      strokeWeight(strW);
       noFill(0);
       translate(this.posx, this.posy);
       line(0, -this.altura, 0, 0);

@@ -5,13 +5,11 @@ function setup() {
   canvasH = canvasDimentions.height;
   canv = createCanvas(canvasW, canvasH);
   canv.parent("myCanvasContainer");
-  textSize(18);
-  text_size = 18
-  if (canvasW <= respLim[1]) {
-    text_size = 14;
-    textSize(14);
-  }
 
+  text_size = canvasW > respLim[1] ? 18 : 14;
+  strW = canvasW > respLim[0] ? 2 : 1;
+  
+  textSize(text_size);
   textStyle(NORMAL);
   textFont(selFont);
 

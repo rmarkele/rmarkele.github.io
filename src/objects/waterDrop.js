@@ -14,7 +14,6 @@ class saidaAgua {
       translate(this.posx + this.largura, this.posy);
       fill(50, 50, 255);
       noStroke();
-      //strokeWeight(2);
       let mult1 = random(0.95, 1.1)* max(PontoOperacao.Vop/10, 0.1);
       let mult2 = random(0.95, 1.3)* max(PontoOperacao.Vop/10, 0.1);
       beginShape();

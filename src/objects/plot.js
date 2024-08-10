@@ -33,7 +33,7 @@ class plot {
     show() {
       let step = canvasW > respLim[0] ? 1 : 2;
       let txtS = canvasW > respLim[0] ? text_size : text_size - 2;
-      let strW = canvasW > respLim[0] ? 2 : 1;
+      
       push();
       translate(this.posx, this.posy);
       noFill();
@@ -65,9 +65,9 @@ class plot {
       push()
         noStroke();
         fill([0, 0, 0, canvasW > respLim[0] ? 255 : 100]);
-        textSize(txtS)
+        textSize(txtS-1)
         textAlign(CENTER)
-        text(this.xlabel, this.largura / 2, canvasW > respLim[0] ? 2.1 * txtS : strW -5);
+        text(this.xlabel, this.largura / 2, canvasW > respLim[0] ? 2.1 * txtS : txtS+5);
       pop()
 
       push();
@@ -149,10 +149,9 @@ class plot {
       );
       let offsetarrow = canvasW <= respLim[0] ? 20 : 0;
       let arrDist =  (10 * canvasW) / 1300;
-      let lref =  canvasW > respLim[0] ? -110 : -120;
+      let lref =  canvasW > respLim[0] ? -110 : -115;
       let space = canvasW > respLim[0] ? 27.5 : 40;
       let Hx =((lref) * canvasW) / 1300 - offsetarrow;
-  
       let Jx = ((lref + space) * canvasW) / 1300 - offsetarrow
       let Zx = ((lref + 2 * space) * canvasW) / 1300 - offsetarrow
 

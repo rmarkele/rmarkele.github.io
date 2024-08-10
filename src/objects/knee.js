@@ -17,7 +17,7 @@ class joelho {
       rotate(this.ang);
       fill(155);
       stroke(0);
-      strokeWeight(2);
+      strokeWeight(strW);
       beginShape();
       for (let i = 0; i < 90; i = i + 0.1) {
         let x = -this.largura * cos(i);
@@ -43,14 +43,14 @@ class joelho {
         vertex(this.w / 2, this.w);
         vertex(this.w / 2, -this.w);
         endShape();
-        strokeWeight(3);
+        strokeWeight(strW);
         line(this.w / 2, -0.75 * this.w, (1.5 * this.w) / 2, -0.75 * this.w);
         line(this.w / 2, 0.75 * this.w, (1.5 * this.w) / 2, 0.75 * this.w);
         rotate(90);
       }
   
       if (this.flange2) {
-        strokeWeight(2);
+        strokeWeight(strW);
         translate(this.largura + this.w / 2, -this.largura - this.w / 2);
         rotate(180);
         beginShape();
@@ -60,7 +60,7 @@ class joelho {
         vertex(this.w / 2, this.w);
         vertex(this.w / 2, -this.w);
         endShape();
-        strokeWeight(3);
+        strokeWeight(strW);
         line(this.w / 2, -0.75 * this.w, (1.5 * this.w) / 2, -0.75 * this.w);
         line(this.w / 2, 0.75 * this.w, (1.5 * this.w) / 2, 0.75 * this.w);
       }

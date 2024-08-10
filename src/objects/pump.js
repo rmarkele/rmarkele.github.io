@@ -40,7 +40,7 @@ class bomba {
       translate(this.posx, this.posy);
       fill(155);
       stroke(0);
-      strokeWeight(2);
+      strokeWeight(strW);
       beginShape();
       vertex(1.5 * this.largura, 0);
       vertex(1.5 * this.largura, -this.altura + this.w / 2);
@@ -54,7 +54,7 @@ class bomba {
       vertex(1.5 * this.largura - 1.5 * this.w, -this.altura + this.w / 2);
       vertex(1.5 * this.largura + this.w / 2, -this.altura + this.w / 2);
       endShape();
-      strokeWeight(3);
+      strokeWeight(strW);
       line(
         1.5 * this.largura + this.w / 4,
         -this.altura + this.w / 2,
@@ -69,7 +69,7 @@ class bomba {
       );
   
       stroke(0);
-      strokeWeight(2);
+      strokeWeight(strW);
       fill(230);
       ellipse(this.largura, 0, this.altura, this.altura);
       fill(155);
@@ -88,7 +88,7 @@ class bomba {
       vertex(this.w / 2, this.w);
       vertex(this.w / 2, -this.w);
       endShape();
-      strokeWeight(3);
+      strokeWeight(strW);
       line(this.w / 2, -0.75 * this.w, (1.5 * this.w) / 2, -0.75 * this.w);
       line(this.w / 2, 0.75 * this.w, (1.5 * this.w) / 2, 0.75 * this.w);
   

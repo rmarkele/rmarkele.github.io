@@ -67,3 +67,5 @@ const canvasDimentions = document.querySelector("#myCanvasContainer").getBoundin
 let bkgColor = 250;
 
 let respLim = [600, 850, 1300];
+
+let strW;
