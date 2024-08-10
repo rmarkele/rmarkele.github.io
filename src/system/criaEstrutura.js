@@ -29,7 +29,7 @@ function criaEstrutura() {
       watt1Y,
       wattMult * canvasW,
       0,
-      200,
+      1300,
       0,
       strg.textoPotenciaHidraulica,
       [255, 0, 0]
@@ -43,7 +43,7 @@ function criaEstrutura() {
       0,
       strg.textoRendimentoEstimado,
       [0, 0, 255],
-      false
+      true
     );
     PontoOperacao = calculaPontoDeOperacao(Z, R, Hmax, Vmax);
     let PontoDemanda = {

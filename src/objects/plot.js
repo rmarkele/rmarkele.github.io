@@ -95,7 +95,7 @@ class plot {
         fill(0);
         textAlign(RIGHT);
         textSize(txtS)
-        text(this.ytick[i], -txtS + 2, ytickplot[i] + 5);
+        text(this.ytick[i], canvasW>respLim[1]? -txtS + 2: -txtS+8, ytickplot[i] + 5);
         pop();
       }
       push();

@@ -219,7 +219,7 @@ function createWaterSystem() {
       15 * yscale,
       strg.textovazaoDemandada,
       160,
-      [0, 10],
+      [0, 100],
       -100
     );
 

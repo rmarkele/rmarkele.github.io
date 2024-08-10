@@ -7,7 +7,7 @@ function cenarioSelectEvent() {
   valvula1.slider.value = v1;
 
   let inp2 = checkForUndefined(cenarios[i].demanda, 5);
-  inp2 = constrain(inp2, 0, 10);
+  inp2 = constrain(inp2, 0, 100);
   sistemaConsumidor.input.value = nf(inp2, 0, 1);
   sistemaConsumidor.slider.value = inp2;
 
@@ -25,8 +25,8 @@ function cenarioSelectEvent() {
     0.85
   );
 
-  cenarios[i].Elevacao_Tanque = constrain(cenarios[i].Elevacao_Tanque, 0, 12);
-  cenarios[i].Elevacao_Saida_Agua = constrain(cenarios[i].Elevacao_Saida_Agua, 0, 12 - cenarios[i].Elevacao_Tanque);
+  // cenarios[i].Elevacao_Tanque = constrain(cenarios[i].Elevacao_Tanque, 0, 12);
+  // cenarios[i].Elevacao_Saida_Agua = constrain(cenarios[i].Elevacao_Saida_Agua, 0, 12 - cenarios[i].Elevacao_Tanque);
 
   hrep = round(1000 * map(checkForUndefined(cenarios[i].Elevacao_Tanque, 0), 0, ylim[1], 0, altura - nivel0)) / 1000;
 

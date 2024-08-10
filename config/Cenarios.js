@@ -20,7 +20,7 @@ let cenarios = [
     label_ptBR: 'Cenário Demonstração',
     label_enUS: 'Demo Scenario',
     abertura_v1: 55,
-    demanda: 3,
+    demanda: 30,
     RPM: 1500,   
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -32,7 +32,7 @@ let cenarios = [
     label_ptBR: '1 - 1500 RPM: Operação em Vazio',
     label_enUS: '1 - 1500 RPM: Deadheaded Pump',
     abertura_v1: 0,
-    demanda: 5.3,
+    demanda: 53,
     RPM: 1500,    
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -46,7 +46,7 @@ let cenarios = [
     label_ptBR: '2 - 1800 RPM: Baixa Demanda',
     label_enUS: '2 - 1800 RPM: Low Demand',
     abertura_v1: 40,
-    demanda: 1.2,
+    demanda: 12,
     RPM: 1800,  
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -56,7 +56,7 @@ let cenarios = [
     label_ptBR: '3 -  600 RPM: Baixa Demanda',
     label_enUS: '3 -  600 RPM: Low Demand',
     abertura_v1: 40,
-    demanda: 1.2,
+    demanda: 12,
     RPM: 600,  
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -68,7 +68,7 @@ let cenarios = [
     label_ptBR: '4 - 1200 RPM: Sobrecarga da Bomba',
     label_enUS: '4 - 1200 RPM: Pump Runout',
     abertura_v1: 72,
-    demanda: 5.5,
+    demanda: 55,
     RPM: 1200,  
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -79,7 +79,7 @@ let cenarios = [
     label_ptBR: '5 - 1800 RPM: Ponto de Máxima Eficiência',
     label_enUS: '5 - 1800 RPM: Best Efficiency Point',
     abertura_v1: 72,
-    demanda: 5.5,
+    demanda: 55,
     RPM: 1800,
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -90,7 +90,7 @@ let cenarios = [
     label_ptBR: '6 - Veloc. Máxima: Válvula Muito Fechada',
     label_enUS: '6 - Full Speed: Too Closed Valve',
     abertura_v1: 33,
-    demanda: 6.5,
+    demanda: 65,
     RPM: 1880,
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -101,7 +101,7 @@ let cenarios = [
     label_ptBR: '7 - Veloc. Máxima: Válvula Totalmente Aberta',
     label_enUS: '7 - Full Speed: Fully Open Valve',
     abertura_v1: 100,
-    demanda: 6.5,
+    demanda: 65,
     RPM: 1880,
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -113,7 +113,7 @@ let cenarios = [
     label_ptBR: '8 - Veloc. Máxima: Alto Desgaste Bomba',
     label_enUS: '8 - Full Speed: Pump High Wear',
     abertura_v1: 100,
-    demanda: 9.5,
+    demanda: 95,
     RPM: 1880,
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
@@ -126,7 +126,7 @@ let cenarios = [
     label_ptBR: '9 - Veloc. Máxima: Sist. Abastec. Insuficiente',
     label_enUS: '9 - Full Speed: Insufficient Supply System',
     abertura_v1: 100,
-    demanda: 10,
+    demanda: 100,
     RPM: 1880,
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão

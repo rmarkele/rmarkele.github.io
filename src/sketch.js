@@ -41,10 +41,6 @@ function setup() {
 function draw() {
 
   background(bkgColor);
-  velBomba = parseFloat(bombar.slider.value);
-
-  Hmax = pow(velBomba / 1800, 2) * 11;
-  Vmax = (velBomba / 1800) * 9.5;
 
   Hb = geraCurvaBomba(Hmax, Vmax, fs);
   plot1.Hb = Hb;
@@ -53,8 +49,8 @@ function draw() {
   escrevePainelAlturas();
   updateFlowPanel();
 
-  let Rmult = 50 / map(parseFloat(valvula1.slider.value), 0, 360, 0, Rconst);
-  R = R0 * pow(Rmult, 2);
+  let Rmult = 50/ map(parseFloat(valvula1.slider.value), 0, 360, 0, Rconst);
+  R = R0/10 * pow(Rmult, 2);
   PontoOperacao = calculaPontoDeOperacao(Z, R, Hmax, Vmax);
   plot1.PontoOperacao = PontoOperacao;
   vazaoEntrada = PontoOperacao.Vop;
@@ -66,7 +62,7 @@ function draw() {
   };
 
   nivel = constrain(
-    nivel + (100 / base)* canvasH/4000 * (vazaoEntrada - vazaoSaida),
+    nivel + (100 / base)* canvasH/40000 * (vazaoEntrada - vazaoSaida),
     nivel0 + hrep,
     altura
   );
@@ -80,7 +76,7 @@ function draw() {
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
   plot1.Hsys = Hsys;
   const PotH = PontoOperacao.Hop * PontoOperacao.Vop * 1000 / 3600;
-  const PotE = 48 * pow(velBomba / 1800, 3) *1000/3600;
+  const PotE = 4800 * pow(velBomba / 1800, 3) *1000/3600;
 
   watt1.pot = PotH;
 

@@ -14,8 +14,8 @@ class saidaAgua {
       translate(this.posx + this.largura, this.posy);
       fill(50, 50, 255);
       noStroke();
-      let mult1 = random(0.95, 1.1)* max(PontoOperacao.Vop/10, 0.1);
-      let mult2 = random(0.95, 1.3)* max(PontoOperacao.Vop/10, 0.1);
+      let mult1 = random(0.95, 1.1)* max(PontoOperacao.Vop/100, 0.1);
+      let mult2 = random(0.95, 1.3)* max(PontoOperacao.Vop/100, 0.1);
       beginShape();
       vertex(mult2 * (this.largura + this.w), this.altura);
       vertex(mult1 * this.largura, this.altura);

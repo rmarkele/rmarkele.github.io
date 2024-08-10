@@ -24,14 +24,16 @@ let bombar,
   watt1,
   watt2;
 let Hb, Hsys;
-let Hmax = 11;
-let Vmax = 9.5;
+let Hmax0 = 110;
+let Vmax0 = 95;
+let Hmax = 110;
+let Vmax = 95;
 let Z = 0;
 const R0 = 0.14;
 let R = 0.14;
 let fs = 0.01;
-let xlim = [0, 10];
-let ylim = [0, 12];
+let xlim = [0, 100];
+let ylim = [0, 120];
 let velBomba = 1800;
 let base = 100;
 let altura = 530;
@@ -41,8 +43,8 @@ let nivel = nivel0;
 let hrep = 0;
 let hsaida = 0;
 
-const xtick = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const ytick = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const xtick = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+const ytick = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120];
 
 let yref
 

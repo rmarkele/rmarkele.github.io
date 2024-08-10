@@ -15,11 +15,17 @@ class bomba {
       })
 
       slider.addEventListener('input', ()=>{
-        input.value = slider.value
+        input.value = slider.value;
+        velBomba = parseFloat(slider.value);
+        Hmax = pow(velBomba / 1800, 2) * Hmax0;
+        Vmax = (velBomba / 1800) * Vmax0;
       })
 
       input.addEventListener('change', ()=>{
-        slider.value = input.value
+        slider.value = input.value;
+        velBomba = parseFloat(slider.value);
+        Hmax = pow(velBomba / 1800, 2) * Hmax0;
+        Vmax = (velBomba / 1800) * Vmax0;
       })
 
       this.inputs = inputs;
