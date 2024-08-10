@@ -16,7 +16,7 @@ class wattimetro {
       translate(this.posx, this.posy);
       fill(240, 240, 240);
       stroke(0);
-      strokeWeight(3);
+      strokeWeight(strW + 1);
       let ang1 = -210;
       let ang2 = 30;
   
@@ -55,7 +55,7 @@ class wattimetro {
         line(0, 0.95 * this.raio, 0, this.raio);
   
         push();
-        strokeWeight(1);
+        strokeWeight(1 * strW/2);
         fill(0);
         translate(0, 0.75 * this.raio);
         rotate(-i);
@@ -81,7 +81,7 @@ class wattimetro {
       vertex(-7, 0);
       endShape();
       stroke(0);
-      strokeWeight(20);
+      strokeWeight(20 * strW / 2);
       point(0, 0);
       pop();
   
