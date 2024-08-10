@@ -62,7 +62,7 @@ function draw() {
   };
 
   nivel = constrain(
-    nivel + (100 / base)* canvasH/40000 * (vazaoEntrada - vazaoSaida),
+    nivel + (100 / base)* canvasH/4000 * (vazaoEntrada - vazaoSaida),
     nivel0 + hrep,
     altura
   );

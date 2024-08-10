@@ -58,6 +58,7 @@ class plot {
         noStroke();
         fill(0);
         textSize(txtS)
+        textAlign(CENTER);
         text(this.xtick[i], xtickplot[i] - 5, txtS + 1);
         pop();
       }
