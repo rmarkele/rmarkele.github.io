@@ -61,8 +61,14 @@ function draw() {
     Hdemanda: max((-Hmax / (Vmax * Vmax)) * (vazaoSaida - Vmax) * (vazaoSaida + Vmax), 0)
   };
 
+  let step;
+  if(canvasW>respLim[1]){
+    step =  1/8 * (vazaoEntrada - vazaoSaida);
+  } else{
+    step =  1/14 * (vazaoEntrada - vazaoSaida);
+  }
   nivel = constrain(
-    nivel + (100 / base)* canvasH/4000 * (vazaoEntrada - vazaoSaida),
+    nivel + step,
     nivel0 + hrep,
     altura
   );
