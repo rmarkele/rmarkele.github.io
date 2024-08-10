@@ -47,6 +47,6 @@ function atualizaStrings() {
   cityFlow.unit.innerHTML =  strg.textovazaoSaida[1];
 }
 
-function getIndexes() {
-  indOf._cenario = strg.labelCenario.indexOf(selPar.value);
-}
+// function getIndexes() {
+//   indOf._cenario = strg.labelCenario.indexOf(selPar.value);
+// }

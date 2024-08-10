@@ -32,10 +32,9 @@ document.querySelectorAll(".lang-menu ul li").forEach(langItem=>{
         listaIdioma.style.display = "none"
         console.log(languageIndex)
         idiomaAjuda();
-        getIndexes();
+        // getIndexes();
         idiomaSelect();
         atualizaStrings();
-        // updateComponentes();
 
     })
 }

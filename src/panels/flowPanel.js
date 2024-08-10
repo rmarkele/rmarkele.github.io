@@ -29,7 +29,6 @@ function createFlowPanel(){
 
 function updateFlowPanel(){
 
-    // console.log(cityFlow.img.src)
 
     pumpFlow.number.innerHTML =  nfs(round(10 * vazaoEntrada) / 10, 0, 1);
     
