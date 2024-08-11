@@ -1,5 +1,5 @@
 class wattimetro {
-    constructor(posx, posy, raio, min, max, pot, txt, cor, showDigital = true) {
+    constructor({posx, posy, raio, min, max, pot, txt, cor, showDigital = true}) {
       this.posx = posx;
       this.posy = posy;
       this.raio = raio;
@@ -87,4 +87,15 @@ class wattimetro {
   
       pop();
     }
-  }
+    update({posx, posy, raio, min, max, pot, txt, cor, showDigital}) {
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+      this.raio = raio??this.raio;
+      this.min = min??this.min;
+      this.max = max??this.max;
+      this.pot = pot??this.pot;
+      this.txt = txt??this.txt;
+      this.cor = cor??this.cor;
+      this.showDigital = showDigital??this.showDigital;
+    }
+}

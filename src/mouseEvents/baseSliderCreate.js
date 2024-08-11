@@ -2,7 +2,7 @@ const baseSlider = document.getElementById("base-slider");
 
 function baseSliderCreate() {
     let posx =  canoSaidaTanque2.posx - canoSaidaTanque2.w / 2;
-    let posy = tanqueRep.posy + 36;
+    let posy = yref - nivel0 + 36;
     let hgt = altura - nivel0 + 72;
     baseSlider.style.left = posx + "px";
     baseSlider.style.top = posy + "px";

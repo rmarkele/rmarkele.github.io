@@ -1,5 +1,5 @@
 class bomba {
-    constructor(posx, posy, largura, altura, w) {
+    constructor({posx, posy, largura, altura, w}) {
       this.posx = posx;
       this.posy = posy;
       this.largura = largura;
@@ -7,7 +7,7 @@ class bomba {
       this.w = w;
       this.id = "pump"
 
-      let {inputs, text, input, unit, slider} = createComponentInput({
+      let {div, inputs, text, input, unit, slider} = createComponentInput({
         id: "bomba",
         label: strg.textoBomba,
         pos: [posx, posy + 30],
@@ -28,6 +28,7 @@ class bomba {
         Vmax = (velBomba / 1800) * Vmax0;
       })
 
+      this.div = div;
       this.inputs = inputs;
       this.text = text;
       this.input = input;
@@ -100,5 +101,15 @@ class bomba {
   
       pop();
     }
-  }
+    update({posx, posy, largura, altura, w}) {
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+      this.largura = largura??this.largura;
+      this.altura = altura??this.altura;
+      this.w = w??this.w;
+
+      this.div.style.left = `${this.posx}px`;
+      this.div.style.top = `${this.posy + 30}px`;
+    }
+}
   

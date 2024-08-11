@@ -1,5 +1,5 @@
 class saidaAgua {
-    constructor(posx, posy, largura, altura, w) {
+    constructor({posx, posy, largura, altura, w}) {
       this.posx = posx;
       this.posy = posy;
       this.largura = largura;
@@ -38,4 +38,11 @@ class saidaAgua {
   
       pop();
     }
-  }
+    update({posx, posy, largura, altura, w}) {
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+      this.largura = largura??this.largura;
+      this.altura = altura??this.altura;
+      this.w = w??this.w;
+    }
+}

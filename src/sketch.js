@@ -18,7 +18,7 @@ function setup() {
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
 
   idiomaSelect();
-  criaEstrutura();
+  createWaterSystem();
   
   
 

@@ -64,10 +64,10 @@ let text_size = 18;
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-const canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+let canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
 
 let bkgColor = 250;
 
-let respLim = [600, 850, 1300];
+let respLim = [600, 900, 1300];
 
 let strW;

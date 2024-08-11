@@ -1,5 +1,5 @@
 class plot {
-    constructor(
+    constructor({
       posx,
       posy,
       largura,
@@ -14,7 +14,7 @@ class plot {
       ytick,
       PontoOperacao,
       demanda
-    ) {
+    }) {
       this.posx = posx;
       this.posy = posy;
       this.largura = largura;
@@ -66,7 +66,7 @@ class plot {
       push()
         noStroke();
         fill([0, 0, 0, canvasW > respLim[0] ? 255 : 100]);
-        textSize(txtS-1)
+        textSize(txtS-2)
         textAlign(CENTER)
         text(this.xlabel, this.largura / 2, canvasW > respLim[0] ? 2.1 * txtS : txtS+5);
       pop()
@@ -289,4 +289,35 @@ class plot {
   
       pop();
     }
-  }
+    update({
+      posx,
+      posy,
+      largura,
+      altura,
+      Hb,
+      Hsys,
+      xlim,
+      ylim,
+      xlabel,
+      ylabel,
+      xtick,
+      ytick,
+      PontoOperacao,
+      demanda
+    }) {
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+      this.largura = largura??this.largura;
+      this.altura = altura??this.altura;
+      this.Hb = Hb??this.Hb;
+      this.Hsys = Hsys??this.Hsys;
+      this.xlim = xlim??this.xlim;
+      this.ylim = ylim??this.ylim;
+      this.xlabel = xlabel??this.xlabel;
+      this.ylabel = ylabel??this.ylabel;
+      this.xtick = xtick??this.xtick;
+      this.ytick = ytick??this.ytick;
+      this.PontoOperacao = PontoOperacao??this.PontoOperacao;
+      this.demanda = demanda??this.demanda;
+    }
+}

@@ -90,7 +90,7 @@
     margin: auto;
   }
 
-  @media (max-width:850px) {
+  @media (max-width:900px) {
     
     #logo-container {    
       left: 2px;
@@ -98,7 +98,15 @@
       bottom: 100%;
       font-size: 10px;
     }
-    
+    #logo-txt0 {
+      font-size: 10px;
+    }
+    #logo-txt1 {
+      font-size: 10px;
+    }
+    .logo-container--btn {
+      font-size: 10px;
+    }
 
 
     .help-body{
@@ -132,6 +140,8 @@
       bottom: 30%;
       top: 60%;
     }
+
+    
 
     #logo-txt0,
     #logo-txt1{    

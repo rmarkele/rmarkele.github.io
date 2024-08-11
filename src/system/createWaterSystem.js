@@ -1,233 +1,31 @@
 function createWaterSystem() {
-    let cano1Mult = 0.62;
-    let canoEntradaMult = 0.7;
-    let valvula1Mult = 0.33;
-    let bombaMult = yscale;
-    if(canvasW > respLim[1] && canvasW <= respLim[2]){
-      yscale = 0.9;
-      base *= 0.8;
-      bombaMult = yscale
-    }else if (canvasW <= respLim[1] && canvasW > respLim[0]) {
-      yscale = 0.8;
-      base *= 0.5;
-      cano1Mult = 0.72;
-      canoEntradaMult = 0.9;
-      bombaMult = yscale
-    } else if (canvasW <= respLim[0]) {
-      yscale = 0.4;
-      base *= 0.3;
-      cano1Mult = 0.78;
-      canoEntradaMult = 0.87;
-      bombaMult = 0.4;
-      valvula1Mult = 0.4
-    }
-    nivel0 *= yscale;
-    nivel = nivel0;
-    altura *= yscale;
-    hrep *= yscale;
-    hsaida *= yscale;
-  
-    let xref = 0.1 * canvasW - base;
-    yref = 550 * yscale;
-  
-    tanqueFont = new tanque(base, 0.5 * altura, nivel, xref, yref);
-  
-    baseTanqueFont = new baseTanque(base, 0.1 * altura, xref, yref);
-  
-    canoSaidaTanque1 = new cano(
-      tanqueFont.posx + tanqueFont.base,
-      tanqueFont.posy - 10,
-      0.04 * canvasW,
-      15 * yscale,
-      0,
-      1
-    );
-  
-    bombar = new bomba(
-      canoSaidaTanque1.posx + canoSaidaTanque1.largura,
-      canoSaidaTanque1.posy,
-      0.04 * canvasW * bombaMult,
-      60 * bombaMult,
-      15 * yscale
-    );
-    joelho1 = new joelho(
-      bombar.posx + 1.5 * bombar.largura,
-      bombar.posy - bombar.altura,
-      25 * yscale,
-      15 * yscale,
-      1,
-      1,
-      0
-    );
-  
-    valvula1 = new valvula(
-      joelho1.posx + joelho1.largura,
-      joelho1.posy - joelho1.largura - joelho1.w / 2,
-      valvula1Mult * canvasW - joelho1.posx - joelho1.largura,
-      15 * yscale,
-      strg.textoValvulaDescarga,
-      10,
-      [0, 100],
-      -10
-    );
-    
-  
-    cano1 = new cano(
-      valvula1.posx + valvula1.largura,
-      valvula1.posy,
-      cano1Mult * canvasW - (valvula1.posx + valvula1.largura),
-      15 * yscale,
-      1,
-      1
-    );
-    joelho2 = new joelho(
-      cano1.posx + cano1.largura - 25 * yscale,
-      cano1.posy - 32.5 * yscale,
-      25 * yscale,
-      15 * yscale,
-      1,
-      1,
-      180
-    );
-  
-    cano2 = new cano(
-      joelho2.posx + joelho2.largura + 32.5 * yscale,
-      joelho2.posy - joelho2.largura + 25 * yscale,
-      joelho2.posy - (altura - nivel0 - hrep - hsaida + 15*yscale + 32.5 * yscale), 
-      15 * yscale,
-      1,
-      1,
-      -90
-    );
-  
-    joelho3 = new joelho(
-      cano2.posx + cano2.w / 2,
-      altura - nivel0 - hrep - hsaida + cano2.w + 32.5 * yscale,
-      25 * yscale,
-      15 * yscale,
-      1,
-      1,
-      0
-    );
-  
-    canoEntradaTanque2 = new cano(
-      joelho3.posx + joelho3.largura,
-      altura - nivel0 - hrep - hsaida + joelho3.w,
-      canoEntradaMult * canvasW - (joelho3.posx + joelho3.largura),
-      15 * yscale,
-      1,
-      0
-    );
-  
-    saidaAgua1 = new saidaAgua(
-      canoEntradaTanque2.posx + canoEntradaTanque2.largura - 25*yscale,
-      canoEntradaTanque2.posy + (25 + 7.5) * yscale,
-      25 * yscale,
-      (hsaida - 25) * yscale,
-      15 * yscale
-    );
-  
-    tanqueRep = new tanque(
-      base,
-      altura - nivel0 - hrep,
-      nivel - nivel0 - hrep,
-      canoEntradaTanque2.posx + canoEntradaTanque2.largura,
-      yref - nivel0 - hrep
-    );
-  
-    baseTanqueRep = new baseTanque(
-      base,
-      hrep + 50 * yscale,
-      tanqueRep.posx,
-      tanqueRep.posy
-    );
-  
-    let cityPosx = (0.91 - 0.08) * canvasW ;
-    let cityPosy = tanqueRep.posy - tanqueRep.altura + (0.04 + 1.4 *  0.16) * canvasW ;
-    let cityW = 0.16;
-    let saidaTanqueH = cityPosy - 32.5 * yscale;
-    if (canvasW <= respLim[1] && canvasW > respLim[0]) {
-      cityPosx = 0.8 * canvasW;
-      cityW = 0.2;
-      cityPosy = baseTanqueRep.posy + baseTanqueRep.altura + 8;
-      saidaTanqueH = cityPosy - tanqueRep.posy+10;
-    } else if (canvasW <= respLim[0]) {
-      cityW = 0.2;
-      cityPosx = 0.5 * (1 - cityW) * canvasW;
-      cityPosy = cano1.posy + 2 * cano1.w;
-      saidaTanqueH =
-        cano1.posy + 2 * cano1.w -5 - tanqueRep.posy + (cityW / 2) * canvasW;
-    }
-    
-    
-    canoSaidaTanque2 = new cano(
-      tanqueRep.posx + 0.5 * tanqueRep.base,
-      tanqueRep.posy,
-      saidaTanqueH,
-      15 * yscale,
-      0,
-      1,
-      90
-    );
+    getSystemParams();
 
-  
-    let joelho4Angle = 270;
-    let joelhopos = [
-      canoSaidaTanque2.posx + 7.5 * yscale,
-      cityPosy + cityW * canvasW * 220/300 - 45 * yscale 
-    ];
-    if (canvasW <= respLim[0]) {
-      joelho4Angle = 180;
-      joelhopos = [
-        canoSaidaTanque2.posx - (25 + 15 + 15 + 2) * yscale,
-        canoSaidaTanque2.posy + canoSaidaTanque2.largura,
-      ];
-    }
-  
-    joelho4 = new joelho(
-      joelhopos[0],
-      joelhopos[1],
-      25 * yscale,
-      15 * yscale,
-      1,
-      1,
-      joelho4Angle
-    );
-  
-    let cano3W = cityPosx - joelho4.posx - joelho4.largura + joelho4.w;
-    let cano3Angle = 0;
-    if (canvasW <= respLim[0]) {
-      cano3W = -(cityPosx + cityW * canvasW + -joelho4.posx - joelho4.largura - joelho4.w);
-      cano3Angle = 180;
-    }
-  
-    cano3 = new cano(
-      joelho4.posx + joelho4.largura,
-      joelho4.posy + joelho4.largura + joelho4.w/2,
-      cano3W,
-      15 * yscale,
-      1,
-      0,
-      cano3Angle
-    );
-  
+    tanqueFont = new tanque(Params.tanqueFont);
+    baseTanqueFont = new baseTanque(Params.baseTanqueFont); 
+    canoSaidaTanque1 = new cano(Params.canoSaidaTanque1);  
+    bombar = new bomba(Params.bombar);
+    joelho1 = new joelho(Params.joelho1);  
+    valvula1 = new valvula(Params.valvula1);  
+    cano1 = new cano(Params.cano1);
+    joelho2 = new joelho(Params.joelho2);  
+    cano2 = new cano(Params.cano2);  
+    joelho3 = new joelho(Params.joelho3);  
+    canoEntradaTanque2 = new cano(Params.canoEntradaTanque2);  
+    saidaAgua1 = new saidaAgua(Params.saidaAgua1);  
+    tanqueRep = new tanque(Params.tanqueRep); 
+    baseTanqueRep = new baseTanque(Params.baseTanqueRep);   
+    canoSaidaTanque2 = new cano(Params.canoSaidaTanque2);  
+    joelho4 = new joelho(Params.joelho4);  
+    cano3 = new cano(Params.cano3);
+    sistemaConsumidor = new sistemaAgua(Params.sistemaConsumidor);
+
+    watt1 = new wattimetro(Params.watt1);
+    watt2 = new wattimetro(Params.watt2);
+    plot1 = new plot(Params.plot1);
+
     
-  
-    sistemaConsumidor = new sistemaAgua(
-      strg.sistemaConsumidor,
-      cityPosx,
-      cityPosy,
-      cityW * canvasW,
-      15 * yscale,
-      strg.textovazaoDemandada,
-      160,
-      [0, 100],
-      -100
-    );
-
-    // console.log(document.querySelector("#city img").getBoundingClientRect());
-
-  
+    
     if(canvasW<=respLim[0]){
       document.querySelector('#myCanvasContainer').appendChild(bombar.inputs);
       document.querySelector('#myCanvasContainer').appendChild(valvula1.inputs);

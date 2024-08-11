@@ -40,9 +40,19 @@
     text-align: center;
 }
 
+@media (max-width: 900px) {
+    .flow-var{
+        font-size: 12px;
+    }
+    .flow-number{
+        width: 30px;
+        text-align: center;
+    }
+    
+}
 @media (max-width: 600px) {
     .flow-var{
         font-size: 12px;
     }
     
-  }
+}

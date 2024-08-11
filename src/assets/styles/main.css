@@ -12,7 +12,10 @@
   --canvas-height: calc(
     var(--vh, 1vh) * 100 - var(--header-height) - var(--footer-height)
   );
+  --canvas-min-height: 580px;
+
   --main-height: calc(var(--vh, 1vh) * 100);
+  --main-min-height: calc(var(--canvas-min-height) + var(--header-height) + var(--footer-height))
 }
 
 canvas {
@@ -31,6 +34,7 @@ canvas {
   justify-content: center;
   align-items: center;
   height: var(--main-height);
+  min-height: var(--main-min-height);
 }
 
 /* Barra de navegação */
@@ -83,6 +87,7 @@ footer {
   width: 100%;
   height: var(--canvas-height);
   max-height: 680px;
+  min-height: var(--canvas-min-height);
   background-color: rgb(255, 255, 255);
   /* margin: auto; */
 }
@@ -206,7 +211,7 @@ input[type="range"] {
 }
 
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   *{
     font-size: 14px;
   }

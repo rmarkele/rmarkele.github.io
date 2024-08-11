@@ -1,5 +1,5 @@
 class baseTanque {
-    constructor(base, altura, posx, posy) {
+    constructor({base, altura, posx, posy}) {
       this.base = base;
       this.altura = altura;
       this.nivel = nivel;
@@ -24,16 +24,23 @@ class baseTanque {
       arc(base / 2, this.altura ,  1.5 * base, 20 * w, 0, 360);
       pop();
     }
+    update({base, altura, posx, posy}) {
+      this.base = base??this.base;
+      this.altura = altura??this.altura;
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+    }
   }
   
   class tanque {
-    constructor(base, altura, nivel, posx, posy) {
+    constructor({base, altura, nivel, posx, posy}) {
       this.base = base;
       this.altura = altura;
       this.nivel = nivel;
       this.posx = posx;
       this.posy = posy;
     }
+
     show() {
       const w = yscale;
       push();
@@ -66,4 +73,12 @@ class baseTanque {
       arc(0 + base / 2, -this.altura, base, 20 * w, 0, 360);
       pop();
     }
-  }
+
+    update({base, altura, nivel, posx, posy}) {
+      this.base = base??this.base;
+      this.altura = altura??this.altura;
+      this.nivel = nivel??this.nivel;
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+    }
+}

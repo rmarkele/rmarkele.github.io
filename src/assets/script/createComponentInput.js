@@ -19,7 +19,7 @@ function createComponentInput({id, label, pos, lim , img, step}){
   
       document.querySelector(`#myCanvasContainer`).appendChild(div);
 
-      
+      let image = document.querySelector(`#${id} img`);
       let inputs = document.querySelector(`#${id} .inputs-container`);
       let text = document.querySelector(`#${id} .label-text`);
       let input = document.querySelector(`#${id} .label-input`);
@@ -27,5 +27,5 @@ function createComponentInput({id, label, pos, lim , img, step}){
       let slider = document.querySelector(`#${id} .component-slider`);
 
       
-      return {div, inputs, text, input, unit, slider}
+      return {div, image, inputs, text, input, unit, slider}
 }

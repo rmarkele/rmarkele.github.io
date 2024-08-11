@@ -1,14 +1,13 @@
 class valvula {
-    constructor(posx, posy, largura, w, txt, offset = 0, lim, offsettxt = 0) {
+    constructor({posx, posy, largura, w, txt, lim}) {
       this.posx = posx;
       this.posy = posy;
       this.largura = largura;
       this.w = w;
-  
       this.txt = txt;
       this.lim = lim;
 
-      let {inputs, text, input, unit, slider} = createComponentInput({
+      let {div, inputs, text, input, unit, slider} = createComponentInput({
         id: "valvula1",
         label: strg.textoValvulaDescarga,
         pos: [posx, posy + 30],
@@ -27,6 +26,7 @@ class valvula {
         slider.value = map(val, this.lim[0], this.lim[1], 0, 360);
       })
 
+      this.div = div;
       this.inputs = inputs;
       this.text = text;
       this.input = input;
@@ -132,4 +132,16 @@ class valvula {
   
       pop();
     }
-  }
+    update({posx, posy, largura, w, txt, lim}) {
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+      this.largura = largura??this.largura;
+      this.w = w??this.w;
+      this.txt = txt??this.txt;
+      this.lim = lim??this.lim;
+
+      this.div.style.left = `${this.posx}px`;
+      this.div.style.top = `${this.posy + 30}px`;
+    }
+
+}

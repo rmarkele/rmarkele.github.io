@@ -1,5 +1,5 @@
 class cano {
-    constructor(posx, posy, largura, w, flange1, flange2, ang) {
+    constructor({posx, posy, largura, w, flange1, flange2, ang}) {
       this.posx = posx;
       this.posy = posy;
       this.largura = largura;
@@ -66,4 +66,13 @@ class cano {
       }
       pop();
     }
-  }
+    update({posx, posy, largura, w, flange1, flange2, ang}) {
+      this.posx = posx??this.posx;
+      this.posy = posy??this.posy;
+      this.largura = largura??this.largura;
+      this.w = w??this.w;
+      this.flange1 = flange1??this.flange1;
+      this.flange2 = flange2??this.flange2;
+      this.ang = ang??this.ang;
+    }
+}
