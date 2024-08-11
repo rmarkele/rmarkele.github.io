@@ -1,12 +1,12 @@
-screen.orientation.addEventListener("change", (event) => {
-    const type = event.target.type;
-    const angle = event.target.angle;
-    canvasDimentions = document
-    .querySelector("#myCanvasContainer")
-    .getBoundingClientRect();
-  alert(`w: ${canvasDimentions.width}, h: ${canvasDimentions.height}`);
-    updateWaterSystem(angle);
-});
+// screen.orientation.addEventListener("change", (event) => {
+//     const type = event.target.type;
+//     const angle = event.target.angle;
+//     canvasDimentions = document
+//     .querySelector("#myCanvasContainer")
+//     .getBoundingClientRect();
+//   alert(`w: ${canvasDimentions.width}, h: ${canvasDimentions.height}`);
+//     updateWaterSystem(angle);
+// });
 
 function updateWaterSystem(angle) {
   canvasDimentions = document
