@@ -37,8 +37,8 @@ screen.orientation.addEventListener("change", function() {
 });
 
 function updateWaterSystem() {
-  canvasH = document.querySelector("#myCanvasContainer").clientHeight;
-  canvasW = document.querySelector("#myCanvasContainer").clientWidth;
+  canvasW = document.querySelector("#myCanvasContainer").clientHeight;
+  canvasH = document.querySelector("#myCanvasContainer").clientWidth;
   resizeCanvas(canvasW, canvasH);
 
   text_size = canvasW > respLim[1] ? 18 : 14;
