@@ -32,7 +32,7 @@ function updateFlowPanel(){
 
     pumpFlow.number.innerHTML =  nfs(round(10 * vazaoEntrada) / 10, 0, 1);
     
-    if (nivel > 21) {
+    if (nivel - nivel0 - hrep > canoEntradaTanque2.w) {
         cityFlow.number.innerHTML =  nfs(round(10 * vazaoSaida) / 10, 0, 1);
     } else {
         cityFlow.number.innerHTML =  nfs(round(10 * vazaoEntrada) / 10, 0, 1);

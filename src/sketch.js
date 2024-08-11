@@ -55,6 +55,7 @@ function draw() {
   plot1.PontoOperacao = PontoOperacao;
   vazaoEntrada = PontoOperacao.Vop;
   vazaoSaida = parseFloat(sistemaConsumidor.slider.value);
+  
   lightMode();
   plot1.demanda = {
     Vdemanda: min(vazaoSaida, Vmax),
