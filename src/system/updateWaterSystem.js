@@ -1,30 +1,45 @@
-screen.orientation.addEventListener("change", (event) => {
-    let type = event.target.type;
-    let angle = event.target.angle;
-    vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+// screen.orientation.addEventListener("change", (event) => {
+//     let type = event.target.type;
+//     let angle = event.target.angle;
+//     vh = window.innerHeight * 0.01;
+//     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    alert(`ScreenOrientation change: ${type}, ${angle} degrees.`);
-    // document.querySelector("#myCanvasContainer").style.minWidth = "580px";
-    // document.querySelector("#main-div").style.width = "650px";
+//     alert(`ScreenOrientation change: ${type}, ${angle} degrees.`);
+//     // document.querySelector("#myCanvasContainer").style.minWidth = "580px";
+//     // document.querySelector("#main-div").style.width = "650px";
 
 
-    // canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
-    // if(type == "landscape-primary"){
-      canvasW = document.querySelector("#myCanvasContainer").clientHeight;
-      canvasH = document.querySelector("#myCanvasContainer").clientWidth;
-    // }else{
-    //   canvasW = document.querySelector("#myCanvasContainer").clientWidth;
-    //   canvasH = document.querySelector("#myCanvasContainer").clientHeight;
-    // }
+//     // canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+//     // if(type == "landscape-primary"){
+//       canvasW = document.querySelector("#myCanvasContainer").clientHeight;
+//       canvasH = document.querySelector("#myCanvasContainer").clientWidth;
+//     // }else{
+//     //   canvasW = document.querySelector("#myCanvasContainer").clientWidth;
+//     //   canvasH = document.querySelector("#myCanvasContainer").clientHeight;
+//     // }
   
-    resizeCanvas(canvasW, canvasH);
+//     resizeCanvas(canvasW, canvasH);
 
-    updateWaterSystem()
+//     updateWaterSystem()
+// });
+screen.orientation.addEventListener("change", function() {
+  var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g);
+  var viewportmeta = document.querySelector('meta[name="viewport"]');
+  if (iOS && viewportmeta) {
+    if (viewportmeta.content.match(/width=device-width/)) {
+      viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=1');
+    }
+    viewportmeta.content = viewportmeta.content.replace(/width=[^,]+/, 'width=' + window.innerWidth);
+  }
+  // If you want to hide the address bar on orientation change, uncomment the next line
+  // window.scrollTo(0, 0);
+  updateWaterSystem()
 });
 
 function updateWaterSystem() {
-  
+  canvasH = document.querySelector("#myCanvasContainer").clientHeight;
+  canvasW = document.querySelector("#myCanvasContainer").clientWidth;
+  resizeCanvas(canvasW, canvasH);
 
   text_size = canvasW > respLim[1] ? 18 : 14;
   strW = canvasW > respLim[0] ? 2 : 1;
