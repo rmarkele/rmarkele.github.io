@@ -1,20 +1,25 @@
-// screen.orientation.addEventListener("change", (event) => {
-//     const type = event.target.type;
-//     const angle = event.target.angle;
-//     canvasDimentions = document
-//     .querySelector("#myCanvasContainer")
-//     .getBoundingClientRect();
-//   alert(`w: ${canvasDimentions.width}, h: ${canvasDimentions.height}`);
-//     updateWaterSystem(angle);
-// });
+screen.orientation.addEventListener("change", (event) => {
+    let type = event.target.type;
+    let angle = event.target.angle;
+    vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-function updateWaterSystem(angle) {
-  canvasDimentions = document
-    .querySelector("#myCanvasContainer")
-    .getBoundingClientRect();
-  canvasW = angle==0? canvasDimentions.width : canvasDimentions.height;
-  canvasH = angle= 0? canvasDimentions.height: canvasDimentions.width;
-  resizeCanvas(canvasW, canvasH);
+    console.log(`ScreenOrientation change: ${type}, ${angle} degrees.`);
+    // document.querySelector("#myCanvasContainer").style.minWidth = "580px";
+    // document.querySelector("#main-div").style.width = "650px";
+
+
+    canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+    canvasW = document.querySelector("#myCanvasContainer").clientWidth;
+    canvasH = document.querySelector("#myCanvasContainer").clientHeight;
+  
+    resizeCanvas(canvasW, canvasH);
+
+    updateWaterSystem()
+});
+
+function updateWaterSystem() {
+  
 
   text_size = canvasW > respLim[1] ? 18 : 14;
   strW = canvasW > respLim[0] ? 2 : 1;
