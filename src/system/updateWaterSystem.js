@@ -1,16 +1,16 @@
 screen.orientation.addEventListener("change", (event) => {
     const type = event.target.type;
-  const angle = event.target.angle;
-  alert(`ScreenOrientation change: ${type}, ${angle} degrees.`);
-  updateWaterSystem();
+    const angle = event.target.angle;
+//   alert(`ScreenOrientation change: ${type}, ${angle} degrees.`);
+    updateWaterSystem(angle);
 });
 
-function updateWaterSystem() {
+function updateWaterSystem(angle) {
   canvasDimentions = document
     .querySelector("#myCanvasContainer")
     .getBoundingClientRect();
-  canvasW = canvasDimentions.width;
-  canvasH = canvasDimentions.height;
+  canvasW = angle==0? canvasDimentions.width : canvasDimentions.height;
+  canvasH = angle= 0? canvasDimentions.height: canvasDimentions.width;
   resizeCanvas(canvasW, canvasH);
 
   text_size = canvasW > respLim[1] ? 18 : 14;
