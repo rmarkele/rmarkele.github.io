@@ -1,7 +1,10 @@
 screen.orientation.addEventListener("change", (event) => {
     const type = event.target.type;
     const angle = event.target.angle;
-//   alert(`ScreenOrientation change: ${type}, ${angle} degrees.`);
+    canvasDimentions = document
+    .querySelector("#myCanvasContainer")
+    .getBoundingClientRect();
+  alert(`w: ${canvasDimentions.width}, h: ${canvasDimentions.height}`);
     updateWaterSystem(angle);
 });
 
