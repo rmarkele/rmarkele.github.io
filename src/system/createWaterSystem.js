@@ -195,18 +195,20 @@ function createWaterSystem() {
     );
   
     let cano3W = cityPosx - joelho4.posx - joelho4.largura + joelho4.w;
+    let cano3Angle = 0;
     if (canvasW <= respLim[0]) {
-      cano3W = cityPosx + cityW * canvasW + -joelho4.posx - joelho4.largura - joelho4.w;
+      cano3W = -(cityPosx + cityW * canvasW + -joelho4.posx - joelho4.largura - joelho4.w);
+      cano3Angle = 180;
     }
   
     cano3 = new cano(
-      joelho4.posx + joelho4.largura + (canvasW>respLim[0]? 0 : - joelho4.w/2),
+      joelho4.posx + joelho4.largura,
       joelho4.posy + joelho4.largura + joelho4.w/2,
       cano3W,
       15 * yscale,
       1,
       0,
-      0
+      cano3Angle
     );
   
     
