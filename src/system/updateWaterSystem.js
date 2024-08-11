@@ -10,8 +10,13 @@ screen.orientation.addEventListener("change", (event) => {
 
 
     canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
-    canvasW = document.querySelector("#myCanvasContainer").clientWidth;
-    canvasH = document.querySelector("#myCanvasContainer").clientHeight;
+    if(type == "landscape-primary"){
+      canvasW = document.querySelector("#myCanvasContainer").clientHeight;
+      canvasH = document.querySelector("#myCanvasContainer").clientWidth;
+    }else{
+      canvasW = document.querySelector("#myCanvasContainer").clientWidth;
+      canvasH = document.querySelector("#myCanvasContainer").clientHeight;
+    }
   
     resizeCanvas(canvasW, canvasH);
 
