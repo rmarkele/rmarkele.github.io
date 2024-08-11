@@ -1,5 +1,7 @@
 screen.orientation.addEventListener("change", (event) => {
-    alert("changed")
+    const type = event.target.type;
+  const angle = event.target.angle;
+  alert(`ScreenOrientation change: ${type}, ${angle} degrees.`);
   updateWaterSystem();
 });
 
