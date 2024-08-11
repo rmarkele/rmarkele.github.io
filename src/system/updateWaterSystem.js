@@ -1,4 +1,5 @@
 screen.orientation.addEventListener("change", (event) => {
+    alert("changed")
   updateWaterSystem();
 });
 
