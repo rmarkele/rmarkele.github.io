@@ -33,7 +33,7 @@ function setup() {
   pipeSliderCreate();
   atualizaStrings();
   cenarioSelectEvent();
-  bkgColor = canvasW>respLim[1]? 250:255;
+// bkgColor = canvasW>respLim[1]? 250:255;
   
   
 }

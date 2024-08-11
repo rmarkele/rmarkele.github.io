@@ -4,19 +4,19 @@ screen.orientation.addEventListener("change", (event) => {
     vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-    console.log(`ScreenOrientation change: ${type}, ${angle} degrees.`);
+    alert(`ScreenOrientation change: ${type}, ${angle} degrees.`);
     // document.querySelector("#myCanvasContainer").style.minWidth = "580px";
     // document.querySelector("#main-div").style.width = "650px";
 
 
-    canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
-    if(type == "landscape-primary"){
+    // canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+    // if(type == "landscape-primary"){
       canvasW = document.querySelector("#myCanvasContainer").clientHeight;
       canvasH = document.querySelector("#myCanvasContainer").clientWidth;
-    }else{
-      canvasW = document.querySelector("#myCanvasContainer").clientWidth;
-      canvasH = document.querySelector("#myCanvasContainer").clientHeight;
-    }
+    // }else{
+    //   canvasW = document.querySelector("#myCanvasContainer").clientWidth;
+    //   canvasH = document.querySelector("#myCanvasContainer").clientHeight;
+    // }
   
     resizeCanvas(canvasW, canvasH);
 
