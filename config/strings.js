@@ -50,7 +50,7 @@ const strings = [
     _altura_elevacao:    ["S:", " [m]"],
     
     //Gráfico
-    _eixo_x_grafico: "Pump Flow Rate [m³/h]:",
+    _eixo_x_grafico: ["Pump Flow Rate:", "[m³/h]"],
     _eixo_y_grafico: "", //Head [m]
     
     //Componentes

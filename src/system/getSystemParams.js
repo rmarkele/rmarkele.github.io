@@ -329,8 +329,6 @@ function getSystemParams() {
     Hsys: Hsys,
     xlim: xlim,
     ylim: ylim,
-    xlabel: "",
-    ylabel: "",
     xtick: xtick,
     ytick: ytick,
     PontoOperacao: PontoOperacao,

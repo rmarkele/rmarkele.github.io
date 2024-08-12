@@ -80,6 +80,5 @@ class baseTanque {
       this.nivel = nivel??this.nivel;
       this.posx = posx??this.posx;
       this.posy = posy??this.posy;
-      console.log(nivel, this.nivel)
     }
 }
