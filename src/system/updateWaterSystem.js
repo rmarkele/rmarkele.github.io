@@ -1,11 +1,14 @@
 screen.orientation.addEventListener("change", () => {
-  location.reload();
+  setTimeout(()=>{
+    canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+    canvasW = canvasDimentions.width;
+    canvasH = canvasDimentions.height;
+    resizeCanvas(canvasW, canvasH);
+    updateWaterSystem();
+  },200);
 });
 
 function updateWaterSystem() {
-  canvasW = document.querySelector("#myCanvasContainer").clientHeight;
-  canvasH = document.querySelector("#myCanvasContainer").clientWidth;
-  resizeCanvas(canvasW, canvasH);
 
   text_size = canvasW > respLim[1] ? 18 : 14;
   strW = canvasW > respLim[0] ? 2 : 1;
