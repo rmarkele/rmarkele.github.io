@@ -33,7 +33,7 @@ class baseTanque {
   }
   
   class tanque {
-    constructor({base, altura, nivel, posx, posy}) {
+    constructor({base, altura, nivel=0, posx, posy}) {
       this.base = base;
       this.altura = altura;
       this.nivel = nivel;
@@ -80,5 +80,6 @@ class baseTanque {
       this.nivel = nivel??this.nivel;
       this.posx = posx??this.posx;
       this.posy = posy??this.posy;
+      console.log(nivel, this.nivel)
     }
 }

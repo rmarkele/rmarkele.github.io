@@ -17,6 +17,7 @@ function updateWaterSystem() {
 
   getSystemParams();
 
+  console.log(nivel)
   tanqueFont.update(Params.tanqueFont);
   baseTanqueFont.update(Params.baseTanqueFont);
   canoSaidaTanque1.update(Params.canoSaidaTanque1);
