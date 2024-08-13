@@ -234,9 +234,9 @@ class plot {
       textAlign(CENTER);
       textSize(txtS);
       textFont(selFont);
-      text(strg.alturasRep[0][0], Hx, text_size + 2);
-      text(strg.alturasRep[1][0], Jx, text_size + 2);
-      text(strg.alturasRep[2][0], Zx, text_size + 2);
+      text(strg.alturasRep[0][0][0], Hx, text_size + 2);
+      text(strg.alturasRep[1][0][0], Jx, text_size + 2);
+      text(strg.alturasRep[2][0][0], Zx, text_size + 2);
       pop();
   
       strokeWeight(strW * 5);

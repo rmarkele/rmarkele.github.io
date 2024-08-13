@@ -39,5 +39,6 @@ function cenarioSelectEvent() {
   velBomba = parseFloat(bombar.slider.value);
   Hmax = pow(velBomba / 1800, 2) * Hmax0;
   Vmax = (velBomba / 1800) * Vmax0;
+  nivel = nivel0;
     
 }
