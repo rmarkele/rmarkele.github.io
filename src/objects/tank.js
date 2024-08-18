@@ -13,7 +13,7 @@ class baseTanque {
       translate(this.posx, this.posy);
       noStroke();
       strokeWeight(1);
-      fill(100);
+      fill(100,210);
       beginShape();
       vertex(-0.01 * this.base, 0);
       vertex(1.01 * this.base, 0);
@@ -21,7 +21,7 @@ class baseTanque {
       vertex(-0.2 * this.base, this.altura);
       vertex(-0.01 * this.base, 0);
       endShape();
-      arc(base / 2, this.altura ,  1.5 * base, 20 * w, 0, 360);
+      arc(base / 2, this.altura * .999 ,  1.4 * base, 20 * w, 0,180);
       pop();
     }
     update({base, altura, posx, posy}) {
@@ -48,17 +48,26 @@ class baseTanque {
       translate(this.posx, this.posy);
       noStroke();
       strokeWeight(1);
-      fill(50, 50, 255);
-      beginShape();
-      vertex(0, -0);
-      vertex(0 + this.base, -0);
-      vertex(0 + this.base, -0 - this.nivel);
-      vertex(0, -this.nivel);
-      vertex(0, -0);
-      endShape();
-      arc(0 + base / 2, 0, base, 20 * w, 0, 180);
-      stroke(10);
-      arc(0 + base / 2, -this.nivel, base, 20 * w, 0, 360);
+      if(this.nivel > 0){
+        fill(50, 50, 255);
+        beginShape();
+        vertex(0, 0);
+        vertex(0 + this.base, -0);
+        vertex(0 + this.base, -0 - this.nivel);
+        vertex(0, -this.nivel);
+        vertex(0, 0);
+        endShape();
+        arc(0 + base / 2, 0, base, 20 * w, 0, 360);
+        stroke(10);
+        arc(0 + base / 2, -this.nivel, base, 20 * w, 0, 360);
+      } else{
+        fill(155);
+        stroke(0);
+        strokeWeight(strW);
+        arc(0 + base / 2, 0, base, 20 * w, 0, 360);
+        fill(210);
+        arc(0 + base / 2, 0, 25*yscale, 25*yscale * 20 * w / base, 0, 360);
+      }
       pop();
   
       push();

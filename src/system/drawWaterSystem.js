@@ -16,14 +16,14 @@ function drawWaterSystem() {
     joelho2.show();
     cano2.show();
     joelho3.show();
-    baseTanqueRep.show();
     canoSaidaTanque2.show();
     canoEntradaTanque2.show();
-    tanqueRep.show();
     if (canvasW <= respLim[0] || canvasW > respLim[1]) {
       joelho4.show();
       cano3.show();
     }
+    baseTanqueRep.show();
+    tanqueRep.show();
     // sistemaConsumidor.show();
     
   }

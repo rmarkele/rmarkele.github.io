@@ -1,7 +1,7 @@
 const pipeSlider = document.getElementById("pipe-slider");
 
 function pipeSliderCreate() {
-    let posx =  joelho3.posx + (joelho3.largura + canoEntradaTanque2.largura) / 2;
+    let posx =  canoEntradaTanque2.posx + (canoEntradaTanque2.largura) / 2;
     let posy = tanqueRep.posy + 36;
     let hgt = altura - nivel0 - hrep + 72;
     pipeSlider.style.left = posx + "px";

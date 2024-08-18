@@ -182,14 +182,24 @@ class plot {
       let base, vec;
   
       // Z
+      
+      let hmaxPlot = map(
+        Hmax,
+        this.ylim[0],
+        this.ylim[1],
+        0,
+        -this.altura
+      );
+
+      let zplot = max(ydataplot[0], hmaxPlot)
       line(
         Zx - arrDist,
-        ydataplot[0],
+        zplot,
         Zx + arrDist,
-        ydataplot[0]
+        zplot
       );
       if (ydataplot[0] < 0) {
-        base = createVector(Zx, ydataplot[0]);
+        base = createVector(Zx, zplot);
         vec = createVector(Zx, 0);
         drawArrow(base, vec, [0], 10);
       }
@@ -228,40 +238,7 @@ class plot {
       }
       line(Hx - arrDist, 0, Hx + arrDist, 0);
   
-      push();
-      strokeWeight(strW / 2);
-      fill(0);
-      textAlign(CENTER);
-      textSize(txtS);
-      textFont(selFont);
-      text(strg.alturasRep[0][0][0], Hx, text_size + 2);
-      text(strg.alturasRep[1][0][0], Jx, text_size + 2);
-      text(strg.alturasRep[2][0][0], Zx, text_size + 2);
-      pop();
-  
-      strokeWeight(strW * 5);
-      push();
-        stroke(0, 255, 0);
-        let xDemanda = map(
-          this.demanda.Vdemanda,
-          this.xlim[0],
-          this.xlim[1],
-          0,
-          this.largura
-        );
-        let yDemanda = map(
-          this.demanda.Hdemanda,
-          this.ylim[0],
-          this.ylim[1],
-          0,
-          -this.altura
-        );
-        point(xDemanda, yDemanda);
-      pop();
-  
-      point(xPonto, yPonto);
-  
-      pop();
+      
   
       xdataplot = [];
       ydataplot = [];
@@ -285,8 +262,45 @@ class plot {
         vertex(xdataplot[i], ydataplot[i]);
       }
       endShape();
+
+      push();
+      strokeWeight(strW / 2);
+      fill(0);
+      textAlign(CENTER);
+      textSize(txtS);
+      textFont(selFont);
+      text(strg.alturasRep[0][0][0], Hx, text_size + 2);
+      text(strg.alturasRep[1][0][0], Jx, text_size + 2);
+      text(strg.alturasRep[2][0][0], Zx, text_size + 2);
       pop();
   
+      strokeWeight(strW * 5);
+      push();
+        stroke(50, 50,2550);
+        let xDemanda = map(
+          this.demanda.Vdemanda,
+          this.xlim[0],
+          this.xlim[1],
+          0,
+          this.largura
+        );
+        let yDemanda = map(
+          this.demanda.Hdemanda,
+          this.ylim[0],
+          this.ylim[1],
+          0,
+          -this.altura
+        );
+        point(xDemanda, yDemanda);
+      pop();
+  
+      point(xPonto, yPonto);
+  
+      pop();
+      
+      pop();
+  
+
       pop();
     }
     update({

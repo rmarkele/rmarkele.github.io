@@ -79,6 +79,7 @@ function draw() {
     0
   );
 
+
   tanqueRep.nivel = nivel - nivel0 - hrep;
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
   plot1.Hsys = Hsys;

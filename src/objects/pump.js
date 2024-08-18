@@ -5,6 +5,7 @@ class bomba {
       this.largura = largura;
       this.altura = altura;
       this.w = w;
+      this.rot=0;
       this.id = "pump"
 
       let {div, inputs, text, input, unit, slider} = createComponentInput({
@@ -62,23 +63,43 @@ class bomba {
       vertex(1.5 * this.largura + this.w / 2, -this.altura + this.w / 2);
       endShape();
       strokeWeight(strW);
-      line(
-        1.5 * this.largura + this.w / 4,
-        -this.altura + this.w / 2,
-        1.5 * this.largura + this.w / 4,
-        -this.altura + 0.75 * this.w
-      );
-      line(
-        1.5 * this.largura - 1.5 * this.w + this.w / 4,
-        -this.altura + this.w / 2,
-        1.5 * this.largura + this.w / 4 - 1.5 * this.w,
-        -this.altura + 0.75 * this.w
-      );
+      // line(
+      //   1.5 * this.largura + this.w / 4,
+      //   -this.altura + this.w / 2,
+      //   1.5 * this.largura + this.w / 4,
+      //   -this.altura + 0.75 * this.w
+      // );
+      // line(
+      //   1.5 * this.largura - 1.5 * this.w + this.w / 4,
+      //   -this.altura + this.w / 2,
+      //   1.5 * this.largura + this.w / 4 - 1.5 * this.w,
+      //   -this.altura + 0.75 * this.w
+      // );
   
       stroke(0);
       strokeWeight(strW);
-      fill(230);
+      // fill(230);
       ellipse(this.largura, 0, this.altura, this.altura);
+      strokeWeight(strW - 1);
+      fill(50,50,255);
+      ellipse(this.largura, 0, 0.9 * this.altura,0.9 * this.altura);
+      // fill(0);
+      // ellipse(this.largura, 0, this.w,this.w);
+      push()
+      noFill();
+      strokeWeight(strW);
+      translate(this.largura, 0);
+      let w_arc = 0.45 * this.altura - this.w / 2;
+      rotate(this.rot)
+      const n_imp = 5;
+      const angInc = 360 / n_imp;
+      for(let i =0; i<n_imp;i++){
+        rotate(angInc)
+        arc(this.w / 2 + w_arc , 0, 2 * w_arc, this.w/2, 180, 270);
+      }
+      this.rot = (this.rot - 10*parseFloat(bombar.slider.value)/1880) % angInc ;
+      
+      pop()
       fill(155);
       arc(this.largura, 0, this.w, this.w, -90, 90);
   
