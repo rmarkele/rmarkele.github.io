@@ -1,12 +1,15 @@
 const pipeSlider = document.getElementById("pipe-slider");
 
 function pipeSliderCreate() {
-  let posx =
-    canvasW < respLim[0]
-      ? joelho3.posx
-      : canoEntradaTanque2.posx + canoEntradaTanque2.largura / 2;
-  let posy = tanqueRep.posy + 36;
-  let hgt = altura - nivel0 - hrep + 72;
+    const wdt = canvasW>respLim[0]?36:18;
+
+  let posx =canoEntradaTanque2.posx + canoEntradaTanque2.largura / 2 - 6;
+    // canvasW < respLim[0]
+    //   ? joelho3.posx + joelho3.largura
+    //   : canoEntradaTanque2.posx + canoEntradaTanque2.largura / 2;
+      
+  let posy = tanqueRep.posy ;
+  let hgt = altura - nivel0 - hrep + 2 * wdt;
   pipeSlider.style.left = posx + "px";
   pipeSlider.style.top = posy + "px";
   pipeSlider.style.width = hgt + "px";

@@ -29,7 +29,7 @@ function getSystemParams() {
     yscale = 0.4;
     base *= 0.3;
     cano1Mult = 0.78;
-    canoEntradaMult = 0.87;
+    canoEntradaMult = 0.9;
     bombaMult = 0.4;
     valvula1Mult = 0.4;
   }

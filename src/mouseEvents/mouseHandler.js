@@ -80,12 +80,13 @@ function updateRepTank(){
     joelho3.posy = altura - nivel0 - hrep - hsaida + cano2.w + 32.5 * yscale;
     saidaAgua1.posy = canoEntradaTanque2.posy + (25 + 7.5) * yscale;
 
-    saidaAgua1.altura =  (hsaida - 25) * yscale;
+    saidaAgua1.altura =  hsaida - 25 * yscale;
 
     cano2.largura = joelho2.posy - (altura - nivel0 - hrep - hsaida + 15*yscale + 32.5 * yscale);
 
-    let posy = tanqueRep.posy + 36;
-    let hgt = altura - nivel0 - hrep + 72;;
+    const wdt = canvasW>respLim[0]?36:18;
+    let posy = tanqueRep.posy + wdt;
+    let hgt = altura - nivel0 - hrep + 2 * wdt;
     pipeSlider.style.top = posy + "px";
     pipeSlider.style.width = hgt + "px";
 

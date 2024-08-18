@@ -143,3 +143,24 @@
 .h-slider:focus::-ms-fill-upper {
   background: transparent;
 }
+
+
+@media (max-width: 600px) {
+  .h-slider::-webkit-slider-thumb:focus,
+  .h-slider::-webkit-slider-thumb {    
+    height: 18px;
+    width: 36px;
+    margin-top: -3px;
+  }
+
+  .h-slider::-moz-range-thumb {
+    height: 18px;
+    width: 36px;
+  }
+
+  .h-slider::-ms-thumb {
+    height: 18px;
+    width: 36px;
+  }
+  
+}
