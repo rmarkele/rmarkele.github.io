@@ -5,6 +5,8 @@ screen.orientation.addEventListener("change", () => {
     canvasH = canvasDimentions.height;
     resizeCanvas(canvasW, canvasH);
     updateWaterSystem();
+    updateRepTank();
+    
   },200);
 });
 
