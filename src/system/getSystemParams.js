@@ -67,8 +67,8 @@ function getSystemParams() {
 
   Params.canoSaidaTanque1 = {
     posx: Params.tanqueFont.posx + Params.tanqueFont.base,
-    posy: Params.tanqueFont.posy - 25 * yscale,
-    largura: 0.04 * canvasW - 15*yscale/2,
+    posy: Params.tanqueFont.posy - 15 * yscale - 20,
+    largura: 0.02 * canvasW - 15*yscale/2,
     w: 15 * yscale,
     flange1: 0,
     flange2: 1,
@@ -77,7 +77,7 @@ function getSystemParams() {
   Params.bombar = {
     posx: Params.canoSaidaTanque1.posx + Params.canoSaidaTanque1.largura + 15*yscale/2,
     posy: Params.canoSaidaTanque1.posy ,
-    largura: 0.08 * canvasW ,
+    largura: 0.07 * canvasW ,
     w: 15 * yscale,
   };
   Params.joelho1 = {
