@@ -134,18 +134,22 @@
   }
 
   @media (max-width: 600px) {
-    #logo-container {    
-      left: 50%;
-      right: 50%;
-      bottom: 30%;
-      top: 60%;
+    #logo-container {   
+      /* left: 50%; */
+      /* right: 50%; */
+      /* bottom: 60%; */
+      /* top: 48%; */
+      /* min-width: fit-content; */
+      /* margin: auto; */
+      /* border: 1px solid black; */
+      width: 100%;
     }
 
     
 
     #logo-txt0,
     #logo-txt1{    
-      display: none;
+     font-size: 8px;
     }
     
   }

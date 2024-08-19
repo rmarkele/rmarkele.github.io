@@ -28,6 +28,7 @@ function setup() {
   } else {
     criaPainelAlturas([-85, (20 * canvasW) / 1300]);
   }
+  createLogo();
 
   baseSliderCreate();
   pipeSliderCreate();

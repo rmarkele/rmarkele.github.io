@@ -4,8 +4,8 @@ const strings = [
     
     //Descriçao do Simulador
     _titulo_simulador_linha1: "BOMBA CENTRÍFUGA",
-    _titulo_simulador_linha2: "",
-    _comentario_simulador_linha1: "SIMULADOR MK-1",
+    _titulo_simulador_linha2: "Sistema de Abastecimento Hídrico",
+    _comentario_simulador_linha1: "SIMULADOR DIDÁTICO MK-1",
     _comentario_simulador_linha2: "", // 
     _btn_saiba_mais_simulador: "SAIBA MAIS",
 
@@ -20,10 +20,10 @@ const strings = [
     
     //Componentes
     _texto_bomba: ["Velocidade:", "RPM"],
-    _texto_valvula_descarga_bomba: ["Abertura:", "%"],
+    _texto_valvula_descarga_bomba: ["Abertura Válvula:", "%"],
     _texto_valvula_vazao_demanda: ["Demanda:", "m³/h"],
     _texto_valvula_vazao_saida: ["Abastecimento:", "m³/h"], 
-    _texto_potencia_hidraulica: ["Pot. Hidráulica", "Bomba [kW]"],
+    _texto_potencia_hidraulica: ["Pot. Hidráulica", "Sistema [kW]"],
     _texto_rendimento_estimado: ["Eficiência", "Bomba [%]"],  
     
     //Luzes
@@ -38,9 +38,9 @@ const strings = [
     
     //Descriçao do Simulador
     _titulo_simulador_linha1: "CENTRIFUGAL PUMP",
-    _titulo_simulador_linha2: "",
+    _titulo_simulador_linha2: "Water Supply System",
     
-    _comentario_simulador_linha1: "SIMULATOR MK-1",
+    _comentario_simulador_linha1: "TEACHING SIMULATOR MK-1",
     _comentario_simulador_linha2: "", //
     _btn_saiba_mais_simulador: "LEARN MORE",
 
@@ -55,10 +55,10 @@ const strings = [
     
     //Componentes
     _texto_bomba: ["Speed:", "RPM"],
-    _texto_valvula_descarga_bomba: ["Opening:", "%"],
+    _texto_valvula_descarga_bomba: ["Valve Opening:", "%"],
     _texto_valvula_vazao_demanda: ["Demand:", " m³/h"],
     _texto_valvula_vazao_saida: ["Supply:", " m³/h"], 
-    _texto_potencia_hidraulica: ["Pump Hydraulic", "Power [kW]"],
+    _texto_potencia_hidraulica: ["System Hydraulic", "Power [kW]"],
     _texto_rendimento_estimado: ["Pump", "Efficiency [%]"],
      
      //Luzes

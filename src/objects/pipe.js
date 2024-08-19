@@ -20,11 +20,12 @@ class cano {
       stroke(0);
       strokeWeight(strW);
       beginShape();
-      vertex(0, -this.w / 2);
-      vertex(this.largura, -this.w / 2);
+      
       vertex(this.largura, this.w / 2);
       vertex(0, this.w / 2);
       vertex(0, -this.w / 2);
+      vertex(this.largura, -this.w / 2);
+      
       endShape();
   
       if (this.flange1) {

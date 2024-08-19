@@ -30,8 +30,8 @@ function getSystemParams() {
     base *= 0.3;
     cano1Mult = 0.78;
     canoEntradaMult = 0.9;
-    bombaMult = 0.4;
-    valvula1Mult = 0.4;
+    bombaMult = yscale;
+    valvula1Mult = 0.38;
   }
 
   nivel0 *= yscale;
@@ -67,23 +67,22 @@ function getSystemParams() {
 
   Params.canoSaidaTanque1 = {
     posx: Params.tanqueFont.posx + Params.tanqueFont.base,
-    posy: Params.tanqueFont.posy - 10,
-    largura: 0.04 * canvasW,
+    posy: Params.tanqueFont.posy - 25 * yscale,
+    largura: 0.04 * canvasW - 15*yscale/2,
     w: 15 * yscale,
     flange1: 0,
     flange2: 1,
   };
 
   Params.bombar = {
-    posx: Params.canoSaidaTanque1.posx + Params.canoSaidaTanque1.largura,
-    posy: Params.canoSaidaTanque1.posy,
-    largura: 0.04 * canvasW * bombaMult,
-    altura: 60 * bombaMult,
+    posx: Params.canoSaidaTanque1.posx + Params.canoSaidaTanque1.largura + 15*yscale/2,
+    posy: Params.canoSaidaTanque1.posy ,
+    largura: 0.08 * canvasW ,
     w: 15 * yscale,
   };
   Params.joelho1 = {
-    posx: Params.bombar.posx + 1.5 * Params.bombar.largura,
-    posy: Params.bombar.posy - Params.bombar.altura,
+    posx: Params.bombar.posx + Params.bombar.largura,
+    posy: Params.bombar.posy - Params.bombar.largura/2,
     largura: 25 * yscale,
     w: 15 * yscale,
     flange1: 1,

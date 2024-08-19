@@ -6,7 +6,7 @@ screen.orientation.addEventListener("change", () => {
     resizeCanvas(canvasW, canvasH);
     updateWaterSystem();
     updateRepTank();
-    
+    createLogo();
   },200);
 });
 
