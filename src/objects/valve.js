@@ -140,7 +140,7 @@ class valvula {
       this.txt = txt??this.txt;
       this.lim = lim??this.lim;
 
-      this.div.style.left = `${this.posx}px`;
+      this.div.style.left = `${this.posx -15*yscale}px`;
       this.div.style.top = `${this.posy + 30}px`;
     }
 
