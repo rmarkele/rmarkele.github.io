@@ -68,10 +68,29 @@ class bomba {
       line(0, -0.75 * this.w, (0.5 * this.w) / 2, -0.75 * this.w);
       line(0, 0.75 * this.w, (0.5 * this.w) / 2, 0.75 * this.w);
 
+       //IMPELIDOR
+       push()
+       translate(this.largura/2, 0)
+       stroke(255)
+       fill(50,50,255);
+       strokeWeight(strW);
+       let w_arc = 0.85 * R2;
+       ellipse(0, 0,  2 * w_arc, 2 * w_arc);
+       rotate(this.rot)
+       const n_imp = 5;
+       const angInc = 360 / n_imp;
+       for(let i =0; i<n_imp;i++){
+         rotate(angInc)
+         arc(w_arc/2, -this.w/2,  w_arc,  this.w/2, 180, 350);
+       }
+       this.rot = (this.rot - 10*parseFloat(bombar.slider.value)/1880) % angInc ;
+      
+       pop()
+
       //VOLUTA
       push()
       translate(this.largura/2, 0)
-      fill(155);
+      fill(155,150);
       // fill(50,50,255);
       beginShape();
       vertex(0.5 * this.largura, R2 * sin(Theta2));
@@ -87,7 +106,7 @@ class bomba {
         
       endShape();
       //CANO SAIDA
-      fill(155)
+      fill(155,150)
       beginShape();
         vertex(xi, R2 * sin(Theta2));
         vertex(0.5 * this.largura - this.w, -this.altura + this.w/2);
@@ -96,6 +115,7 @@ class bomba {
       endShape();
 
       // FLANGE DO CANO DE saida
+      fill(155)
       beginShape();
         vertex(0.5 * this.largura - 1.5 * this.w, -this.altura + this.w/2);
         vertex(0.5 * this.largura - 1.5 * this.w, -this.altura );
@@ -107,23 +127,7 @@ class bomba {
         
       pop()
 
-      //IMPELIDOR
-      push()
-      translate(this.largura/2, 0)
-      noFill();
-      stroke(50,50,255)
-      strokeWeight(strW);
-      let w_arc = 0.85 * R2;
-      rotate(this.rot)
-      const n_imp = 5;
-      const angInc = 360 / n_imp;
-      for(let i =0; i<n_imp;i++){
-        rotate(angInc)
-        arc(w_arc/2, -this.w/2,  w_arc,  this.w/2, 180, 350);
-      }
-      this.rot = (this.rot - 10*parseFloat(bombar.slider.value)/1880) % angInc ;
-      ellipse(0, 0,  2 * w_arc, 2 * w_arc);
-      pop()
+     
 
 
       //CANO ENTRADA

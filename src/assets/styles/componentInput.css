@@ -58,6 +58,14 @@
     text-align: center;
   }
 
+  @media (max-width: 850px) {
+    .label-text,
+    .label-input,
+    .label-unit{
+      font-size: 14px;
+    }
+  }
+
   @media (max-width: 600px) {
     #myCanvasContainer {
       display: flex;
