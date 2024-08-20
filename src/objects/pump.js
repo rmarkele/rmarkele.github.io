@@ -1,8 +1,9 @@
 class bomba {
-    constructor({posx, posy, largura, w}) {
+    constructor({posx, posy, largura, altura, w}) {
       this.posx = posx;
       this.posy = posy;
       this.largura = largura;
+      this.altura = altura;
       this.w = w;
       this.rot=0;
       this.id = "pump"
@@ -84,23 +85,24 @@ class bomba {
         // vertex(0.5 * this.largura, yi);
         
       endShape();
+      //CANO SAIDA
       fill(155)
       beginShape();
         vertex(xi, R2 * sin(Theta2));
-        vertex(0.5 * this.largura - this.w, -0.5*this.largura + this.w/2);
-        vertex(0.5 * this.largura, -0.5*this.largura + this.w/2);
+        vertex(0.5 * this.largura - this.w, -this.altura + this.w/2);
+        vertex(0.5 * this.largura, -this.altura + this.w/2);
         vertex(0.5 * this.largura, R2 * sin(Theta2));
       endShape();
 
       // FLANGE DO CANO DE saida
       beginShape();
-        vertex(0.5 * this.largura - 1.5 * this.w, -0.5*this.largura + this.w/2);
-        vertex(0.5 * this.largura - 1.5 * this.w, -0.5*this.largura );
-        vertex(0.5 * this.largura + 0.5 * this.w, -0.5*this.largura );
-        vertex(0.5 * this.largura + 0.5 * this.w, -0.5*this.largura + this.w/2);
+        vertex(0.5 * this.largura - 1.5 * this.w, -this.altura + this.w/2);
+        vertex(0.5 * this.largura - 1.5 * this.w, -this.altura );
+        vertex(0.5 * this.largura + 0.5 * this.w, -this.altura );
+        vertex(0.5 * this.largura + 0.5 * this.w, -this.altura + this.w/2);
       endShape(CLOSE);
-      line(0.5 * this.largura + 0.25 * this.w, -0.5 * this.largura + 0.5 * this.w,0.5 * this.largura + 0.25 * this.w, -0.5 * this.largura + 0.75 * this.w);
-      line(0.5 * this.largura - 1.25 * this.w, -0.5 * this.largura + 0.5 * this.w,0.5 * this.largura - 1.25 * this.w, -0.5 * this.largura + 0.75 * this.w);
+      line(0.5 * this.largura + 0.25 * this.w, -this.altura + 0.5 * this.w,0.5 * this.largura + 0.25 * this.w, -this.altura + 0.75 * this.w);
+      line(0.5 * this.largura - 1.25 * this.w, -this.altura + 0.5 * this.w,0.5 * this.largura - 1.25 * this.w, -this.altura + 0.75 * this.w);
         
       pop()
 

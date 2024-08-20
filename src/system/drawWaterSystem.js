@@ -1,5 +1,5 @@
 function drawWaterSystem() {
-    // plotGrid();
+    plotGrid();
     if (vazaoEntrada > 0) {
       saidaAgua1.show();
     }

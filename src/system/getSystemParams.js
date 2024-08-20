@@ -13,24 +13,24 @@ function getSystemParams() {
   let cano1Mult = 0.62;
   let canoEntradaMult = 0.7;
   let valvula1Mult = 0.33;
-  let bombaMult = yscale;
+  let bombaMult = 0.6;
 
   if (canvasW > respLim[1] && canvasW <= respLim[2]) {
     yscale = 0.9;
     base *= 0.8;
-    bombaMult = yscale;
+    bombaMult = 0.63;
   } else if (canvasW <= respLim[1] && canvasW > respLim[0]) {
     yscale = 0.8;
     base *= 0.5;
     cano1Mult = 0.72;
     canoEntradaMult = 0.9;
-    bombaMult = yscale;
+    bombaMult = 0.64;
   } else if (canvasW <= respLim[0]) {
     yscale = 0.4;
     base *= 0.3;
     cano1Mult = 0.78;
     canoEntradaMult = 0.9;
-    bombaMult = yscale;
+    bombaMult = 0.3;
     valvula1Mult = 0.38;
   }
 
@@ -67,8 +67,8 @@ function getSystemParams() {
 
   Params.canoSaidaTanque1 = {
     posx: Params.tanqueFont.posx + Params.tanqueFont.base,
-    posy: Params.tanqueFont.posy - 15 * yscale - 20,
-    largura: 0.02 * canvasW - 15*yscale/2,
+    posy: Params.tanqueFont.posy - 25 * yscale,
+    largura: 0.04 * canvasW - 15*yscale/2,
     w: 15 * yscale,
     flange1: 0,
     flange2: 1,
@@ -77,12 +77,13 @@ function getSystemParams() {
   Params.bombar = {
     posx: Params.canoSaidaTanque1.posx + Params.canoSaidaTanque1.largura + 15*yscale/2,
     posy: Params.canoSaidaTanque1.posy ,
-    largura: 0.07 * canvasW ,
+    largura: 0.08 * canvasW ,
+    altura: Params.canoSaidaTanque1.posy - (580 - 230 + 120) * yscale,
     w: 15 * yscale,
   };
   Params.joelho1 = {
     posx: Params.bombar.posx + Params.bombar.largura,
-    posy: Params.bombar.posy - Params.bombar.largura/2,
+    posy: Params.bombar.posy - Params.bombar.altura,
     largura: 25 * yscale,
     w: 15 * yscale,
     flange1: 1,
@@ -277,7 +278,7 @@ function getSystemParams() {
   let plotX = 0.2 * canvasW;
   let plotW = 0.42 * canvasW;
   if (canvasW <= respLim[1] && canvasW > respLim[0]) {
-    watt1X = 0.4 * canvasW + wattMult * canvasW;
+    watt1X = 0.45 * canvasW + wattMult * canvasW;
     watt1Y = Params.baseTanqueFont.posy + Params.baseTanqueFont.altura;
     watt2X = watt1X + 2.1 * wattMult * canvasW;
     watt2Y = watt1Y;
