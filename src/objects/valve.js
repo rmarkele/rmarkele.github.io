@@ -10,7 +10,7 @@ class valvula {
       let {div, inputs, text, input, unit, slider} = createComponentInput({
         id: "valvula1",
         label: strg.textoValvulaDescarga,
-        pos: [posx, posy + 30],
+        pos: [posx -15*yscale, posy + 30],
         lim: [0, 360]
       })
       slider.addEventListener('input', ()=>{
