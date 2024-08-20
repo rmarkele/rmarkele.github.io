@@ -71,7 +71,8 @@ class bomba {
       //VOLUTA
       push()
       translate(this.largura/2, 0)
-      fill(50,50,255);
+      fill(155);
+      // fill(50,50,255);
       beginShape();
       vertex(0.5 * this.largura, R2 * sin(Theta2));
       let xi, yi;
@@ -110,7 +111,7 @@ class bomba {
       push()
       translate(this.largura/2, 0)
       noFill();
-      stroke(255)
+      stroke(50,50,255)
       strokeWeight(strW);
       let w_arc = 0.85 * R2;
       rotate(this.rot)
