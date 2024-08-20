@@ -68,7 +68,7 @@ function getSystemParams() {
   Params.canoSaidaTanque1 = {
     posx: Params.tanqueFont.posx + Params.tanqueFont.base,
     posy: Params.tanqueFont.posy - 25 * yscale,
-    largura: 0.04 * canvasW - 15*yscale/2,
+    largura: 0.025 * canvasW - 15*yscale/2,
     w: 15 * yscale,
     flange1: 0,
     flange2: 1,
