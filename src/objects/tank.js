@@ -60,6 +60,13 @@ class baseTanque {
         arc(0 + base / 2, 0, base, 20 * w, 0, 360);
         stroke(10);
         arc(0 + base / 2, -this.nivel, base, 20 * w, 0, 360);
+      } else if (PontoOperacao.Vop>0){
+        fill(50,50,255);
+        stroke(0);
+        strokeWeight(strW);
+        arc(0 + base / 2, 0, base, 20 * w, 0, 360);
+        fill(100,100,255);
+        arc(0 + base / 2, 0, 25*yscale, 25*yscale * 20 * w / base, 0, 360);
       } else{
         fill(155);
         stroke(0);
