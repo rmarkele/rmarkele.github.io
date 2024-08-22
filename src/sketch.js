@@ -1,5 +1,10 @@
 
 function setup() {
+
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
   
   canvasW = canvasDimentions.width;
   canvasH = canvasDimentions.height;
