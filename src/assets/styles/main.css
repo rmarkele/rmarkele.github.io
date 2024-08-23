@@ -6,16 +6,21 @@
   font-size: 18px;
 }
 
-:root{
+:root {
   --header-height: 40px;
   --footer-height: 30px;
+  --heights-height: 30px;
   --canvas-height: calc(
-    var(--vh, 1vh) * 100 - var(--header-height) - var(--footer-height)
+    var(--vh, 1vh) * 100 - var(--header-height) - var(--footer-height) -
+      var(--heights-height)
   );
-  --canvas-min-height: 580px;
+  --canvas-min-height: 500px;
 
   --main-height: calc(var(--vh, 1vh) * 100);
-  --main-min-height: calc(var(--canvas-min-height) + var(--header-height) + var(--footer-height))
+  --main-min-height: calc(
+    var(--canvas-min-height) + var(--header-height) + var(--footer-height) +
+      var(--heights-height-height)
+  );
 }
 
 canvas {
@@ -54,6 +59,18 @@ canvas {
   /* overflow: hidden; */
 }
 
+#heights {
+  width: 100%;
+  height: var(--heights-height);
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 0px 10px;
+  z-index: -1;
+  gap: 50px;
+}
 
 footer {
   width: 100%;
@@ -67,7 +84,7 @@ footer {
 }
 
 .h-container {
-  flex: 1;
+  /* flex: 1; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,8 +113,6 @@ footer {
 
 /*  logo */
 
-
-
 /* .cityimg {
   width: 100%;
   height: auto;
@@ -113,8 +128,6 @@ footer {
   right: 0px;
   z-index: 10px;
 }
-
-
 
 h2.centerAlign {
   text-align: center;
@@ -139,7 +152,6 @@ a {
   top: 0;
 }
 
-
 /*  Luzes*/
 
 .lights {
@@ -161,7 +173,7 @@ a {
   padding: 5px;
   border-radius: 30%;
   /*   position: relative */
-  flex:1;
+  flex: 1;
   transition: all ease 0.5s;
   /*  margin: 10px; */
 }
@@ -196,8 +208,6 @@ a {
   color: rgb(127.5, 127.5, 127.5);
 }
 
-
-
 button,
 select,
 select option,
@@ -206,36 +216,35 @@ input[type="range"] {
   cursor: pointer;
   border-radius: 0px;
   color: black;
-} 
+}
 
-.variable-slider{
+.variable-slider {
   width: 100%;
 }
 
-
 @media (max-width: 900px) {
-  *{
+  * {
     font-size: 14px;
   }
-  
-  #myCanvasContainer {    
+
+  #myCanvasContainer {
     max-height: 550px;
-  } 
+  }
 
   .variable-slider {
     -webkit-appearance: none;
     width: 100%;
     margin-top: 10px;
   }
-  
+
   .variable-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
   }
-  
+
   .variable-slider:focus {
     outline: none;
   }
-  
+
   .variable-slider::-ms-track {
     width: 100%;
     cursor: pointer;
@@ -244,7 +253,7 @@ input[type="range"] {
     color: transparent;
   }
   /*#############Thumb##############*/
-  
+
   .variable-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 30px;
@@ -254,7 +263,7 @@ input[type="range"] {
     cursor: pointer;
     margin-top: -12px;
   }
-  
+
   .variable-slider::-moz-range-thumb {
     height: 30px;
     width: 30px;
@@ -262,7 +271,7 @@ input[type="range"] {
     background: #555;
     cursor: pointer;
   }
-  
+
   .variable-slider::-ms-thumb {
     height: 30px;
     width: 30px;
@@ -271,7 +280,7 @@ input[type="range"] {
     cursor: pointer;
   }
   /*#############Track##############*/
-  
+
   .variable-slider::-webkit-slider-runnable-track {
     width: 100%;
     height: 12px;
@@ -279,18 +288,18 @@ input[type="range"] {
     background: #ccc;
     border-radius: 6px;
   }
-  
+
   .variable-slider:active::-webkit-slider-runnable-track {
     background: #d6d6d6;
   }
-  
+
   .variable-slider::-moz-range-track {
     width: 100%;
     height: 12px;
     cursor: pointer;
     background: #ccc;
   }
-  
+
   .variable-slider::-ms-track {
     width: 100%;
     height: 12px;
@@ -299,45 +308,49 @@ input[type="range"] {
     border-color: transparent;
     color: transparent;
   }
-  
+
   .variable-slider::-ms-fill-lower {
     background: #ccc;
   }
-  
+
   .variable-slider:focus::-ms-fill-lower {
     background: #ddd;
   }
-  
+
   .variable-slider::-ms-fill-upper {
     background: #ccc;
   }
-  
+
   .variable-slider:focus::-ms-fill-upper {
     background: #ddd;
   }
 }
- 
 
 @media (max-width: 600px) {
-  #myCanvasContainer {    
+  #myCanvasContainer {
     max-height: 1000px;
-  } 
-  
+  }
+
   .lights {
     position: absolute;
     min-width: 10px;
     left: 2px;
-    top: calc(45px );
+    top: calc(45px + 30px);
     font-size: 10px;
     flex-direction: column;
-    
   }
-  
+
   .circle p {
     font-size: 8px;
   }
   .circle {
     width: 100%;
   }
-  
-} 
+  footer {
+    
+    padding: 0px 2px;
+
+  }
+}
+
+

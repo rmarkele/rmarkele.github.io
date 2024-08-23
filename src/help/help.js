@@ -20,15 +20,15 @@ function idiomaAjuda() {
 function createLogo(){
     
     if(canvasW<=respLim[0]){
-        let posy =  watt1.posy -  1.1 * watt1.raio;
+        let posy =  cano1.posy + 10;
         logo.style.top = posy + "px";
     } else if(canvasW<=respLim[1]){
          logo.style.top = "20px";
-         logo.style.left = "2px";
+        //  logo.style.left = "2px";
     } else{
         logo.style.top = "unset";
-        logo.style.bottom = "2px";
-        logo.style.left = "45%";
+        logo.style.bottom = "32px";
+        // logo.style.left = "45%";
     }
 }
 

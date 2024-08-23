@@ -1,8 +1,9 @@
 
 function setup() {
 
-  let vh = window.innerHeight * 0.01;
+  vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
+  console.log(vh);
 
   canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
   
@@ -26,13 +27,7 @@ function setup() {
   createWaterSystem();
   
   
-
-  createFlowPanel();
-  if (canvasW > respLim[0]) {
-    criaPainelAlturas([-50  , (20 * canvasW) / 1300]);
-  } else {
-    criaPainelAlturas([-85, (20 * canvasW) / 1300]);
-  }
+  criaPainelAlturas();
   createLogo();
 
   baseSliderCreate();

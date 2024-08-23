@@ -1,6 +1,6 @@
 const txtH={}, txtZ={}, txtJ={};
 
-function criaPainelAlturas(pos) {
+function criaPainelAlturas() {
   txtH.text = document.querySelector("#Hplace .h-text");
   txtH.number = document.querySelector("#Hplace .h-number");
   txtH.unit = document.querySelector("#Hplace .h-unit");

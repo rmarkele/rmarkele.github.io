@@ -193,7 +193,7 @@ function getSystemParams() {
     saidaTanqueH = cityPosy - Params.tanqueRep.posy + 10;
   } else if (canvasW <= respLim[0]) {
     cityW = 0.2;
-    cityPosx = 0.5 * (1 - cityW) * canvasW;
+    cityPosx = 1 * (1 - cityW) * canvasW;
     cityPosy = Params.cano1.posy + 2 * Params.cano1.w;
     saidaTanqueH =
       Params.cano1.posy +

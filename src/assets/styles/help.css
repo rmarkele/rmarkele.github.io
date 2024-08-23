@@ -3,13 +3,19 @@
   position: absolute;
   padding: 0;
   margin: 0;
-  bottom: 2px;
-  left: 45%;
+  /* bottom: 2px; */
+  /* left: 45%; */
   border: none;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.logo-items{
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 #logo-txt0 {
@@ -21,135 +27,129 @@
   text-align: center;
   font-size: 16px;
 }
-  
-#logo-container p{
+
+#logo-container p {
   padding: 0;
   margin: 0;
   text-align: center;
 }
-  
-  #logo-container .logo-container--title{
-    font-weight: bold;
-  }
-  
-  /* #logo-container .logo-container--text{
+
+#logo-container .logo-container--title {
+  font-weight: bold;
+}
+
+/* #logo-container .logo-container--text{
   } */
-  
-  #logo-container .logo-container--btn{
-    padding: 2px 5px;
-    letter-spacing: 2px;
-    background-color: #eee;
-    border: 2px solid #555;
-    border-radius: 5px;
-    color: #555;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
+
+#logo-container .logo-container--btn {
+  padding: 2px 5px;
+  letter-spacing: 2px;
+  background-color: #eee;
+  border: 2px solid #555;
+  border-radius: 5px;
+  color: #555;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.help-body {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 1800px;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.know-more {
+  line-height: 1.6;
+  font-size: 24px;
+  border: none;
+  padding: 20px;
+}
+
+.know-more .title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.know-more .notes {
+  background-color: #efefef;
+  padding: 10px;
+  border: 2px solid black;
+  font-size: 18px;
+}
+
+.help-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.know-more img {
+  width: 100%;
+  height: auto;
+  max-width: 831px;
+  margin: auto;
+}
+
+@media (max-width: 900px) {
+  #logo-container {
+    /* left: 2px; */
+    top: 20px;
+    /* bottom: 100%; */
+    align-items: start;
+    font-size: 10px;
+  }
+  #logo-txt0 {
+    font-size: 10px;
+  }
+  #logo-txt1 {
+    font-size: 10px;
+  }
+  .logo-container--btn {
+    font-size: 10px;
   }
 
-  
-  .help-body{
-    box-sizing: border-box;
-    width: 100vw;
-    max-width: 1800px;
-    overflow-x: hidden;
-    padding: 20px;
+  .help-body {
+    margin: 0;
+    padding: 0;
   }
 
-  .know-more{
-    line-height: 1.6;
-    font-size: 24px;
-    border: none;
-    padding: 20px;
+  .know-more {
+    font-size: 18px;
+    padding: 10px;
   }
 
-  .know-more .title{
-    text-align: center;
-    margin-bottom: 20px;
+  .know-more .title h2 {
+    font-size: 18px;
   }
 
-  .know-more .notes{
-   background-color: #efefef;
-   padding: 10px;
-   border: 2px solid black;
-   font-size: 18px;
+  .know-more .title h3 {
+    font-size: 18px;
   }
 
+  .know-more .notes {
+    font-size: 16px;
+  }
+}
 
-  .help-img{
+@media (max-width: 600px) {
+  #logo-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
   }
 
-  .know-more img{
-    width: 100%;
-    height: auto;
-    max-width: 831px;
-    margin: auto;
+  #logo-container {
+    /* left: 2px; */
+    top: 35%;
+    /* bottom: 100%; */
+    align-items: center;
+    font-size: 10px;
   }
 
-  @media (max-width:900px) {
-    
-    #logo-container {    
-      left: 2px;
-      top: 20px;
-      bottom: 100%;
-      font-size: 10px;
-    }
-    #logo-txt0 {
-      font-size: 10px;
-    }
-    #logo-txt1 {
-      font-size: 10px;
-    }
-    .logo-container--btn {
-      font-size: 10px;
-    }
-
-
-    .help-body{
-      margin: 0;
-      padding: 0;
-    }
-
-    .know-more{
-      font-size: 18px;
-      padding: 10px;
-    }
-
-    .know-more .title h2{
-     font-size: 18px;
-    }
-
-    .know-more .title h3{
-      font-size: 18px;
-     }
-
-    .know-more .notes{
-      font-size: 16px;
-     }
-  
+  #logo-txt0,
+  #logo-txt1 {
+    font-size: 10px;
   }
-
-  @media (max-width: 600px) {
-    #logo-container {   
-      /* left: 50%; */
-      /* right: 50%; */
-      /* bottom: 60%; */
-      /* top: 48%; */
-      /* min-width: fit-content; */
-      /* margin: auto; */
-      /* border: 1px solid black; */
-      width: 100%;
-    }
-
-    
-
-    #logo-txt0,
-    #logo-txt1{    
-     font-size: 8px;
-    }
-    
-  }
+}

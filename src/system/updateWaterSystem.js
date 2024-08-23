@@ -1,6 +1,7 @@
 screen.orientation.addEventListener("change", () => {
   setTimeout(()=>{
     vh = window.innerHeight * 0.01;
+    console.log(vh);
     document.documentElement.style.setProperty('--vh', `${vh}px`);
     canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
     canvasW = canvasDimentions.width;

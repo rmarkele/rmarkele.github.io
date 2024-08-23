@@ -61,10 +61,13 @@ let text_size = 18;
 
 
 
+// let vh;
+// let canvasDimentions;
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
+console.log(vh)
 
-let canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+// let canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
 
 let bkgColor = 250;
 
