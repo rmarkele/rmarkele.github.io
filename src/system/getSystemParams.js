@@ -16,7 +16,7 @@ function getSystemParams() {
   let bombaMult = 0.6;
 
   if (canvasW > respLim[1] && canvasW <= respLim[2]) {
-    yscale = 0.9;
+    yscale = 0.85;
     base *= 0.8;
     bombaMult = 0.63;
   } else if (canvasW <= respLim[1] && canvasW > respLim[0]) {
@@ -186,9 +186,14 @@ function getSystemParams() {
     (0.04 + 1.4 * 0.16) * canvasW;
   let cityW = 0.16;
   let saidaTanqueH = cityPosy - 32.5 * yscale;
-  if (canvasW <= respLim[1] && canvasW > respLim[0]) {
-    cityPosx = 0.8 * canvasW;
-    cityW = 0.19;
+  if (canvasW <= respLim[2] && canvasW > respLim[1]) {
+    cityW = 0.12;
+    cityPosx = (0.91 - cityW/2) * canvasW;
+    cityPosy = Params.baseTanqueRep.posy + Params.baseTanqueRep.altura + 8;
+    saidaTanqueH = cityPosy - Params.tanqueRep.posy + 10;
+  } else if (canvasW <= respLim[1] && canvasW > respLim[0]) {
+    cityPosx = 0.82 * canvasW;
+    cityW = 0.18;
     cityPosy = Params.baseTanqueRep.posy + Params.baseTanqueRep.altura + 8;
     saidaTanqueH = cityPosy - Params.tanqueRep.posy + 10;
   } else if (canvasW <= respLim[0]) {

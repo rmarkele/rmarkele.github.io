@@ -8,8 +8,8 @@
 
 :root {
   --header-height: 40px;
-  --footer-height: 30px;
-  --heights-height: 30px;
+  --footer-height: 25px;
+  --heights-height: 25px;
   --canvas-height: calc(
     var(--vh, 1vh) * 100 - var(--header-height) - var(--footer-height) -
       var(--heights-height)
@@ -52,7 +52,7 @@ canvas {
 
 /* Barra de navegação */
 #main-navbar {
-  background: #555;
+  background: #222;
   padding: 5px;
   margin: 0 auto;
   display: flex;
@@ -77,6 +77,8 @@ canvas {
   padding: 0px 10px;
   /* z-index: -1; */
   gap: 50px;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 footer {
@@ -88,6 +90,8 @@ footer {
   color: white;
   padding: 0px 10px;
   z-index: -1;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .h-container {
