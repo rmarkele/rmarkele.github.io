@@ -1,18 +1,19 @@
 screen.orientation.addEventListener("change", () => {
-  setTimeout(()=>{
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
-    canvasW = canvasDimentions.width;
-    canvasH = canvasDimentions.height;
-    resizeCanvas(canvasW, canvasH);
-    updateWaterSystem();
-    updateRepTank();
-    createLogo();
-    vh = window.innerHeight * 0.01; // need to repeat this.
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    console.log(vh)
-  },200);
+  window.location.reload();
+  // setTimeout(()=>{
+  //   let vh = window.innerHeight * 0.01;
+  //   document.documentElement.style.setProperty('--vh', `${vh}px`);
+  //   canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
+  //   canvasW = canvasDimentions.width;
+  //   canvasH = canvasDimentions.height;
+  //   resizeCanvas(canvasW, canvasH);
+  //   updateWaterSystem();
+  //   updateRepTank();
+  //   createLogo();
+  //   vh = window.innerHeight * 0.01; // need to repeat this.
+  //   document.documentElement.style.setProperty('--vh', `${vh}px`);
+  //   console.log(vh)
+  // },200);
 });
 
 function updateWaterSystem() {
