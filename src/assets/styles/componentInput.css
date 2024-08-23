@@ -28,7 +28,7 @@
 
 
 .component-container {
-    position: absolute;
+    /* position: absolute; */
     margin: none;
     /*   border: 1px solid black; */
     z-index: 10;

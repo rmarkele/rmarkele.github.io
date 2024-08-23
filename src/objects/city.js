@@ -38,7 +38,7 @@ class sistemaAgua {
     this.posx = posx??this.posx;
     this.posy = posy??this.posy;
     this.largura = largura??this.largura;
-    this.height = largura * 220 / 300; 
+    this.height = largura * 220 / 300??this.height; 
     this.w = w??this.w;
     this.txt = txt??this.txt;
     this.lim = lim??this.lim;

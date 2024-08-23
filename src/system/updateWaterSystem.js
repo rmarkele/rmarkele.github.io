@@ -1,8 +1,8 @@
 screen.orientation.addEventListener("change", () => {
+  console.log("mudou")
   setTimeout(()=>{
-    // let vh = window.innerHeight * 0.01;
-    // // console.log(vh);
-    // document.documentElement.style.setProperty('--vh', `${vh}px`);
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
     canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
     canvasW = canvasDimentions.width;
     canvasH = canvasDimentions.height;
@@ -10,6 +10,9 @@ screen.orientation.addEventListener("change", () => {
     updateWaterSystem();
     updateRepTank();
     createLogo();
+    vh = window.innerHeight * 0.01; // need to repeat this.
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    console.log(vh)
   },200);
 });
 
@@ -40,36 +43,36 @@ function updateWaterSystem() {
   joelho4.update(Params.joelho4);
   cano3.update(Params.cano3);
   sistemaConsumidor.update(Params.sistemaConsumidor);
-  updateRepTank();
+  // updateRepTank();
 
-  watt1.update(Params.watt1);
-  watt2.update(Params.watt2);
-  plot1.update(Params.plot1);
+  // watt1.update(Params.watt1);
+  // watt2.update(Params.watt2);
+  // plot1.update(Params.plot1);
 
-  if (canvasW <= respLim[0]) {
-    document.querySelector("#myCanvasContainer").appendChild(bombar.inputs);
-    document.querySelector("#myCanvasContainer").appendChild(valvula1.inputs);
-    document
-      .querySelector("#myCanvasContainer")
-      .appendChild(sistemaConsumidor.inputs);
-  } else {
-    bombar.div.appendChild(bombar.inputs);
-    valvula1.div.appendChild(valvula1.inputs);
-    sistemaConsumidor.div.appendChild(sistemaConsumidor.inputs);
-  }
+  // if (canvasW <= respLim[0]) {
+  //   document.querySelector("#myCanvasContainer").appendChild(bombar.inputs);
+  //   document.querySelector("#myCanvasContainer").appendChild(valvula1.inputs);
+  //   document
+  //     .querySelector("#myCanvasContainer")
+  //     .appendChild(sistemaConsumidor.inputs);
+  // } else {
+  //   bombar.div.appendChild(bombar.inputs);
+  //   valvula1.div.appendChild(valvula1.inputs);
+  //   sistemaConsumidor.div.appendChild(sistemaConsumidor.inputs);
+  // }
 
-  let posy = valvula1.posy + valvula1.w + 2;
-  let posx = 0.45 * canvasW;
-  if (canvasW <= 600) {
-    posy = cano3.posy + 2 * cano3.w + 10;
-    posx = 0.25 * canvasW;
-    flowPanel.style.left = posx + "px";
-  }
-  flowPanel.style.left = posx + "px";
-  flowPanel.style.top = posy + "px";
+  // let posy = valvula1.posy + valvula1.w + 2;
+  // let posx = 0.45 * canvasW;
+  // if (canvasW <= 600) {
+  //   posy = cano3.posy + 2 * cano3.w + 10;
+  //   posx = 0.25 * canvasW;
+  //   flowPanel.style.left = posx + "px";
+  // }
+  // flowPanel.style.left = posx + "px";
+  // flowPanel.style.top = posy + "px";
 
-  baseSliderCreate();
-  pipeSliderCreate();
-  baseSlider.value = map(tanqueRep.posy, yref - nivel0, yref - altura, 0, 100);
-  pipeSlider.value = map(canoEntradaTanque2.posy, tanqueRep.posy, tanqueRep.posy - tanqueRep.altura, 0, 100);
+  // baseSliderCreate();
+  // pipeSliderCreate();
+  // baseSlider.value = map(tanqueRep.posy, yref - nivel0, yref - altura, 0, 100);
+  // pipeSlider.value = map(canoEntradaTanque2.posy, tanqueRep.posy, tanqueRep.posy - tanqueRep.altura, 0, 100);
 }

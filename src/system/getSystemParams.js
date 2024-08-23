@@ -188,7 +188,7 @@ function getSystemParams() {
   let saidaTanqueH = cityPosy - 32.5 * yscale;
   if (canvasW <= respLim[1] && canvasW > respLim[0]) {
     cityPosx = 0.8 * canvasW;
-    cityW = 0.2;
+    cityW = 0.19;
     cityPosy = Params.baseTanqueRep.posy + Params.baseTanqueRep.altura + 8;
     saidaTanqueH = cityPosy - Params.tanqueRep.posy + 10;
   } else if (canvasW <= respLim[0]) {

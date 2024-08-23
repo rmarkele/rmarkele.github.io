@@ -3,7 +3,7 @@ function setup() {
 
   vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  console.log(vh);
+  // console.log(vh);
 
   canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
   
