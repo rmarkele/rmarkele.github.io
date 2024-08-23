@@ -24,6 +24,7 @@ function createLogo(){
         logo.style.top = posy + "px";
     } else if(canvasW<=respLim[1]){
          logo.style.top = "20px";
+         logo.style.bottom = "unset";
         //  logo.style.left = "2px";
     } else{
         logo.style.top = "unset";

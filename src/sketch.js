@@ -58,9 +58,13 @@ function draw() {
   vazaoSaida = parseFloat(sistemaConsumidor.slider.value);
   
   lightMode();
+  // plot1.demanda = {
+  //   Vdemanda: min(vazaoSaida, Vmax),
+  //   Hdemanda: max((-Hmax / (Vmax * Vmax)) * (vazaoSaida - Vmax) * (vazaoSaida + Vmax), 0)
+  // };
   plot1.demanda = {
-    Vdemanda: min(vazaoSaida, Vmax),
-    Hdemanda: max((-Hmax / (Vmax * Vmax)) * (vazaoSaida - Vmax) * (vazaoSaida + Vmax), 0)
+    Vdemanda: round(10 * parseFloat(sistemaConsumidor.slider.value))/10,
+    Hdemanda: 0
   };
 
   let step;

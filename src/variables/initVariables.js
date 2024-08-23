@@ -65,7 +65,7 @@ let text_size = 18;
 // let canvasDimentions;
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
-console.log(vh)
+// console.log(vh)
 
 // let canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
 

@@ -14,12 +14,12 @@
     var(--vh, 1vh) * 100 - var(--header-height) - var(--footer-height) -
       var(--heights-height)
   );
-  --canvas-min-height: 500px;
+  --canvas-min-height: 520px;
 
   --main-height: calc(var(--vh, 1vh) * 100);
   --main-min-height: calc(
     var(--canvas-min-height) + var(--header-height) + var(--footer-height) +
-      var(--heights-height-height)
+      var(--heights-height)
   );
 }
 
@@ -38,7 +38,7 @@ canvas {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  /* height: 100vh; */
   height: var(--main-height);
   min-height: var(--main-min-height);
 }

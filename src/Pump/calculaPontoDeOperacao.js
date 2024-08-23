@@ -11,8 +11,8 @@ function calculaPontoDeOperacao(Z, R, Hmax, Vmax) {
         H = Hmax;
     }
     let PontoOperacao = {
-        Vop: V,
-        Hop: H,
+        Vop: round(10 * V) / 10,
+        Hop: round(10 * H) / 10,
     };
 
     return PontoOperacao;

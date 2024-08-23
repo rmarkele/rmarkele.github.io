@@ -274,9 +274,16 @@ class plot {
       text(strg.alturasRep[2][0][0], Zx, text_size + 2);
       pop();
   
-      strokeWeight(strW * 5);
+      strokeWeight(strW * 6);
       push();
-        stroke(50, 50,2550);
+      if(this.demanda.Vdemanda > this.PontoOperacao.Vop){
+        stroke(255, 50,50);
+      } else if(this.demanda.Vdemanda < this.PontoOperacao.Vop){
+        stroke(50, 255,50);
+      } else{
+        stroke(255, 255,50);
+      }
+
         let xDemanda = map(
           this.demanda.Vdemanda,
           this.xlim[0],
