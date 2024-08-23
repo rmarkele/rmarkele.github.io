@@ -15,7 +15,7 @@ const strings = [
     _altura_elevacao:    ["Z:", " m"],
     
     //Gráfico
-    _eixo_x_grafico: ["Vazão da Bomba:", "m³/h"],
+    _eixo_x_grafico: ["Vazão Bomba:", "m³/h"],
     _eixo_y_grafico: "", // Altura Representativa m
     
     //Componentes

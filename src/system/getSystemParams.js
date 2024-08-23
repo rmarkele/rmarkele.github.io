@@ -286,7 +286,7 @@ function getSystemParams() {
   } else if (canvasW <= respLim[0]) {
     wattMult = 0.18;
     watt1X = 0.2 * canvasW;
-    watt1Y = 0.63 * canvasH;
+    watt1Y = 0.58 * canvasH;
     watt2X = 0.8 * canvasW;
     watt2Y = watt1Y;
     plotX = 0.26 * canvasW;
