@@ -73,11 +73,14 @@ function draw() {
   } else{
     step =  1/14 * (vazaoEntrada - vazaoSaida);
   }
-  nivel = constrain(
-    nivel + step,
-    nivel0 + hrep,
-    altura
-  );
+
+  nivel = Hsys[0].y<Hb[0].y ? 
+    constrain(
+      nivel + step,
+      nivel0 + hrep,
+      altura
+    ):  
+    nivel0 + hrep;
 
   Z = max(
     map(max(nivel, hsaida + nivel0 + hrep), nivel0, altura, 0, ylim[1]),
