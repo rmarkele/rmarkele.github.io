@@ -48,7 +48,7 @@ class baseTanque {
       translate(this.posx, this.posy);
       noStroke();
       strokeWeight(1);
-      if(this.nivel > 0){
+      if(round(100 * this.nivel) /100 > 0){
         fill(50, 50, 255);
         beginShape();
         vertex(0, 0);
