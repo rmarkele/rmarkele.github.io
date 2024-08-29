@@ -38,7 +38,7 @@ let velBomba = 1800;
 let base = 100;
 let altura = 530;
 let nivel0 = 180;
-let nivel = nivel0;
+let nivel =0;
 
 let hrep = 0;
 let hsaida = 0;

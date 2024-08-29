@@ -79,7 +79,7 @@ function draw() {
 
   nivel = constrain(
       nivel + step,
-      nivel0 + hrep,
+      0,
       map(
         Hb[0].y,
         ylim[0],
@@ -91,12 +91,12 @@ function draw() {
 
 
   Z = max(
-    map(max(nivel, hsaida + nivel0 + hrep), nivel0, altura, 0, ylim[1]),
+    map(max(nivel + nivel0 + hrep, hsaida + nivel0 + hrep), nivel0, altura, 0, ylim[1]),
     0
   );
 
 
-  tanqueRep.nivel = nivel - nivel0 - hrep;
+  tanqueRep.nivel = nivel;
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
   plot1.Hsys = Hsys;
   const PotH = PontoOperacao.Hop * PontoOperacao.Vop * 10 / 3600;

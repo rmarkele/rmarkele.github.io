@@ -52,8 +52,8 @@ class baseTanque {
         fill(50, 50, 255);
         beginShape();
         vertex(0, 0);
-        vertex(0 + this.base, -0);
-        vertex(0 + this.base, -0 - this.nivel);
+        vertex(0 + this.base, 0);
+        vertex(0 + this.base, - this.nivel);
         vertex(0, -this.nivel);
         vertex(0, 0);
         endShape();
