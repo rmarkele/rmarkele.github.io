@@ -74,3 +74,5 @@ let bkgColor = 250;
 let respLim = [600, 900, 1300];
 
 let strW;
+
+// const alphaD = 0.001 / Math.sqrt(1.2);

@@ -55,6 +55,9 @@ function draw() {
   PontoOperacao = calculaPontoDeOperacao(Z, R, Hmax, Vmax);
   plot1.PontoOperacao = PontoOperacao;
   vazaoEntrada = PontoOperacao.Vop;
+  // let KD =  alphaD * Math.pow(parseFloat(sistemaConsumidor.slider.value), 2)
+  // vazaoSaida = KD * Math.sqrt(PontoOperacao.Hop);
+  // console.log(vazaoSaida)
   vazaoSaida = parseFloat(sistemaConsumidor.slider.value);
   
   lightMode();
@@ -74,13 +77,18 @@ function draw() {
     step =  1/14 * (vazaoEntrada - vazaoSaida);
   }
 
-  nivel = Hsys[0].y<Hb[0].y ? 
-    constrain(
+  nivel = constrain(
       nivel + step,
       nivel0 + hrep,
-      altura
-    ):  
-    nivel0 + hrep;
+      map(
+        Hb[0].y,
+        ylim[0],
+        ylim[1],
+        nivel0,
+        altura
+      ), 
+    );
+
 
   Z = max(
     map(max(nivel, hsaida + nivel0 + hrep), nivel0, altura, 0, ylim[1]),
@@ -92,7 +100,7 @@ function draw() {
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);
   plot1.Hsys = Hsys;
   const PotH = PontoOperacao.Hop * PontoOperacao.Vop * 10 / 3600;
-  const PotE = 48 * pow(velBomba / 1800, 3) *1000/3600;
+  const PotE = 48 * pow(velBomba / 1800, 3) *1000 / 3600;
 
   watt1.pot = PotH;
 
