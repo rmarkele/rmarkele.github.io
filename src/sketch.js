@@ -80,13 +80,7 @@ function draw() {
   nivel = constrain(
       nivel + step,
       0,
-      map(
-        Hb[0].y,
-        ylim[0],
-        ylim[1],
-        nivel0,
-        altura
-      ), 
+      tanqueRep.altura
     );
 
 
