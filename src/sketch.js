@@ -76,6 +76,7 @@ function draw() {
   } else{
     step =  1/14 * (vazaoEntrada - vazaoSaida);
   }
+  
 
   nivel = constrain(
       nivel + step,
