@@ -21,7 +21,8 @@ function criaPainelAlturas() {
 }
 
 function escrevePainelAlturas() {
+  let zcalc = Math.min(PontoOperacao.Hop,  plot1.Hsys[0].y)
   txtH.number.innerHTML = nfs(round(10 * PontoOperacao.Hop) / 10, 2, 1);
-  txtJ.number.innerHTML = PontoOperacao.Hop >= Z ? nfs(round(10 * (PontoOperacao.Hop - Z)) / 10, 2, 1) : "--";
-  txtZ.number.innerHTML = PontoOperacao.Hop >= Z ? nfs(round(10 * Z) / 10, 2, 1) : "--";
+  txtJ.number.innerHTML =nfs(round(10 * (PontoOperacao.Hop - zcalc)) / 10, 2, 1);
+  txtZ.number.innerHTML = nfs(round(10 * zcalc) / 10, 2, 1);
 }
