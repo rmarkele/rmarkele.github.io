@@ -3,11 +3,26 @@
     const warningElement = document.getElementById("orientation-warning");
     const isLandscape = window.matchMedia("(orientation: landscape)").matches;
     
-    warningElement.style.display = isLandscape ? "block" : "none";
+    if (isLandscape) {
+      warningElement.style.display = "block";
+    } else {
+        warningElement.style.display = "none";
+        // Reload if the page was initially loaded in landscape
+        if (window.sessionStorage.getItem("initialLoadInLandscape") === "true") {
+            window.sessionStorage.removeItem("initialLoadInLandscape");
+            window.location.reload(); // Fixes layout issues
+        }
+    }
   }
 
   // Verificar ao carregar a página
-  window.addEventListener("DOMContentLoaded", checkOrientation);
+  window.addEventListener("DOMContentLoaded", () => {
+    const isInitialLoadLandscape = window.matchMedia("(orientation: landscape)").matches;
+    if (isInitialLoadLandscape) {
+        window.sessionStorage.setItem("initialLoadInLandscape", "true");
+    }
+    checkOrientation();
+});
 
   // Verificar sempre que a orientação mudar
   window.addEventListener("resize", checkOrientation); // resize captura mudanças de orientação
