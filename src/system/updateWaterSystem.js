@@ -13,6 +13,8 @@
             window.location.reload(); // Fixes layout issues
         }
     }
+
+    return isLandscape;
   }
 
   // Verificar ao carregar a página
@@ -25,7 +27,14 @@
 });
 
   // Verificar sempre que a orientação mudar
-  window.addEventListener("resize", checkOrientation); // resize captura mudanças de orientação
+  window.addEventListener("resize", ()=>{
+    let isLandscape = checkOrientation();
+    if (isLandscape) {
+        noLoop();
+    } else {
+        loop();
+    }
+  }); // resize captura mudanças de orientação
 
 function updateWaterSystem() {
 
