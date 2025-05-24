@@ -90,6 +90,7 @@ function draw() {
     0
   );
 
+  Z = min(Z, Hmax);
 
   tanqueRep.nivel = nivel;
   Hsys = geraCurvaSistema(Z, R, Vmax, ylim[1], fs);

@@ -45,7 +45,15 @@ function atualizaStrings() {
   pumpFlow.unit.innerHTML =  strg.textovazaoBomba[1];
   cityFlow.text.innerHTML =  strg.textovazaoSaida[0];
   cityFlow.unit.innerHTML =  strg.textovazaoSaida[1];
+
+  const warningElementH2 = document.querySelector("#orientation-warning h2");
+  const warningElementP = document.querySelector("#orientation-warning p");
+  
+  warningElementH2.innerHTML = strg.orientationWarning[0];
+  warningElementP.innerHTML = strg.orientationWarning[1];
+
 }
+
 
 // function getIndexes() {
 //   indOf._cenario = strg.labelCenario.indexOf(selPar.value);

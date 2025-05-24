@@ -30,6 +30,9 @@ const strings = [
     _texto_luz_PS: "VI",
     _texto_luz_NORMAL: "VN",
     _texto_luz_PC: "VA",
+
+    //Aviso Orientação do Celular
+    _aviso_mobile: ["📱 Para uma melhor experiência, por Favor, gire seu celular para a posição vertical!", "Este simulador funciona melhor no modo retrato."], 
     
   },
   
@@ -65,6 +68,9 @@ const strings = [
     _texto_luz_PS: "IF",
     _texto_luz_NORMAL: "NF",
     _texto_luz_PC: "HF",
+
+    //Aviso Orientação do Celular
+    _aviso_mobile: ["📱 For the best experience, please use your phone upright!", "This simulator is designed for portrait orientation." ], 
     
   },
   

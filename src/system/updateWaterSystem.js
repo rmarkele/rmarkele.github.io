@@ -1,20 +1,16 @@
-screen.orientation.addEventListener("change", () => {
-  window.location.reload();
-  // setTimeout(()=>{
-  //   let vh = window.innerHeight * 0.01;
-  //   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  //   canvasDimentions = document.querySelector("#myCanvasContainer").getBoundingClientRect();
-  //   canvasW = canvasDimentions.width;
-  //   canvasH = canvasDimentions.height;
-  //   resizeCanvas(canvasW, canvasH);
-  //   updateWaterSystem();
-  //   updateRepTank();
-  //   createLogo();
-  //   vh = window.innerHeight * 0.01; // need to repeat this.
-  //   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  //   console.log(vh)
-  // },200);
-});
+  // Função para verificar a orientação e mostrar aviso
+  function checkOrientation() {
+    const warningElement = document.getElementById("orientation-warning");
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+    
+    warningElement.style.display = isLandscape ? "block" : "none";
+  }
+
+  // Verificar ao carregar a página
+  window.addEventListener("DOMContentLoaded", checkOrientation);
+
+  // Verificar sempre que a orientação mudar
+  window.addEventListener("resize", checkOrientation); // resize captura mudanças de orientação
 
 function updateWaterSystem() {
 
