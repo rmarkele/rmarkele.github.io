@@ -4,9 +4,9 @@
     const isLandscape = window.matchMedia("(orientation: landscape)").matches;
     
     if (isLandscape) {
-      warningElement.style.display = "block";
+      warningElement.classList.add('active');
     } else {
-        warningElement.style.display = "none";
+        warningElement.classList.remove('active');
         // Reload if the page was initially loaded in landscape
         if (window.sessionStorage.getItem("initialLoadInLandscape") === "true") {
             window.sessionStorage.removeItem("initialLoadInLandscape");
