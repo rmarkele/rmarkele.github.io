@@ -23,7 +23,8 @@ class sistemaAgua {
     })
 
     input.addEventListener('change', ()=>{
-      input.value = nf(constrain(val, this.lim[0], this.lim[1]), 0, 1);
+
+      input.value = nf(constrain(input.value, this.lim[0], this.lim[1]), 0, 1);
       slider.value = input.value;
     })
     this.div = div;

@@ -7,23 +7,28 @@ class bomba {
       this.w = w;
       this.rot=0;
       this.id = "pump"
+      this.lim = [660, 1880]
 
       let {div, inputs, text, input, unit, slider} = createComponentInput({
         id: "bomba",
         label: strg.textoBomba,
         pos: [posx, posy + this.largura/2],
-        lim: [660, 1880]
+        lim: this.lim
       })
 
       slider.addEventListener('input', ()=>{
+        slider.value = constrain(slider.value, this.lim[0], this.lim[1])
         input.value = slider.value;
+
         velBomba = parseFloat(slider.value);
         Hmax = pow(velBomba / 1800, 2) * Hmax0;
         Vmax = (velBomba / 1800) * Vmax0;
       })
 
       input.addEventListener('change', ()=>{
+        input.value = constrain(input.value, 660, 1880);
         slider.value = input.value;
+        
         velBomba = parseFloat(slider.value);
         Hmax = pow(velBomba / 1800, 2) * Hmax0;
         Vmax = (velBomba / 1800) * Vmax0;

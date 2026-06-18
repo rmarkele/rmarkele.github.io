@@ -43,11 +43,11 @@ let cenarios = [
 
   
   {
-    label_ptBR: '2 - 1800 RPM: Baixa Demanda',
-    label_enUS: '2 - 1800 RPM: Low Demand',
-    abertura_v1: 40,
-    demanda: 12,
-    RPM: 1800,  
+    label_ptBR: '2 - 1880 RPM: Baixa Demanda',
+    label_enUS: '2 - 1880 RPM: Low Demand',
+    abertura_v1: 50,
+    demanda: 20,
+    RPM: 1880,  
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
   },
@@ -55,8 +55,8 @@ let cenarios = [
   {
     label_ptBR: '3 -  600 RPM: Baixa Demanda',
     label_enUS: '3 -  600 RPM: Low Demand',
-    abertura_v1: 40,
-    demanda: 12,
+    abertura_v1: 50,
+    demanda: 20,
     RPM: 600,  
     Limiar_Vazao_Baixa: 25, //percentual da vazão
     Limiar_Vazao_Excessiva: 70, //percentual da vazão
